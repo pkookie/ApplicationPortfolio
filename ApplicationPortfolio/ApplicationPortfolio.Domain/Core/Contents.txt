@@ -1,0 +1,7 @@
+﻿Different services
+
+In the resource booking system these are:
+
+	- IAuditService
+	- IBookingService
+	- IResourceService
