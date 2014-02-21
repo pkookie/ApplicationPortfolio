@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ICT_AppPortfolioModelStoreContainer" CdmEntityContainer="ICT_AppPortfolioEntities">
+    <EntitySetMapping Name="access_types">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.access_types">
+        <MappingFragment StoreEntitySet="access_types">
+          <ScalarProperty Name="access_type_id" ColumnName="access_type_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="addresses">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.address">
+        <MappingFragment StoreEntitySet="addresses">
+          <ScalarProperty Name="address_id" ColumnName="address_id" />
+          <ScalarProperty Name="property_name" ColumnName="property_name" />
+          <ScalarProperty Name="uprn" ColumnName="uprn" />
+          <ScalarProperty Name="paon" ColumnName="paon" />
+          <ScalarProperty Name="descriptor" ColumnName="descriptor" />
+          <ScalarProperty Name="locality" ColumnName="locality" />
+          <ScalarProperty Name="county" ColumnName="county" />
+          <ScalarProperty Name="post_code" ColumnName="post_code" />
+          <ScalarProperty Name="usrn" ColumnName="usrn" />
+          <ScalarProperty Name="authority" ColumnName="authority" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="applications">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.application">
+        <MappingFragment StoreEntitySet="applications">
+          <ScalarProperty Name="application_id" ColumnName="application_id" />
+          <ScalarProperty Name="service_area_id" ColumnName="service_area_id" />
+          <ScalarProperty Name="business_criticality_id" ColumnName="business_criticality_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="backup_jobs">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.backup_jobs">
+        <MappingFragment StoreEntitySet="backup_jobs">
+          <ScalarProperty Name="backup_job_id" ColumnName="backup_job_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="backup_links">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.backup_links">
+        <MappingFragment StoreEntitySet="backup_links">
+          <ScalarProperty Name="backup_link_id" ColumnName="backup_link_id" />
+          <ScalarProperty Name="server_id" ColumnName="server_id" />
+          <ScalarProperty Name="backup_type_id" ColumnName="backup_type_id" />
+          <ScalarProperty Name="backup_job_id" ColumnName="backup_job_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="backup_types">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.backup_types">
+        <MappingFragment StoreEntitySet="backup_types">
+          <ScalarProperty Name="backup_type_id" ColumnName="backup_type_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="baseobjects">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.baseobject">
+        <MappingFragment StoreEntitySet="baseobjects">
+          <ScalarProperty Name="object_id" ColumnName="object_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="object_type_id" ColumnName="object_type_id" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="buildings">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.building">
+        <MappingFragment StoreEntitySet="buildings">
+          <ScalarProperty Name="building_id" ColumnName="building_id" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="address3" ColumnName="address3" />
+          <ScalarProperty Name="town" ColumnName="town" />
+          <ScalarProperty Name="postcode" ColumnName="postcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="business_criticalities">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.business_criticalities">
+        <MappingFragment StoreEntitySet="business_criticalities">
+          <ScalarProperty Name="bus_criticality_id" ColumnName="bus_criticality_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="change_requests">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.change_requests">
+        <MappingFragment StoreEntitySet="change_requests">
+          <ScalarProperty Name="change_request_id" ColumnName="change_request_id" />
+          <ScalarProperty Name="object_id" ColumnName="object_id" />
+          <ScalarProperty Name="technician_id" ColumnName="technician_id" />
+          <ScalarProperty Name="authorised" ColumnName="authorised" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="is_hardware" ColumnName="is_hardware" />
+          <ScalarProperty Name="equipment_sub" ColumnName="equipment_sub" />
+          <ScalarProperty Name="problem" ColumnName="problem" />
+          <ScalarProperty Name="change" ColumnName="change" />
+          <ScalarProperty Name="comment_reversal" ColumnName="comment_reversal" />
+          <ScalarProperty Name="success" ColumnName="success" />
+          <ScalarProperty Name="site" ColumnName="site" />
+          <ScalarProperty Name="contact_id" ColumnName="contact_id" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="ThirdParty" ColumnName="ThirdParty" />
+          <ScalarProperty Name="downtime" ColumnName="downtime" />
+          <ScalarProperty Name="requested_by" ColumnName="requested_by" />
+          <ScalarProperty Name="doc_no" ColumnName="doc_no" />
+          <ScalarProperty Name="job_no" ColumnName="job_no" />
+          <ScalarProperty Name="incident_no" ColumnName="incident_no" />
+          <ScalarProperty Name="dynamic" ColumnName="dynamic" />
+          <ScalarProperty Name="perm" ColumnName="perm" />
+          <ScalarProperty Name="impact" ColumnName="impact" />
+          <ScalarProperty Name="auth_state" ColumnName="auth_state" />
+          <ScalarProperty Name="touchpaper_ref" ColumnName="touchpaper_ref" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contact_links">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.contact_links">
+        <MappingFragment StoreEntitySet="contact_links">
+          <ScalarProperty Name="contact_link_id" ColumnName="contact_link_id" />
+          <ScalarProperty Name="contact_id" ColumnName="contact_id" />
+          <ScalarProperty Name="contact_type_id" ColumnName="contact_type_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contact_types">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.contact_types">
+        <MappingFragment StoreEntitySet="contact_types">
+          <ScalarProperty Name="contact_type_id" ColumnName="contact_type_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contacts">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.contact">
+        <MappingFragment StoreEntitySet="contacts">
+          <ScalarProperty Name="contact_id" ColumnName="contact_id" />
+          <ScalarProperty Name="known_as" ColumnName="known_as" />
+          <ScalarProperty Name="primary_email" ColumnName="primary_email" />
+          <ScalarProperty Name="primary_phone" ColumnName="primary_phone" />
+          <ScalarProperty Name="secondary_phone" ColumnName="secondary_phone" />
+          <ScalarProperty Name="address_id" ColumnName="address_id" />
+          <ScalarProperty Name="job_description" ColumnName="job_description" />
+          <ScalarProperty Name="contact_type_id" ColumnName="contact_type_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cpus">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.cpu">
+        <MappingFragment StoreEntitySet="cpus">
+          <ScalarProperty Name="cpu_id" ColumnName="cpu_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="documents">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.document">
+        <MappingFragment StoreEntitySet="document">
+          <ScalarProperty Name="object_id" ColumnName="object_id" />
+          <ScalarProperty Name="document_id" ColumnName="document_id" />
+          <ScalarProperty Name="document_type_id" ColumnName="document_type_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="is_image" ColumnName="is_image" />
+          <ScalarProperty Name="file_location" ColumnName="file_location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="document_type">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.document_type">
+        <MappingFragment StoreEntitySet="document_type">
+          <ScalarProperty Name="document_type_id" ColumnName="document_type_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="frameworks">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.framework">
+        <MappingFragment StoreEntitySet="frameworks">
+          <ScalarProperty Name="framework_id" ColumnName="framework_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="website_id" ColumnName="website_id" />
+          <ScalarProperty Name="application_id" ColumnName="application_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="manufacturers">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.manufacturer">
+        <MappingFragment StoreEntitySet="manufacturers">
+          <ScalarProperty Name="manufacturer_id" ColumnName="manufacturer_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="models">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.model">
+        <MappingFragment StoreEntitySet="models">
+          <ScalarProperty Name="model_id" ColumnName="model_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="network_addresses">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.network_addresses">
+        <MappingFragment StoreEntitySet="network_addresses">
+          <ScalarProperty Name="network_address_id" ColumnName="network_address_id" />
+          <ScalarProperty Name="network_id" ColumnName="network_id" />
+          <ScalarProperty Name="server_id" ColumnName="server_id" />
+          <ScalarProperty Name="ip_address" ColumnName="ip_address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="networks">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.network">
+        <MappingFragment StoreEntitySet="networks">
+          <ScalarProperty Name="network_id" ColumnName="network_id" />
+          <ScalarProperty Name="start_ip" ColumnName="start_ip" />
+          <ScalarProperty Name="end_ip" ColumnName="end_ip" />
+          <ScalarProperty Name="subnet_mask" ColumnName="subnet_mask" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="notification_groups">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.notification_groups">
+        <MappingFragment StoreEntitySet="notification_groups">
+          <ScalarProperty Name="notification_group_id" ColumnName="notification_group_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="notification_groups_contacts">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.notification_groups_contacts">
+        <MappingFragment StoreEntitySet="notification_groups_contacts">
+          <ScalarProperty Name="notification_groups_contacts_id" ColumnName="notification_groups_contacts_id" />
+          <ScalarProperty Name="notification_group_id" ColumnName="notification_group_id" />
+          <ScalarProperty Name="contact_id" ColumnName="contact_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="notification_groups_objects">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.notification_groups_objects">
+        <MappingFragment StoreEntitySet="notification_groups_objects">
+          <ScalarProperty Name="notifications_groups_objects_id" ColumnName="notifications_groups_objects_id" />
+          <ScalarProperty Name="notification_group_id" ColumnName="notification_group_id" />
+          <ScalarProperty Name="object_id" ColumnName="object_id" />
+          <ScalarProperty Name="object_type_id" ColumnName="object_type_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="notifications">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.notification">
+        <MappingFragment StoreEntitySet="notifications">
+          <ScalarProperty Name="notifications_id" ColumnName="notifications_id" />
+          <ScalarProperty Name="contact_id" ColumnName="contact_id" />
+          <ScalarProperty Name="object_id" ColumnName="object_id" />
+          <ScalarProperty Name="and_dependants" ColumnName="and_dependants" />
+          <ScalarProperty Name="and_ascendants" ColumnName="and_ascendants" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="object_types">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.object_types">
+        <MappingFragment StoreEntitySet="object_types">
+          <ScalarProperty Name="object_type_id" ColumnName="object_type_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="details_table" ColumnName="details_table" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="operating_systems">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.operating_systems">
+        <MappingFragment StoreEntitySet="operating_systems">
+          <ScalarProperty Name="operating_system_id" ColumnName="operating_system_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="platforms">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.platform">
+        <MappingFragment StoreEntitySet="platforms">
+          <ScalarProperty Name="platform_id" ColumnName="platform_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="server_links">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.server_links">
+        <MappingFragment StoreEntitySet="server_links">
+          <ScalarProperty Name="server_link_id" ColumnName="server_link_id" />
+          <ScalarProperty Name="server_id" ColumnName="server_id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="server_locations">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.server_locations">
+        <MappingFragment StoreEntitySet="server_locations">
+          <ScalarProperty Name="location_id" ColumnName="location_id" />
+          <ScalarProperty Name="display_name" ColumnName="display_name" />
+          <ScalarProperty Name="short_name" ColumnName="short_name" />
+          <ScalarProperty Name="building_id" ColumnName="building_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="servers">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.server">
+        <MappingFragment StoreEntitySet="servers">
+          <ScalarProperty Name="server_id" ColumnName="server_id" />
+          <ScalarProperty Name="platform_id" ColumnName="platform_id" />
+          <ScalarProperty Name="operating_system_id" ColumnName="operating_system_id" />
+          <ScalarProperty Name="manufacturer_id" ColumnName="manufacturer_id" />
+          <ScalarProperty Name="cpu_id" ColumnName="cpu_id" />
+          <ScalarProperty Name="model_id" ColumnName="model_id" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
+          <ScalarProperty Name="building_id" ColumnName="building_id" />
+          <ScalarProperty Name="serial_number" ColumnName="serial_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="service_area">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.service_area">
+        <MappingFragment StoreEntitySet="service_area">
+          <ScalarProperty Name="service_area_id" ColumnName="service_area_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="source_controls">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.source_controls">
+        <MappingFragment StoreEntitySet="source_controls">
+          <ScalarProperty Name="source_control_id" ColumnName="source_control_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="status">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.status">
+        <MappingFragment StoreEntitySet="status">
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="suppliers">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.supplier">
+        <MappingFragment StoreEntitySet="suppliers">
+          <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="webservers">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.webserver">
+        <MappingFragment StoreEntitySet="webservers">
+          <ScalarProperty Name="webserver_id" ColumnName="webserver_id" />
+          <ScalarProperty Name="server_id" ColumnName="server_id" />
+          <ScalarProperty Name="is_iis" ColumnName="is_iis" />
+          <ScalarProperty Name="is_apache" ColumnName="is_apache" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="webservices">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.webservice">
+        <MappingFragment StoreEntitySet="webservices">
+          <ScalarProperty Name="webservice_id" ColumnName="webservice_id" />
+          <ScalarProperty Name="is_websitebased" ColumnName="is_websitebased" />
+          <ScalarProperty Name="website_id" ColumnName="website_id" />
+          <ScalarProperty Name="server_id" ColumnName="server_id" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="access_type_id" ColumnName="access_type_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="websites">
+      <EntityTypeMapping TypeName="ICT_AppPortfolioModel.website">
+        <MappingFragment StoreEntitySet="websites">
+          <ScalarProperty Name="website_id" ColumnName="website_id" />
+          <ScalarProperty Name="webserver_id" ColumnName="webserver_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

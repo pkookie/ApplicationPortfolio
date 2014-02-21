@@ -1,53 +1,263 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-	<PropertyGroup>
-		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-		<ProjectGuid>c9d43b43-9eed-4a87-a353-b90c59d0c8e6</ProjectGuid>
-		<OutputType>Library</OutputType>
-		<AppDesignerFolder>Properties</AppDesignerFolder>
-		<RootNamespace>ApplicationPortfolio.Domain</RootNamespace>
-		<AssemblyName>ApplicationPortfolio.Domain</AssemblyName>
-		<TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-		<FileAlignment>512</FileAlignment>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-		<DebugSymbols>true</DebugSymbols>
-		<DebugType>full</DebugType>
-		<Optimize>false</Optimize>
-		<OutputPath>bin\Debug\</OutputPath>
-		<DefineConstants>DEBUG;TRACE</DefineConstants>
-		<ErrorReport>prompt</ErrorReport>
-		<WarningLevel>4</WarningLevel>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-		<DebugType>pdbonly</DebugType>
- 		<Optimize>true</Optimize>
-		<OutputPath>bin\Release\</OutputPath>
-		<DefineConstants>TRACE</DefineConstants>
-		<ErrorReport>prompt</ErrorReport>
-		<WarningLevel>4</WarningLevel>
-	</PropertyGroup>
-	<ItemGroup>
-		<Reference Include="System"/>
-		
-		<Reference Include="System.Core"/>
-		<Reference Include="System.Xml.Linq"/>
-		<Reference Include="System.Data.DataSetExtensions"/>
-		
-		
-		<Reference Include="Microsoft.CSharp"/>
- 		
-		<Reference Include="System.Data"/>
-		<Reference Include="System.Xml"/>
-	</ItemGroup>
-	<ItemGroup>
-		<Compile Include="Class1.cs" />
-
-		<Compile Include="Properties\AssemblyInfo.cs" />
-	</ItemGroup>
-	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8E6D95C0-9E7D-47C0-BE2C-9F0FEECC24F2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ApplicationPortfolio.Domain</RootNamespace>
+    <AssemblyName>ApplicationPortfolio.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataConnections\access_types.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\address.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\application.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\AppPortfolioModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppPortfolioModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\AppPortfolioModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\AppPortfolioModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppPortfolioModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\backup_jobs.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\backup_links.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\backup_types.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\baseobject.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\building.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\business_criticalities.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\change_requests.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\contact.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\contact_links.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\contact_types.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\cpu.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\document.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\document_type.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\framework.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\manufacturer.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\model.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\network.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\network_addresses.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\notification.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\notification_groups.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\notification_groups_contacts.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\notification_groups_objects.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\object_types.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\operating_systems.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\platform.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\server.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\server_links.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\server_locations.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\service_area.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\source_controls.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\status.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\supplier.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\sysdiagram.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\webserver.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\webservice.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\website.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Core\Contents.txt" />
+    <Content Include="DataConnections\Contents.txt" />
+    <Content Include="Readme.txt" />
+    <Content Include="Types\Contents.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.4.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 4.0 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="LocalDatabase\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="DataConnections\AppPortfolioModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AppPortfolioModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="DataConnections\AppPortfolioModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AppPortfolioModel.edmx</DependentUpon>
+      <LastGenOutput>AppPortfolioModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DataConnections\AppPortfolioModel.edmx.diagram">
+      <DependentUpon>AppPortfolioModel.edmx</DependentUpon>
+    </None>
+    <None Include="DataConnections\AppPortfolioModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AppPortfolioModel.edmx</DependentUpon>
+      <LastGenOutput>AppPortfolioModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -55,5 +265,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-
- </Project>
+</Project>

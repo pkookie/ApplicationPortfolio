@@ -1,0 +1,1132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ICT_AppPortfolioModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ICT_AppPortfolioModelStoreContainer">
+    <EntitySet Name="access_types" EntityType="ICT_AppPortfolioModel.Store.access_types" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="addresses" EntityType="ICT_AppPortfolioModel.Store.addresses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="applications" EntityType="ICT_AppPortfolioModel.Store.applications" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="backup_jobs" EntityType="ICT_AppPortfolioModel.Store.backup_jobs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="backup_links" EntityType="ICT_AppPortfolioModel.Store.backup_links" store:Type="Tables" store:Schema="dbo" store:Name="backup_links">
+      <DefiningQuery>SELECT 
+      [backup_links].[backup_link_id] AS [backup_link_id], 
+      [backup_links].[server_id] AS [server_id], 
+      [backup_links].[backup_type_id] AS [backup_type_id], 
+      [backup_links].[backup_job_id] AS [backup_job_id]
+      FROM [dbo].[backup_links] AS [backup_links]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="backup_types" EntityType="ICT_AppPortfolioModel.Store.backup_types" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="baseobjects" EntityType="ICT_AppPortfolioModel.Store.baseobjects" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="buildings" EntityType="ICT_AppPortfolioModel.Store.buildings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="business_criticalities" EntityType="ICT_AppPortfolioModel.Store.business_criticalities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="change_requests" EntityType="ICT_AppPortfolioModel.Store.change_requests" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="contact_links" EntityType="ICT_AppPortfolioModel.Store.contact_links" store:Type="Tables" store:Schema="dbo" store:Name="contact_links">
+      <DefiningQuery>SELECT 
+      [contact_links].[contact_link_id] AS [contact_link_id], 
+      [contact_links].[contact_id] AS [contact_id], 
+      [contact_links].[contact_type_id] AS [contact_type_id]
+      FROM [dbo].[contact_links] AS [contact_links]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="contact_types" EntityType="ICT_AppPortfolioModel.Store.contact_types" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="contacts" EntityType="ICT_AppPortfolioModel.Store.contacts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="cpus" EntityType="ICT_AppPortfolioModel.Store.cpus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="document" EntityType="ICT_AppPortfolioModel.Store.document" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="document_type" EntityType="ICT_AppPortfolioModel.Store.document_type" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="frameworks" EntityType="ICT_AppPortfolioModel.Store.frameworks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="manufacturers" EntityType="ICT_AppPortfolioModel.Store.manufacturers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="models" EntityType="ICT_AppPortfolioModel.Store.models" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="network_addresses" EntityType="ICT_AppPortfolioModel.Store.network_addresses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="networks" EntityType="ICT_AppPortfolioModel.Store.networks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="notification_groups" EntityType="ICT_AppPortfolioModel.Store.notification_groups" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="notification_groups_contacts" EntityType="ICT_AppPortfolioModel.Store.notification_groups_contacts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="notification_groups_objects" EntityType="ICT_AppPortfolioModel.Store.notification_groups_objects" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="notifications" EntityType="ICT_AppPortfolioModel.Store.notifications" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="object_types" EntityType="ICT_AppPortfolioModel.Store.object_types" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="operating_systems" EntityType="ICT_AppPortfolioModel.Store.operating_systems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="platforms" EntityType="ICT_AppPortfolioModel.Store.platforms" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="server_links" EntityType="ICT_AppPortfolioModel.Store.server_links" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="server_locations" EntityType="ICT_AppPortfolioModel.Store.server_locations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="servers" EntityType="ICT_AppPortfolioModel.Store.servers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="service_area" EntityType="ICT_AppPortfolioModel.Store.service_area" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="source_controls" EntityType="ICT_AppPortfolioModel.Store.source_controls" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="status" EntityType="ICT_AppPortfolioModel.Store.status" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="suppliers" EntityType="ICT_AppPortfolioModel.Store.suppliers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="ICT_AppPortfolioModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="webservers" EntityType="ICT_AppPortfolioModel.Store.webservers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="webservices" EntityType="ICT_AppPortfolioModel.Store.webservices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="websites" EntityType="ICT_AppPortfolioModel.Store.websites" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_applications_business_criticalities" Association="ICT_AppPortfolioModel.Store.FK_applications_business_criticalities">
+      <End Role="business_criticalities" EntitySet="business_criticalities" />
+      <End Role="applications" EntitySet="applications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_applications_directorates" Association="ICT_AppPortfolioModel.Store.FK_applications_directorates">
+      <End Role="service_area" EntitySet="service_area" />
+      <End Role="applications" EntitySet="applications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_applications_objects" Association="ICT_AppPortfolioModel.Store.FK_applications_objects">
+      <End Role="baseobjects" EntitySet="baseobjects" />
+      <End Role="applications" EntitySet="applications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_backup_links_backup_jobs" Association="ICT_AppPortfolioModel.Store.FK_backup_links_backup_jobs">
+      <End Role="backup_jobs" EntitySet="backup_jobs" />
+      <End Role="backup_links" EntitySet="backup_links" />
+    </AssociationSet>
+    <AssociationSet Name="FK_backup_links_backup_types" Association="ICT_AppPortfolioModel.Store.FK_backup_links_backup_types">
+      <End Role="backup_types" EntitySet="backup_types" />
+      <End Role="backup_links" EntitySet="backup_links" />
+    </AssociationSet>
+    <AssociationSet Name="FK_backup_links_servers" Association="ICT_AppPortfolioModel.Store.FK_backup_links_servers">
+      <End Role="servers" EntitySet="servers" />
+      <End Role="backup_links" EntitySet="backup_links" />
+    </AssociationSet>
+    <AssociationSet Name="FK_change_requests_contacts" Association="ICT_AppPortfolioModel.Store.FK_change_requests_contacts">
+      <End Role="contacts" EntitySet="contacts" />
+      <End Role="change_requests" EntitySet="change_requests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_change_requests_objects" Association="ICT_AppPortfolioModel.Store.FK_change_requests_objects">
+      <End Role="baseobjects" EntitySet="baseobjects" />
+      <End Role="change_requests" EntitySet="change_requests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_contact_links_contact_types" Association="ICT_AppPortfolioModel.Store.FK_contact_links_contact_types">
+      <End Role="contact_types" EntitySet="contact_types" />
+      <End Role="contact_links" EntitySet="contact_links" />
+    </AssociationSet>
+    <AssociationSet Name="FK_contact_links_contacts" Association="ICT_AppPortfolioModel.Store.FK_contact_links_contacts">
+      <End Role="contacts" EntitySet="contacts" />
+      <End Role="contact_links" EntitySet="contact_links" />
+    </AssociationSet>
+    <AssociationSet Name="FK_contacts_addresses" Association="ICT_AppPortfolioModel.Store.FK_contacts_addresses">
+      <End Role="addresses" EntitySet="addresses" />
+      <End Role="contacts" EntitySet="contacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_contacts_contact_types" Association="ICT_AppPortfolioModel.Store.FK_contacts_contact_types">
+      <End Role="contact_types" EntitySet="contact_types" />
+      <End Role="contacts" EntitySet="contacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documentation_document_type" Association="ICT_AppPortfolioModel.Store.FK_documentation_document_type">
+      <End Role="document_type" EntitySet="document_type" />
+      <End Role="document" EntitySet="document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documentation_objects" Association="ICT_AppPortfolioModel.Store.FK_documentation_objects">
+      <End Role="baseobjects" EntitySet="baseobjects" />
+      <End Role="document" EntitySet="document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_network_addresses_networks" Association="ICT_AppPortfolioModel.Store.FK_network_addresses_networks">
+      <End Role="networks" EntitySet="networks" />
+      <End Role="network_addresses" EntitySet="network_addresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_network_addresses_objects" Association="ICT_AppPortfolioModel.Store.FK_network_addresses_objects">
+      <End Role="baseobjects" EntitySet="baseobjects" />
+      <End Role="network_addresses" EntitySet="network_addresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_network_addresses_servers" Association="ICT_AppPortfolioModel.Store.FK_network_addresses_servers">
+      <End Role="servers" EntitySet="servers" />
+      <End Role="network_addresses" EntitySet="network_addresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_networks_objects" Association="ICT_AppPortfolioModel.Store.FK_networks_objects">
+      <End Role="baseobjects" EntitySet="baseobjects" />
+      <End Role="networks" EntitySet="networks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_notification_groups_contacts_contacts" Association="ICT_AppPortfolioModel.Store.FK_notification_groups_contacts_contacts">
+      <End Role="contacts" EntitySet="contacts" />
+      <End Role="notification_groups_contacts" EntitySet="notification_groups_contacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_notification_groups_contacts_notification_groups" Association="ICT_AppPortfolioModel.Store.FK_notification_groups_contacts_notification_groups">
+      <End Role="notification_groups" EntitySet="notification_groups" />
+      <End Role="notification_groups_contacts" EntitySet="notification_groups_contacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_notifications_contacts" Association="ICT_AppPortfolioModel.Store.FK_notifications_contacts">
+      <End Role="contacts" EntitySet="contacts" />
+      <End Role="notifications" EntitySet="notifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_notifications_groups_objects_notification_groups" Association="ICT_AppPortfolioModel.Store.FK_notifications_groups_objects_notification_groups">
+      <End Role="notification_groups" EntitySet="notification_groups" />
+      <End Role="notification_groups_objects" EntitySet="notification_groups_objects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_notifications_groups_objects_object_types" Association="ICT_AppPortfolioModel.Store.FK_notifications_groups_objects_object_types">
+      <End Role="object_types" EntitySet="object_types" />
+      <End Role="notification_groups_objects" EntitySet="notification_groups_objects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_notifications_groups_objects_objects" Association="ICT_AppPortfolioModel.Store.FK_notifications_groups_objects_objects">
+      <End Role="baseobjects" EntitySet="baseobjects" />
+      <End Role="notification_groups_objects" EntitySet="notification_groups_objects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_notifications_objects" Association="ICT_AppPortfolioModel.Store.FK_notifications_objects">
+      <End Role="baseobjects" EntitySet="baseobjects" />
+      <End Role="notifications" EntitySet="notifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_objects_object_types" Association="ICT_AppPortfolioModel.Store.FK_objects_object_types">
+      <End Role="object_types" EntitySet="object_types" />
+      <End Role="baseobjects" EntitySet="baseobjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_server_links_servers" Association="ICT_AppPortfolioModel.Store.FK_server_links_servers">
+      <End Role="servers" EntitySet="servers" />
+      <End Role="server_links" EntitySet="server_links" />
+    </AssociationSet>
+    <AssociationSet Name="FK_server_locations_buildings" Association="ICT_AppPortfolioModel.Store.FK_server_locations_buildings">
+      <End Role="buildings" EntitySet="buildings" />
+      <End Role="server_locations" EntitySet="server_locations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_servers_buildings" Association="ICT_AppPortfolioModel.Store.FK_servers_buildings">
+      <End Role="buildings" EntitySet="buildings" />
+      <End Role="servers" EntitySet="servers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_servers_cpus" Association="ICT_AppPortfolioModel.Store.FK_servers_cpus">
+      <End Role="cpus" EntitySet="cpus" />
+      <End Role="servers" EntitySet="servers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_servers_manufacturers" Association="ICT_AppPortfolioModel.Store.FK_servers_manufacturers">
+      <End Role="manufacturers" EntitySet="manufacturers" />
+      <End Role="servers" EntitySet="servers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_servers_models" Association="ICT_AppPortfolioModel.Store.FK_servers_models">
+      <End Role="models" EntitySet="models" />
+      <End Role="servers" EntitySet="servers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_servers_objects" Association="ICT_AppPortfolioModel.Store.FK_servers_objects">
+      <End Role="baseobjects" EntitySet="baseobjects" />
+      <End Role="servers" EntitySet="servers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_servers_operating_systems" Association="ICT_AppPortfolioModel.Store.FK_servers_operating_systems">
+      <End Role="operating_systems" EntitySet="operating_systems" />
+      <End Role="servers" EntitySet="servers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_servers_platforms" Association="ICT_AppPortfolioModel.Store.FK_servers_platforms">
+      <End Role="platforms" EntitySet="platforms" />
+      <End Role="servers" EntitySet="servers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_servers_status" Association="ICT_AppPortfolioModel.Store.FK_servers_status">
+      <End Role="status" EntitySet="status" />
+      <End Role="servers" EntitySet="servers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_servers_suppliers1" Association="ICT_AppPortfolioModel.Store.FK_servers_suppliers1">
+      <End Role="suppliers" EntitySet="suppliers" />
+      <End Role="servers" EntitySet="servers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_webservers_objects" Association="ICT_AppPortfolioModel.Store.FK_webservers_objects">
+      <End Role="baseobjects" EntitySet="baseobjects" />
+      <End Role="webservers" EntitySet="webservers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_webservers_servers" Association="ICT_AppPortfolioModel.Store.FK_webservers_servers">
+      <End Role="servers" EntitySet="servers" />
+      <End Role="webservers" EntitySet="webservers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_webservices_access_types" Association="ICT_AppPortfolioModel.Store.FK_webservices_access_types">
+      <End Role="access_types" EntitySet="access_types" />
+      <End Role="webservices" EntitySet="webservices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_webservices_servers" Association="ICT_AppPortfolioModel.Store.FK_webservices_servers">
+      <End Role="servers" EntitySet="servers" />
+      <End Role="webservices" EntitySet="webservices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_webservices_websites" Association="ICT_AppPortfolioModel.Store.FK_webservices_websites">
+      <End Role="websites" EntitySet="websites" />
+      <End Role="webservices" EntitySet="webservices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_websites_webservers" Association="ICT_AppPortfolioModel.Store.FK_websites_webservers">
+      <End Role="webservers" EntitySet="webservers" />
+      <End Role="websites" EntitySet="websites" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="access_types">
+    <Key>
+      <PropertyRef Name="access_type_id" />
+    </Key>
+    <Property Name="access_type_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="description" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="addresses">
+    <Key>
+      <PropertyRef Name="address_id" />
+    </Key>
+    <Property Name="address_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="property_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="uprn" Type="nvarchar" MaxLength="100" />
+    <Property Name="paon" Type="nvarchar" MaxLength="100" />
+    <Property Name="descriptor" Type="nvarchar" MaxLength="100" />
+    <Property Name="locality" Type="nvarchar" MaxLength="100" />
+    <Property Name="county" Type="nvarchar" MaxLength="100" />
+    <Property Name="post_code" Type="nvarchar" MaxLength="100" />
+    <Property Name="usrn" Type="nvarchar" MaxLength="100" />
+    <Property Name="authority" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="applications">
+    <Key>
+      <PropertyRef Name="application_id" />
+    </Key>
+    <Property Name="application_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="service_area_id" Type="bigint" Nullable="false" />
+    <Property Name="business_criticality_id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="backup_jobs">
+    <Key>
+      <PropertyRef Name="backup_job_id" />
+    </Key>
+    <Property Name="backup_job_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'ICT_AppPortfolio.dbo.backup_links' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="backup_links">
+    <Key>
+      <PropertyRef Name="backup_link_id" />
+      <PropertyRef Name="server_id" />
+      <PropertyRef Name="backup_type_id" />
+      <PropertyRef Name="backup_job_id" />
+    </Key>
+    <Property Name="backup_link_id" Type="bigint" Nullable="false" />
+    <Property Name="server_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="backup_type_id" Type="bigint" Nullable="false" />
+    <Property Name="backup_job_id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="backup_types">
+    <Key>
+      <PropertyRef Name="backup_type_id" />
+    </Key>
+    <Property Name="backup_type_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="baseobjects">
+    <Key>
+      <PropertyRef Name="object_id" />
+    </Key>
+    <Property Name="object_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="object_type_id" Type="bigint" Nullable="false" />
+    <Property Name="parent_id" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="buildings">
+    <Key>
+      <PropertyRef Name="building_id" />
+    </Key>
+    <Property Name="building_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="address1" Type="nvarchar" MaxLength="200" />
+    <Property Name="address2" Type="nvarchar" MaxLength="200" />
+    <Property Name="address3" Type="nvarchar" MaxLength="200" />
+    <Property Name="town" Type="nvarchar" MaxLength="200" />
+    <Property Name="postcode" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="business_criticalities">
+    <Key>
+      <PropertyRef Name="bus_criticality_id" />
+    </Key>
+    <Property Name="bus_criticality_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="description" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="change_requests">
+    <Key>
+      <PropertyRef Name="change_request_id" />
+    </Key>
+    <Property Name="change_request_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="object_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="technician_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="authorised" Type="nchar" MaxLength="10" />
+    <Property Name="date" Type="datetime" />
+    <Property Name="is_hardware" Type="nvarchar" MaxLength="50" />
+    <Property Name="equipment_sub" Type="nvarchar" MaxLength="50" />
+    <Property Name="problem" Type="nvarchar(max)" />
+    <Property Name="change" Type="nvarchar(max)" />
+    <Property Name="comment_reversal" Type="nvarchar(max)" />
+    <Property Name="success" Type="nvarchar" MaxLength="50" />
+    <Property Name="site" Type="nvarchar" MaxLength="50" />
+    <Property Name="contact_id" Type="bigint" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="ThirdParty" Type="nvarchar" MaxLength="50" />
+    <Property Name="downtime" Type="nvarchar" MaxLength="50" />
+    <Property Name="requested_by" Type="nvarchar" MaxLength="50" />
+    <Property Name="doc_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="job_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="incident_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="dynamic" Type="nvarchar" MaxLength="50" />
+    <Property Name="perm" Type="nvarchar" MaxLength="50" />
+    <Property Name="impact" Type="nvarchar" MaxLength="50" />
+    <Property Name="auth_state" Type="nvarchar" MaxLength="50" />
+    <Property Name="touchpaper_ref" Type="nvarchar" MaxLength="50" />
+    <Property Name="type" Type="nvarchar" MaxLength="50" />
+    <Property Name="created_on" Type="nchar" MaxLength="10" />
+    <Property Name="created_by" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'ICT_AppPortfolio.dbo.contact_links' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="contact_links">
+    <Key>
+      <PropertyRef Name="contact_link_id" />
+      <PropertyRef Name="contact_id" />
+      <PropertyRef Name="contact_type_id" />
+    </Key>
+    <Property Name="contact_link_id" Type="bigint" Nullable="false" />
+    <Property Name="contact_id" Type="bigint" Nullable="false" />
+    <Property Name="contact_type_id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="contact_types">
+    <Key>
+      <PropertyRef Name="contact_type_id" />
+    </Key>
+    <Property Name="contact_type_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="contacts">
+    <Key>
+      <PropertyRef Name="contact_id" />
+    </Key>
+    <Property Name="contact_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="known_as" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="primary_email" Type="nvarchar" Nullable="false" MaxLength="512" />
+    <Property Name="primary_phone" Type="nvarchar" MaxLength="30" />
+    <Property Name="secondary_phone" Type="nvarchar" MaxLength="30" />
+    <Property Name="address_id" Type="bigint" />
+    <Property Name="job_description" Type="nvarchar" MaxLength="100" />
+    <Property Name="contact_type_id" Type="bigint" />
+  </EntityType>
+  <EntityType Name="cpus">
+    <Key>
+      <PropertyRef Name="cpu_id" />
+    </Key>
+    <Property Name="cpu_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="description" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="document">
+    <Key>
+      <PropertyRef Name="document_id" />
+    </Key>
+    <Property Name="object_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="document_id" Type="bigint" Nullable="false" />
+    <Property Name="document_type_id" Type="bigint" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" />
+    <Property Name="is_image" Type="bit" />
+    <Property Name="file_location" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="document_type">
+    <Key>
+      <PropertyRef Name="document_type_id" />
+    </Key>
+    <Property Name="document_type_id" Type="bigint" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="description" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="frameworks">
+    <Key>
+      <PropertyRef Name="framework_id" />
+    </Key>
+    <Property Name="framework_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="description" Type="nvarchar" MaxLength="100" />
+    <Property Name="website_id" Type="uniqueidentifier" />
+    <Property Name="application_id" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="manufacturers">
+    <Key>
+      <PropertyRef Name="manufacturer_id" />
+    </Key>
+    <Property Name="manufacturer_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="description" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="models">
+    <Key>
+      <PropertyRef Name="model_id" />
+    </Key>
+    <Property Name="model_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="description" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="network_addresses">
+    <Key>
+      <PropertyRef Name="network_address_id" />
+    </Key>
+    <Property Name="network_address_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="network_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="server_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ip_address" Type="nvarchar" Nullable="false" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="networks">
+    <Key>
+      <PropertyRef Name="network_id" />
+    </Key>
+    <Property Name="network_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="start_ip" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="end_ip" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="subnet_mask" Type="nvarchar" Nullable="false" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="notification_groups">
+    <Key>
+      <PropertyRef Name="notification_group_id" />
+    </Key>
+    <Property Name="notification_group_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="notification_groups_contacts">
+    <Key>
+      <PropertyRef Name="notification_groups_contacts_id" />
+    </Key>
+    <Property Name="notification_groups_contacts_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="notification_group_id" Type="bigint" />
+    <Property Name="contact_id" Type="bigint" />
+  </EntityType>
+  <EntityType Name="notification_groups_objects">
+    <Key>
+      <PropertyRef Name="notifications_groups_objects_id" />
+    </Key>
+    <Property Name="notifications_groups_objects_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="notification_group_id" Type="bigint" Nullable="false" />
+    <Property Name="object_id" Type="uniqueidentifier" />
+    <Property Name="object_type_id" Type="bigint" />
+  </EntityType>
+  <EntityType Name="notifications">
+    <Key>
+      <PropertyRef Name="notifications_id" />
+    </Key>
+    <Property Name="notifications_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="contact_id" Type="bigint" Nullable="false" />
+    <Property Name="object_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="and_dependants" Type="bit" Nullable="false" />
+    <Property Name="and_ascendants" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="object_types">
+    <Key>
+      <PropertyRef Name="object_type_id" />
+    </Key>
+    <Property Name="object_type_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="details_table" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="operating_systems">
+    <Key>
+      <PropertyRef Name="operating_system_id" />
+    </Key>
+    <Property Name="operating_system_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="description" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="platforms">
+    <Key>
+      <PropertyRef Name="platform_id" />
+    </Key>
+    <Property Name="platform_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="description" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="server_links">
+    <Key>
+      <PropertyRef Name="server_link_id" />
+    </Key>
+    <Property Name="server_link_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="server_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" />
+    <Property Name="URL" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="server_locations">
+    <Key>
+      <PropertyRef Name="location_id" />
+    </Key>
+    <Property Name="location_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="display_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="short_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="building_id" Type="bigint" />
+  </EntityType>
+  <EntityType Name="servers">
+    <Key>
+      <PropertyRef Name="server_id" />
+    </Key>
+    <Property Name="server_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="platform_id" Type="bigint" />
+    <Property Name="operating_system_id" Type="bigint" />
+    <Property Name="manufacturer_id" Type="bigint" />
+    <Property Name="cpu_id" Type="bigint" />
+    <Property Name="model_id" Type="bigint" />
+    <Property Name="status_id" Type="bigint" />
+    <Property Name="supplier_id" Type="bigint" />
+    <Property Name="building_id" Type="bigint" />
+    <Property Name="serial_number" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="service_area">
+    <Key>
+      <PropertyRef Name="service_area_id" />
+    </Key>
+    <Property Name="service_area_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="description" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="source_controls">
+    <Key>
+      <PropertyRef Name="source_control_id" />
+    </Key>
+    <Property Name="source_control_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="description" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="status">
+    <Key>
+      <PropertyRef Name="status_id" />
+    </Key>
+    <Property Name="status_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="suppliers">
+    <Key>
+      <PropertyRef Name="supplier_id" />
+    </Key>
+    <Property Name="supplier_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="description" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="webservers">
+    <Key>
+      <PropertyRef Name="webserver_id" />
+    </Key>
+    <Property Name="webserver_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="server_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="is_iis" Type="bit" Nullable="false" />
+    <Property Name="is_apache" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="webservices">
+    <Key>
+      <PropertyRef Name="webservice_id" />
+    </Key>
+    <Property Name="webservice_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="is_websitebased" Type="bit" Nullable="false" />
+    <Property Name="website_id" Type="uniqueidentifier" />
+    <Property Name="server_id" Type="uniqueidentifier" />
+    <Property Name="url" Type="nvarchar" MaxLength="250" />
+    <Property Name="access_type_id" Type="bigint" />
+  </EntityType>
+  <EntityType Name="websites">
+    <Key>
+      <PropertyRef Name="website_id" />
+    </Key>
+    <Property Name="website_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="webserver_id" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_applications_business_criticalities">
+    <End Role="business_criticalities" Type="ICT_AppPortfolioModel.Store.business_criticalities" Multiplicity="1" />
+    <End Role="applications" Type="ICT_AppPortfolioModel.Store.applications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="business_criticalities">
+        <PropertyRef Name="bus_criticality_id" />
+      </Principal>
+      <Dependent Role="applications">
+        <PropertyRef Name="business_criticality_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_applications_directorates">
+    <End Role="service_area" Type="ICT_AppPortfolioModel.Store.service_area" Multiplicity="1" />
+    <End Role="applications" Type="ICT_AppPortfolioModel.Store.applications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="service_area">
+        <PropertyRef Name="service_area_id" />
+      </Principal>
+      <Dependent Role="applications">
+        <PropertyRef Name="service_area_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_applications_objects">
+    <End Role="baseobjects" Type="ICT_AppPortfolioModel.Store.baseobjects" Multiplicity="1" />
+    <End Role="applications" Type="ICT_AppPortfolioModel.Store.applications" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="baseobjects">
+        <PropertyRef Name="object_id" />
+      </Principal>
+      <Dependent Role="applications">
+        <PropertyRef Name="application_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_backup_links_backup_jobs">
+    <End Role="backup_jobs" Type="ICT_AppPortfolioModel.Store.backup_jobs" Multiplicity="1" />
+    <End Role="backup_links" Type="ICT_AppPortfolioModel.Store.backup_links" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="backup_jobs">
+        <PropertyRef Name="backup_job_id" />
+      </Principal>
+      <Dependent Role="backup_links">
+        <PropertyRef Name="backup_job_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_backup_links_backup_types">
+    <End Role="backup_types" Type="ICT_AppPortfolioModel.Store.backup_types" Multiplicity="1" />
+    <End Role="backup_links" Type="ICT_AppPortfolioModel.Store.backup_links" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="backup_types">
+        <PropertyRef Name="backup_type_id" />
+      </Principal>
+      <Dependent Role="backup_links">
+        <PropertyRef Name="backup_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_backup_links_servers">
+    <End Role="servers" Type="ICT_AppPortfolioModel.Store.servers" Multiplicity="1" />
+    <End Role="backup_links" Type="ICT_AppPortfolioModel.Store.backup_links" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="servers">
+        <PropertyRef Name="server_id" />
+      </Principal>
+      <Dependent Role="backup_links">
+        <PropertyRef Name="server_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_change_requests_contacts">
+    <End Role="contacts" Type="ICT_AppPortfolioModel.Store.contacts" Multiplicity="0..1" />
+    <End Role="change_requests" Type="ICT_AppPortfolioModel.Store.change_requests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="contacts">
+        <PropertyRef Name="contact_id" />
+      </Principal>
+      <Dependent Role="change_requests">
+        <PropertyRef Name="contact_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_change_requests_objects">
+    <End Role="baseobjects" Type="ICT_AppPortfolioModel.Store.baseobjects" Multiplicity="1" />
+    <End Role="change_requests" Type="ICT_AppPortfolioModel.Store.change_requests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="baseobjects">
+        <PropertyRef Name="object_id" />
+      </Principal>
+      <Dependent Role="change_requests">
+        <PropertyRef Name="object_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_contact_links_contact_types">
+    <End Role="contact_types" Type="ICT_AppPortfolioModel.Store.contact_types" Multiplicity="1" />
+    <End Role="contact_links" Type="ICT_AppPortfolioModel.Store.contact_links" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="contact_types">
+        <PropertyRef Name="contact_type_id" />
+      </Principal>
+      <Dependent Role="contact_links">
+        <PropertyRef Name="contact_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_contact_links_contacts">
+    <End Role="contacts" Type="ICT_AppPortfolioModel.Store.contacts" Multiplicity="1" />
+    <End Role="contact_links" Type="ICT_AppPortfolioModel.Store.contact_links" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="contacts">
+        <PropertyRef Name="contact_id" />
+      </Principal>
+      <Dependent Role="contact_links">
+        <PropertyRef Name="contact_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_contacts_addresses">
+    <End Role="addresses" Type="ICT_AppPortfolioModel.Store.addresses" Multiplicity="0..1" />
+    <End Role="contacts" Type="ICT_AppPortfolioModel.Store.contacts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="addresses">
+        <PropertyRef Name="address_id" />
+      </Principal>
+      <Dependent Role="contacts">
+        <PropertyRef Name="address_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_contacts_contact_types">
+    <End Role="contact_types" Type="ICT_AppPortfolioModel.Store.contact_types" Multiplicity="0..1" />
+    <End Role="contacts" Type="ICT_AppPortfolioModel.Store.contacts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="contact_types">
+        <PropertyRef Name="contact_type_id" />
+      </Principal>
+      <Dependent Role="contacts">
+        <PropertyRef Name="contact_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documentation_document_type">
+    <End Role="document_type" Type="ICT_AppPortfolioModel.Store.document_type" Multiplicity="1" />
+    <End Role="document" Type="ICT_AppPortfolioModel.Store.document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="document_type">
+        <PropertyRef Name="document_type_id" />
+      </Principal>
+      <Dependent Role="document">
+        <PropertyRef Name="document_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documentation_objects">
+    <End Role="baseobjects" Type="ICT_AppPortfolioModel.Store.baseobjects" Multiplicity="1" />
+    <End Role="document" Type="ICT_AppPortfolioModel.Store.document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="baseobjects">
+        <PropertyRef Name="object_id" />
+      </Principal>
+      <Dependent Role="document">
+        <PropertyRef Name="object_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_network_addresses_networks">
+    <End Role="networks" Type="ICT_AppPortfolioModel.Store.networks" Multiplicity="1" />
+    <End Role="network_addresses" Type="ICT_AppPortfolioModel.Store.network_addresses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="networks">
+        <PropertyRef Name="network_id" />
+      </Principal>
+      <Dependent Role="network_addresses">
+        <PropertyRef Name="network_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_network_addresses_objects">
+    <End Role="baseobjects" Type="ICT_AppPortfolioModel.Store.baseobjects" Multiplicity="1" />
+    <End Role="network_addresses" Type="ICT_AppPortfolioModel.Store.network_addresses" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="baseobjects">
+        <PropertyRef Name="object_id" />
+      </Principal>
+      <Dependent Role="network_addresses">
+        <PropertyRef Name="network_address_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_network_addresses_servers">
+    <End Role="servers" Type="ICT_AppPortfolioModel.Store.servers" Multiplicity="1" />
+    <End Role="network_addresses" Type="ICT_AppPortfolioModel.Store.network_addresses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="servers">
+        <PropertyRef Name="server_id" />
+      </Principal>
+      <Dependent Role="network_addresses">
+        <PropertyRef Name="server_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_networks_objects">
+    <End Role="baseobjects" Type="ICT_AppPortfolioModel.Store.baseobjects" Multiplicity="1" />
+    <End Role="networks" Type="ICT_AppPortfolioModel.Store.networks" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="baseobjects">
+        <PropertyRef Name="object_id" />
+      </Principal>
+      <Dependent Role="networks">
+        <PropertyRef Name="network_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_notification_groups_contacts_contacts">
+    <End Role="contacts" Type="ICT_AppPortfolioModel.Store.contacts" Multiplicity="0..1" />
+    <End Role="notification_groups_contacts" Type="ICT_AppPortfolioModel.Store.notification_groups_contacts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="contacts">
+        <PropertyRef Name="contact_id" />
+      </Principal>
+      <Dependent Role="notification_groups_contacts">
+        <PropertyRef Name="contact_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_notification_groups_contacts_notification_groups">
+    <End Role="notification_groups" Type="ICT_AppPortfolioModel.Store.notification_groups" Multiplicity="0..1" />
+    <End Role="notification_groups_contacts" Type="ICT_AppPortfolioModel.Store.notification_groups_contacts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="notification_groups">
+        <PropertyRef Name="notification_group_id" />
+      </Principal>
+      <Dependent Role="notification_groups_contacts">
+        <PropertyRef Name="notification_group_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_notifications_contacts">
+    <End Role="contacts" Type="ICT_AppPortfolioModel.Store.contacts" Multiplicity="1" />
+    <End Role="notifications" Type="ICT_AppPortfolioModel.Store.notifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="contacts">
+        <PropertyRef Name="contact_id" />
+      </Principal>
+      <Dependent Role="notifications">
+        <PropertyRef Name="contact_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_notifications_groups_objects_notification_groups">
+    <End Role="notification_groups" Type="ICT_AppPortfolioModel.Store.notification_groups" Multiplicity="1" />
+    <End Role="notification_groups_objects" Type="ICT_AppPortfolioModel.Store.notification_groups_objects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="notification_groups">
+        <PropertyRef Name="notification_group_id" />
+      </Principal>
+      <Dependent Role="notification_groups_objects">
+        <PropertyRef Name="notification_group_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_notifications_groups_objects_object_types">
+    <End Role="object_types" Type="ICT_AppPortfolioModel.Store.object_types" Multiplicity="0..1" />
+    <End Role="notification_groups_objects" Type="ICT_AppPortfolioModel.Store.notification_groups_objects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="object_types">
+        <PropertyRef Name="object_type_id" />
+      </Principal>
+      <Dependent Role="notification_groups_objects">
+        <PropertyRef Name="object_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_notifications_groups_objects_objects">
+    <End Role="baseobjects" Type="ICT_AppPortfolioModel.Store.baseobjects" Multiplicity="0..1" />
+    <End Role="notification_groups_objects" Type="ICT_AppPortfolioModel.Store.notification_groups_objects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="baseobjects">
+        <PropertyRef Name="object_id" />
+      </Principal>
+      <Dependent Role="notification_groups_objects">
+        <PropertyRef Name="object_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_notifications_objects">
+    <End Role="baseobjects" Type="ICT_AppPortfolioModel.Store.baseobjects" Multiplicity="1" />
+    <End Role="notifications" Type="ICT_AppPortfolioModel.Store.notifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="baseobjects">
+        <PropertyRef Name="object_id" />
+      </Principal>
+      <Dependent Role="notifications">
+        <PropertyRef Name="object_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_objects_object_types">
+    <End Role="object_types" Type="ICT_AppPortfolioModel.Store.object_types" Multiplicity="1" />
+    <End Role="baseobjects" Type="ICT_AppPortfolioModel.Store.baseobjects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="object_types">
+        <PropertyRef Name="object_type_id" />
+      </Principal>
+      <Dependent Role="baseobjects">
+        <PropertyRef Name="object_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_server_links_servers">
+    <End Role="servers" Type="ICT_AppPortfolioModel.Store.servers" Multiplicity="1" />
+    <End Role="server_links" Type="ICT_AppPortfolioModel.Store.server_links" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="servers">
+        <PropertyRef Name="server_id" />
+      </Principal>
+      <Dependent Role="server_links">
+        <PropertyRef Name="server_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_server_locations_buildings">
+    <End Role="buildings" Type="ICT_AppPortfolioModel.Store.buildings" Multiplicity="0..1" />
+    <End Role="server_locations" Type="ICT_AppPortfolioModel.Store.server_locations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="buildings">
+        <PropertyRef Name="building_id" />
+      </Principal>
+      <Dependent Role="server_locations">
+        <PropertyRef Name="building_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_servers_buildings">
+    <End Role="buildings" Type="ICT_AppPortfolioModel.Store.buildings" Multiplicity="0..1" />
+    <End Role="servers" Type="ICT_AppPortfolioModel.Store.servers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="buildings">
+        <PropertyRef Name="building_id" />
+      </Principal>
+      <Dependent Role="servers">
+        <PropertyRef Name="building_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_servers_cpus">
+    <End Role="cpus" Type="ICT_AppPortfolioModel.Store.cpus" Multiplicity="0..1" />
+    <End Role="servers" Type="ICT_AppPortfolioModel.Store.servers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cpus">
+        <PropertyRef Name="cpu_id" />
+      </Principal>
+      <Dependent Role="servers">
+        <PropertyRef Name="cpu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_servers_manufacturers">
+    <End Role="manufacturers" Type="ICT_AppPortfolioModel.Store.manufacturers" Multiplicity="0..1" />
+    <End Role="servers" Type="ICT_AppPortfolioModel.Store.servers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="manufacturers">
+        <PropertyRef Name="manufacturer_id" />
+      </Principal>
+      <Dependent Role="servers">
+        <PropertyRef Name="manufacturer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_servers_models">
+    <End Role="models" Type="ICT_AppPortfolioModel.Store.models" Multiplicity="0..1" />
+    <End Role="servers" Type="ICT_AppPortfolioModel.Store.servers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="models">
+        <PropertyRef Name="model_id" />
+      </Principal>
+      <Dependent Role="servers">
+        <PropertyRef Name="model_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_servers_objects">
+    <End Role="baseobjects" Type="ICT_AppPortfolioModel.Store.baseobjects" Multiplicity="1" />
+    <End Role="servers" Type="ICT_AppPortfolioModel.Store.servers" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="baseobjects">
+        <PropertyRef Name="object_id" />
+      </Principal>
+      <Dependent Role="servers">
+        <PropertyRef Name="server_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_servers_operating_systems">
+    <End Role="operating_systems" Type="ICT_AppPortfolioModel.Store.operating_systems" Multiplicity="0..1" />
+    <End Role="servers" Type="ICT_AppPortfolioModel.Store.servers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="operating_systems">
+        <PropertyRef Name="operating_system_id" />
+      </Principal>
+      <Dependent Role="servers">
+        <PropertyRef Name="operating_system_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_servers_platforms">
+    <End Role="platforms" Type="ICT_AppPortfolioModel.Store.platforms" Multiplicity="0..1" />
+    <End Role="servers" Type="ICT_AppPortfolioModel.Store.servers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="platforms">
+        <PropertyRef Name="platform_id" />
+      </Principal>
+      <Dependent Role="servers">
+        <PropertyRef Name="platform_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_servers_status">
+    <End Role="status" Type="ICT_AppPortfolioModel.Store.status" Multiplicity="0..1" />
+    <End Role="servers" Type="ICT_AppPortfolioModel.Store.servers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="status">
+        <PropertyRef Name="status_id" />
+      </Principal>
+      <Dependent Role="servers">
+        <PropertyRef Name="status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_servers_suppliers1">
+    <End Role="suppliers" Type="ICT_AppPortfolioModel.Store.suppliers" Multiplicity="0..1" />
+    <End Role="servers" Type="ICT_AppPortfolioModel.Store.servers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="suppliers">
+        <PropertyRef Name="supplier_id" />
+      </Principal>
+      <Dependent Role="servers">
+        <PropertyRef Name="supplier_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_webservers_objects">
+    <End Role="baseobjects" Type="ICT_AppPortfolioModel.Store.baseobjects" Multiplicity="1" />
+    <End Role="webservers" Type="ICT_AppPortfolioModel.Store.webservers" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="baseobjects">
+        <PropertyRef Name="object_id" />
+      </Principal>
+      <Dependent Role="webservers">
+        <PropertyRef Name="webserver_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_webservers_servers">
+    <End Role="servers" Type="ICT_AppPortfolioModel.Store.servers" Multiplicity="1" />
+    <End Role="webservers" Type="ICT_AppPortfolioModel.Store.webservers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="servers">
+        <PropertyRef Name="server_id" />
+      </Principal>
+      <Dependent Role="webservers">
+        <PropertyRef Name="server_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_webservices_access_types">
+    <End Role="access_types" Type="ICT_AppPortfolioModel.Store.access_types" Multiplicity="0..1" />
+    <End Role="webservices" Type="ICT_AppPortfolioModel.Store.webservices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="access_types">
+        <PropertyRef Name="access_type_id" />
+      </Principal>
+      <Dependent Role="webservices">
+        <PropertyRef Name="access_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_webservices_servers">
+    <End Role="servers" Type="ICT_AppPortfolioModel.Store.servers" Multiplicity="0..1" />
+    <End Role="webservices" Type="ICT_AppPortfolioModel.Store.webservices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="servers">
+        <PropertyRef Name="server_id" />
+      </Principal>
+      <Dependent Role="webservices">
+        <PropertyRef Name="server_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_webservices_websites">
+    <End Role="websites" Type="ICT_AppPortfolioModel.Store.websites" Multiplicity="0..1" />
+    <End Role="webservices" Type="ICT_AppPortfolioModel.Store.webservices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="websites">
+        <PropertyRef Name="website_id" />
+      </Principal>
+      <Dependent Role="webservices">
+        <PropertyRef Name="website_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_websites_webservers">
+    <End Role="webservers" Type="ICT_AppPortfolioModel.Store.webservers" Multiplicity="1" />
+    <End Role="websites" Type="ICT_AppPortfolioModel.Store.websites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="webservers">
+        <PropertyRef Name="webserver_id" />
+      </Principal>
+      <Dependent Role="websites">
+        <PropertyRef Name="webserver_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

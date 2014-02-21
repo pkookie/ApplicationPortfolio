@@ -1,0 +1,8 @@
+D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Domain\bin\Debug\ApplicationPortfolio.Domain.dll.config
+D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Domain\bin\Debug\ApplicationPortfolio.Domain.dll
+D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Domain\bin\Debug\ApplicationPortfolio.Domain.pdb
+D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Domain\bin\Debug\EntityFramework.dll
+D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Domain\bin\Debug\EntityFramework.xml
+D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Domain\obj\Debug\ApplicationPortfolio.Domain.csprojResolveAssemblyReference.cache
+D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Domain\obj\Debug\ApplicationPortfolio.Domain.dll
+D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Domain\obj\Debug\ApplicationPortfolio.Domain.pdb
