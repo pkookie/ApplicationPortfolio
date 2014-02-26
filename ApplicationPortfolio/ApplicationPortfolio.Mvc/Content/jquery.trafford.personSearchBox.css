@@ -1,0 +1,57 @@
+﻿
+#personSearchBox-resultsList
+{
+    list-style:none;
+    padding:0.25em 0.5em;
+    position:absolute;
+    width:18em;
+    cursor:pointer;
+    background-color:White;
+    border:1px solid #CCC;
+    z-index:5;
+    display:none;
+}
+
+#personSearchBox-resultsList li
+{
+    margin:2px 0px;
+}
+
+.personSearchBox-selected div
+{
+    border-color:#0078C1;
+    background-color:#DDD;
+}
+
+.personSearchBox-removeItem
+{
+    display:inline-block;
+    
+}
+
+.personSearchBox-itemWrapper
+{
+    padding: 0.25em 24px 0.25em 0.25em;
+    position: relative;
+    display: inline-block;
+    z-index: 0;
+}
+
+.personSearchBox-itemWrapper img.personSearchBox-imgRemove
+{
+    vertical-align: middle;
+    border: 0;
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+    right: 4px;
+    cursor: pointer;
+    z-index: 0;
+}
+
+.personSearchBox-itemWrapperHighlight
+{
+    background-color: #7B7B7B;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+}

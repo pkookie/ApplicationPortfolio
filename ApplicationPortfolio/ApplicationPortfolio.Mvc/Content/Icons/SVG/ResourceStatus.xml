@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BookableResourceResult xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Resources>
+		<AvaliableResource>
+			<ResourceId>29a95274-9921-4451-a462-678af2ed6bd5</ResourceId>
+			<ResourceName>TTH Ground Floor</ResourceName>
+			<Bookable>False</Bookable>
+			<Bookings/>
+		</AvaliableResource>
+		<AvaliableResource>
+			<ResourceId>b297e017-4c83-4981-8a60-1dabfffb702c</ResourceId>
+			<ResourceName>TTH First Floor</ResourceName>
+			<Bookable>False</Bookable>
+			<Bookings/>
+		</AvaliableResource>
+		<AvaliableResource>
+			<ResourceId>0bf25e87-99ce-46dd-8a98-4b19f700de4c</ResourceId>
+			<ResourceName>Test desk</ResourceName>
+			<Bookable>True</Bookable>
+			<Bookings>
+				<ResourceBookings>
+					<BookingId>40f36293-fab1-4c48-898b-a27de2ab2862</BookingId>
+					<BookingInformation>Martin Poulton</BookingInformation>
+					<StartTime>07:00</StartTime>
+					<EndTime>12:00</EndTime>
+				</ResourceBookings>
+				<ResourceBookings>
+					<BookingId>a5994bef-82f8-4937-aa5f-ee413dea6e61</BookingId>
+					<BookingInformation>Jeremy Page</BookingInformation>
+					<StartTime>13:00</StartTime>
+					<EndTime>19:00</EndTime>
+				</ResourceBookings>
+			</Bookings>
+		</AvaliableResource>
+		
+		<AvaliableResource>
+			<ResourceId>2c770ff4-04a7-4bd4-9b4a-4ca02dd644a4</ResourceId>
+			<ResourceName>FooBar</ResourceName>
+			<Bookable>True</Bookable>
+			<hasPC>True</hasPC>
+		</AvaliableResource>		
+		
+		<AvaliableResource>
+			<ResourceId>0041d9cf-442c-4bd4-acf2-713a7698e8a2</ResourceId>
+			<ResourceName>Ground floor desk</ResourceName>
+			<Bookable>True</Bookable>
+		</AvaliableResource>
+		
+		<AvaliableResource>
+			<ResourceId>ff39be4c-c1ac-4f37-9c48-0818ee2c08e4</ResourceId>
+			<ResourceName>2nd floor desk</ResourceName>
+			<Bookable>True</Bookable>
+			<hasPC>True</hasPC>
+		</AvaliableResource>
+		
+				<AvaliableResource>
+			<ResourceId>5e82f936-d8a1-4093-af6e-5a2dcb03c72d</ResourceId>
+			<ResourceName>2nd floor desk</ResourceName>
+			<Bookable>True</Bookable>
+		</AvaliableResource>
+		
+	</Resources>
+</BookableResourceResult>

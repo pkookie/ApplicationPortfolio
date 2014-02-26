@@ -1,0 +1,44 @@
+﻿
+@media print
+{
+	body
+	{
+		font-family: Georgia, serif;
+		color: black;
+		font-size: 10pt;
+		overflow:visible ! important;
+	    height:auto ! important;
+	    float:none ! important;
+	}
+	
+	.noPrint
+	{
+	    display:none;
+	}
+	
+	.Printing
+	{
+	    display:block;
+	    overflow:visible ! important;
+	    height:auto ! important;
+	    float:none ! important;
+	}
+	
+	.Printing table
+	{
+	    display:table;
+	    overflow:visible ! important;
+	    height:auto ! important;
+	    float:none ! important;
+	}	
+
+	#mainContext
+	{
+		margin-top:0px;
+	}
+
+	body div
+	{
+		margin-top:0px;
+	}
+}

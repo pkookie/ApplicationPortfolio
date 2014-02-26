@@ -12,41 +12,17 @@ namespace ApplicationPortfolio.Domain.DataConnections
     using System;
     using System.Collections.Generic;
     
-    public partial class server
+    public partial class Server
     {
-        public server()
+        public Server()
         {
-            this.backup_links = new HashSet<backup_links>();
-            this.network_addresses = new HashSet<network_addresses>();
-            this.server_links = new HashSet<server_links>();
-            this.webservers = new HashSet<webserver>();
-            this.webservices = new HashSet<webservice>();
+            this.ApplicationServers = new HashSet<ApplicationServer>();
         }
     
-        public System.Guid server_id { get; set; }
-        public Nullable<long> platform_id { get; set; }
-        public Nullable<long> operating_system_id { get; set; }
-        public Nullable<long> manufacturer_id { get; set; }
-        public Nullable<long> cpu_id { get; set; }
-        public Nullable<long> model_id { get; set; }
-        public Nullable<long> status_id { get; set; }
-        public Nullable<long> supplier_id { get; set; }
-        public Nullable<long> building_id { get; set; }
-        public string serial_number { get; set; }
+        public System.Guid ServerId { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
     
-        public virtual ICollection<backup_links> backup_links { get; set; }
-        public virtual baseobject baseobject { get; set; }
-        public virtual building building { get; set; }
-        public virtual cpu cpu { get; set; }
-        public virtual manufacturer manufacturer { get; set; }
-        public virtual model model { get; set; }
-        public virtual ICollection<network_addresses> network_addresses { get; set; }
-        public virtual operating_systems operating_systems { get; set; }
-        public virtual platform platform { get; set; }
-        public virtual ICollection<server_links> server_links { get; set; }
-        public virtual status status { get; set; }
-        public virtual supplier supplier { get; set; }
-        public virtual ICollection<webserver> webservers { get; set; }
-        public virtual ICollection<webservice> webservices { get; set; }
+        public virtual ICollection<ApplicationServer> ApplicationServers { get; set; }
     }
 }

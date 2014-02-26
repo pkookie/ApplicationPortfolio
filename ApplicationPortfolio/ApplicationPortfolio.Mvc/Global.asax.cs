@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Library.SharedContent;
 
 namespace ApplicationPortfolio.Mvc
 {
@@ -16,6 +17,9 @@ namespace ApplicationPortfolio.Mvc
     {
         protected void Application_Start()
         {
+
+            SharedContentVirtualPathProvider.Register();
+            ViewEngines.Engines.Add(new SharedContentViewEngine());
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);

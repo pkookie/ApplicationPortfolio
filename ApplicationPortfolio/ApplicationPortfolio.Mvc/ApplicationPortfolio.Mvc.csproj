@@ -15,7 +15,7 @@
     <AssemblyName>ApplicationPortfolio.Mvc</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Library">
+      <HintPath>..\Library.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -148,13 +151,192 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ApplicationController.cs" />
+    <Compile Include="Controllers\BusinessCriticalityController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ServerController.cs" />
+    <Compile Include="Controllers\ServiceAreaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ApplicationPortfolioMvcContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Carpark.css" />
+    <Content Include="Content\desk-touch.css" />
+    <Content Include="Content\Establishment.css" />
+    <Content Include="Content\fullcalendar.css" />
+    <Content Include="Content\Icons\accept.png" />
+    <Content Include="Content\Icons\add.png" />
+    <Content Include="Content\Icons\add_large.png" />
+    <Content Include="Content\Icons\asc.gif" />
+    <Content Include="Content\Icons\bg.gif" />
+    <Content Include="Content\Icons\bin.png" />
+    <Content Include="Content\Icons\building.png" />
+    <Content Include="Content\Icons\calendar.png" />
+    <Content Include="Content\Icons\cancel.png" />
+    <Content Include="Content\Icons\car.png" />
+    <Content Include="Content\Icons\chart_organisation.png" />
+    <Content Include="Content\Icons\checkedbox.png" />
+    <Content Include="Content\Icons\cog.png" />
+    <Content Include="Content\Icons\crosshair.png" />
+    <Content Include="Content\Icons\date.png" />
+    <Content Include="Content\Icons\delete.png" />
+    <Content Include="Content\Icons\delete_large.png" />
+    <Content Include="Content\Icons\desc.gif" />
+    <Content Include="Content\Icons\desk.png" />
+    <Content Include="Content\Icons\desk_green.png" />
+    <Content Include="Content\Icons\door_open.png" />
+    <Content Include="Content\Icons\downArrow.png" />
+    <Content Include="Content\Icons\email.png" />
+    <Content Include="Content\Icons\email_large.png" />
+    <Content Include="Content\Icons\emptybox.png" />
+    <Content Include="Content\Icons\exclamation.png" />
+    <Content Include="Content\Icons\fax.png" />
+    <Content Include="Content\Icons\group.png" />
+    <Content Include="Content\Icons\group_add.png" />
+    <Content Include="Content\Icons\group_delete.png" />
+    <Content Include="Content\Icons\group_edit.png" />
+    <Content Include="Content\Icons\information.png" />
+    <Content Include="Content\Icons\lamp.png" />
+    <Content Include="Content\Icons\LoadingGif\099714.gif" />
+    <Content Include="Content\Icons\LoadingGif\152285.gif" />
+    <Content Include="Content\Icons\LoadingGif\16aa9a.gif" />
+    <Content Include="Content\Icons\LoadingGif\1b753c.gif" />
+    <Content Include="Content\Icons\LoadingGif\23617c.gif" />
+    <Content Include="Content\Icons\LoadingGif\247f63.gif" />
+    <Content Include="Content\Icons\LoadingGif\2a679b.gif" />
+    <Content Include="Content\Icons\LoadingGif\2b497f.gif" />
+    <Content Include="Content\Icons\LoadingGif\2d66cf.gif" />
+    <Content Include="Content\Icons\LoadingGif\2d9968.gif" />
+    <Content Include="Content\Icons\LoadingGif\39820d.gif" />
+    <Content Include="Content\Icons\LoadingGif\3e2277.gif" />
+    <Content Include="Content\Icons\LoadingGif\50524f.gif" />
+    <Content Include="Content\Icons\LoadingGif\579a03.gif" />
+    <Content Include="Content\Icons\LoadingGif\5a8e87.gif" />
+    <Content Include="Content\Icons\LoadingGif\6432cf.gif" />
+    <Content Include="Content\Icons\LoadingGif\64ab00.gif" />
+    <Content Include="Content\Icons\LoadingGif\657486.gif" />
+    <Content Include="Content\Icons\LoadingGif\6d6d6d.gif" />
+    <Content Include="Content\Icons\LoadingGif\7083a7.gif" />
+    <Content Include="Content\Icons\LoadingGif\753500.gif" />
+    <Content Include="Content\Icons\LoadingGif\809107.gif" />
+    <Content Include="Content\Icons\LoadingGif\870f4f.gif" />
+    <Content Include="Content\Icons\LoadingGif\878a51.gif" />
+    <Content Include="Content\Icons\LoadingGif\880c11.gif" />
+    <Content Include="Content\Icons\LoadingGif\892e39.gif" />
+    <Content Include="Content\Icons\LoadingGif\8e4400.gif" />
+    <Content Include="Content\Icons\LoadingGif\8e6c8a.gif" />
+    <Content Include="Content\Icons\LoadingGif\962183.gif" />
+    <Content Include="Content\Icons\LoadingGif\9b3000.gif" />
+    <Content Include="Content\Icons\LoadingGif\9B439A.gif" />
+    <Content Include="Content\Icons\LoadingGif\9f7000.gif" />
+    <Content Include="Content\Icons\LoadingGif\a6900c.gif" />
+    <Content Include="Content\Icons\LoadingGif\a77072.gif" />
+    <Content Include="Content\Icons\LoadingGif\aa5a00.gif" />
+    <Content Include="Content\Icons\LoadingGif\aaaa07.gif" />
+    <Content Include="Content\Icons\LoadingGif\b18b57.gif" />
+    <Content Include="Content\Icons\LoadingGif\B471B3.gif" />
+    <Content Include="Content\Icons\LoadingGif\CC3333.gif" />
+    <Content Include="Content\Icons\LoadingGif\d6ae00.gif" />
+    <Content Include="Content\Icons\LoadingGif\D96668.gif" />
+    <Content Include="Content\Icons\LoadingGif\DE4479.gif" />
+    <Content Include="Content\Icons\LoadingGif\df5408.gif" />
+    <Content Include="Content\Icons\LoadingGif\E67397.gif" />
+    <Content Include="Content\Icons\LoadingGif\ec8902.gif" />
+    <Content Include="Content\Icons\lock.png" />
+    <Content Include="Content\Icons\magnifier.png" />
+    <Content Include="Content\Icons\mobile.png" />
+    <Content Include="Content\Icons\mysteryman40.png" />
+    <Content Include="Content\Icons\note.png" />
+    <Content Include="Content\Icons\pencil.png" />
+    <Content Include="Content\Icons\photo.png" />
+    <Content Include="Content\Icons\photos.png" />
+    <Content Include="Content\Icons\photo_add.png" />
+    <Content Include="Content\Icons\photo_delete.png" />
+    <Content Include="Content\Icons\picture.png" />
+    <Content Include="Content\Icons\printer.png" />
+    <Content Include="Content\Icons\printer_empty.png" />
+    <Content Include="Content\Icons\resultset_next.png" />
+    <Content Include="Content\Icons\resultset_previous.png" />
+    <Content Include="Content\Icons\sitemap.png" />
+    <Content Include="Content\Icons\sortArrow.png" />
+    <Content Include="Content\Icons\sortAsc.png" />
+    <Content Include="Content\Icons\sortDecs.png" />
+    <Content Include="Content\Icons\star-half.png" />
+    <Content Include="Content\Icons\star-off.png" />
+    <Content Include="Content\Icons\star-on.png" />
+    <Content Include="Content\Icons\SVG\blank.js" />
+    <Content Include="Content\Icons\SVG\Carrington.svg" />
+    <Content Include="Content\Icons\SVG\cleanup.xsl" />
+    <Content Include="Content\Icons\SVG\desk-for-pc.xslt" />
+    <Content Include="Content\Icons\SVG\desk-list.xsl" />
+    <Content Include="Content\Icons\SVG\FriarsCourt.svg" />
+    <Content Include="Content\Icons\SVG\highlight-desks.xslt" />
+    <Content Include="Content\Icons\SVG\import-guid.xsl" />
+    <Content Include="Content\Icons\SVG\popup.svg" />
+    <Content Include="Content\Icons\SVG\QuayWest.svg" />
+    <Content Include="Content\Icons\SVG\render.xslt" />
+    <Content Include="Content\Icons\SVG\ResourceStatus.xml" />
+    <Content Include="Content\Icons\SVG\rooms.xml" />
+    <Content Include="Content\Icons\SVG\svg-uncompressed.htc" />
+    <Content Include="Content\Icons\SVG\svg-uncompressed.js" />
+    <Content Include="Content\Icons\SVG\svg.htc" />
+    <Content Include="Content\Icons\SVG\svg.js" />
+    <Content Include="Content\Icons\SVG\svg.swf" />
+    <Content Include="Content\Icons\SVG\TTH.svg" />
+    <Content Include="Content\Icons\SVG\Waterside.svg" />
+    <Content Include="Content\Icons\tag_blue.png" />
+    <Content Include="Content\Icons\telephone.png" />
+    <Content Include="Content\Icons\textfield_rename.png" />
+    <Content Include="Content\Icons\textphone.gif" />
+    <Content Include="Content\Icons\text_align_left.png" />
+    <Content Include="Content\Icons\tick.png" />
+    <Content Include="Content\Icons\time.png" />
+    <Content Include="Content\Icons\time_add.png" />
+    <Content Include="Content\Icons\time_delete.png" />
+    <Content Include="Content\Icons\time_start.png" />
+    <Content Include="Content\Icons\time_stop.png" />
+    <Content Include="Content\Icons\user.png" />
+    <Content Include="Content\Icons\user_0.png" />
+    <Content Include="Content\Icons\user_1.png" />
+    <Content Include="Content\Icons\user_2.png" />
+    <Content Include="Content\Icons\user_3.png" />
+    <Content Include="Content\Icons\user_4.png" />
+    <Content Include="Content\Icons\user_5.png" />
+    <Content Include="Content\Icons\user_6.png" />
+    <Content Include="Content\Icons\user_7.png" />
+    <Content Include="Content\Icons\vcard.png" />
+    <Content Include="Content\Images\ajax-loader.gif" />
+    <Content Include="Content\Images\Buildings\07435ec6-1aef-4a1f-a568-e8df586b9d14.jpg" />
+    <Content Include="Content\Images\Buildings\a92a0c7e-dd73-4df7-9b1d-fa3f8aad01f0.jpg" />
+    <Content Include="Content\Images\Cache\89b93e7b-50c7-4167-b4c2-f09d3b5e4e4c.jpg" />
+    <Content Include="Content\Images\Cache\a96a6338-09fc-4a62-85c5-123100e8df73.jpg" />
+    <Content Include="Content\Images\Cache\mysteryroom250.jpg" />
+    <Content Include="Content\Images\icons-18-black.png" />
+    <Content Include="Content\Images\icons-18-white.png" />
+    <Content Include="Content\Images\icons-36-black.png" />
+    <Content Include="Content\Images\icons-36-white.png" />
+    <Content Include="Content\Images\Jcrop.gif" />
+    <Content Include="Content\Images\Trafford_Logo_Colour_On-Square.png" />
+    <Content Include="Content\joyride-1.0.4.css" />
+    <Content Include="Content\jqm-datebox-1.1.0.css" />
+    <Content Include="Content\jquery-mobile-fluid960.min.css" />
+    <Content Include="Content\jquery.Jcrop.css" />
+    <Content Include="Content\jquery.mobile-1.3.0.css" />
+    <Content Include="Content\jquery.mobile-1.3.0.min.css" />
+    <Content Include="Content\jquery.mobile.structure-1.3.0.css" />
+    <Content Include="Content\jquery.mobile.structure-1.3.0.min.css" />
+    <Content Include="Content\jquery.mobile.theme-1.3.0.css" />
+    <Content Include="Content\jquery.mobile.theme-1.3.0.min.css" />
+    <Content Include="Content\jquery.trafford.personSearchBox.css" />
+    <Content Include="Content\keyboard.css" />
+    <Content Include="Content\Print.css" />
+    <Content Include="Content\Profiles.css" />
+    <Content Include="Content\ResourceBooking.css" />
+    <Content Include="Content\stub.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -211,6 +393,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Content\Icons\SVG\ResourceBookingSVG.spp" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -226,7 +409,9 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -257,12 +442,46 @@
     <Content Include="Views\Web.config" />
     <Content Include="packages.config" />
     <None Include="readme.txt" />
+    <Content Include="Views\Application\Index.cshtml" />
+    <Content Include="Views\Application\Details.cshtml" />
+    <Content Include="Views\Application\Create.cshtml" />
+    <Content Include="Views\Application\Edit.cshtml" />
+    <Content Include="Views\Application\Delete.cshtml" />
+    <Content Include="Views\BusinessCriticality\Index.cshtml" />
+    <Content Include="Views\BusinessCriticality\Details.cshtml" />
+    <Content Include="Views\BusinessCriticality\Create.cshtml" />
+    <Content Include="Views\BusinessCriticality\Edit.cshtml" />
+    <Content Include="Views\BusinessCriticality\Delete.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Contact\Details.cshtml" />
+    <Content Include="Views\Contact\Create.cshtml" />
+    <Content Include="Views\Contact\Edit.cshtml" />
+    <Content Include="Views\Contact\Delete.cshtml" />
+    <Content Include="Views\ServiceArea\Index.cshtml" />
+    <Content Include="Views\ServiceArea\Details.cshtml" />
+    <Content Include="Views\ServiceArea\Create.cshtml" />
+    <Content Include="Views\ServiceArea\Edit.cshtml" />
+    <Content Include="Views\ServiceArea\Delete.cshtml" />
+    <Content Include="Views\Server\Index.cshtml" />
+    <Content Include="Views\Server\Details.cshtml" />
+    <Content Include="Views\Server\Create.cshtml" />
+    <Content Include="Views\Server\Edit.cshtml" />
+    <Content Include="Views\Server\Delete.cshtml" />
+    <Content Include="Views\Shared\_LayoutAppPortfolio.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Helpers\" />
-    <Folder Include="Models\" />
-    <Folder Include="ViewModels\" />
+    <Folder Include="ViewModels\Application\" />
+    <Folder Include="ViewModels\BaseObject\" />
+    <Folder Include="ViewModels\Document\" />
+    <Folder Include="ViewModels\Server\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ApplicationPortfolio.Domain\ApplicationPortfolio.Domain.csproj">
+      <Project>{8e6d95c0-9e7d-47c0-be2c-9f0feecc24f2}</Project>
+      <Name>ApplicationPortfolio.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -280,9 +499,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>52544</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:62064/</IISUrl>
+          <IISUrl>http://localhost/ApplicationPortfolio.Mvc</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

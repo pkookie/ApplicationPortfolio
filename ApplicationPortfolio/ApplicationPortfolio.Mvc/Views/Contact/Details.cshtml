@@ -1,0 +1,22 @@
+﻿@model ApplicationPortfolio.Domain.DataConnections.Contact
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Contact</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OpenId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OpenId)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ContactId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

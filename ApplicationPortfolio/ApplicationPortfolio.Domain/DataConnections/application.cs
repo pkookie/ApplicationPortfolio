@@ -12,14 +12,27 @@ namespace ApplicationPortfolio.Domain.DataConnections
     using System;
     using System.Collections.Generic;
     
-    public partial class application
+    public partial class Application
     {
-        public System.Guid application_id { get; set; }
-        public long service_area_id { get; set; }
-        public long business_criticality_id { get; set; }
+        public Application()
+        {
+            this.ApplicationDocuments = new HashSet<ApplicationDocument>();
+            this.ApplicationServers = new HashSet<ApplicationServer>();
+        }
     
-        public virtual business_criticalities business_criticalities { get; set; }
-        public virtual service_area service_area { get; set; }
-        public virtual baseobject baseobject { get; set; }
+        public System.Guid ApplicationId { get; set; }
+        public string Name { get; set; }
+        public Nullable<System.Guid> BusinessContact { get; set; }
+        public Nullable<System.Guid> IctContact { get; set; }
+        public Nullable<int> BusinessCriticalityId { get; set; }
+        public Nullable<int> ServiceAreaId { get; set; }
+        public string Description { get; set; }
+    
+        public virtual BusinessCriticality BusinessCriticality { get; set; }
+        public virtual Contact Contact { get; set; }
+        public virtual Contact Contact1 { get; set; }
+        public virtual ServiceArea ServiceArea { get; set; }
+        public virtual ICollection<ApplicationDocument> ApplicationDocuments { get; set; }
+        public virtual ICollection<ApplicationServer> ApplicationServers { get; set; }
     }
 }

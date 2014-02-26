@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ApplicationPortfolio.Domain.DataConnections.Application>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact.ContactId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact1.ContactId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BusinessCriticality.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServiceArea.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact.ContactId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact1.ContactId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BusinessCriticality.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServiceArea.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ApplicationId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ApplicationId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ApplicationId })
+        </td>
+    </tr>
+}
+
+</table>

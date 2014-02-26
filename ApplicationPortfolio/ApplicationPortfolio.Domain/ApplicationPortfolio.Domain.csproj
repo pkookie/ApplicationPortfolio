@@ -61,13 +61,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataConnections\access_types.cs">
+    <Compile Include="DataConnections\Application.cs">
       <DependentUpon>AppPortfolioModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataConnections\address.cs">
+    <Compile Include="DataConnections\ApplicationDocument.cs">
       <DependentUpon>AppPortfolioModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataConnections\application.cs">
+    <Compile Include="DataConnections\ApplicationServer.cs">
       <DependentUpon>AppPortfolioModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataConnections\AppPortfolioModel.Context.cs">
@@ -85,115 +85,31 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppPortfolioModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DataConnections\backup_jobs.cs">
+    <Compile Include="DataConnections\BusinessCriticality.cs">
       <DependentUpon>AppPortfolioModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataConnections\backup_links.cs">
+    <Compile Include="DataConnections\Contact.cs">
       <DependentUpon>AppPortfolioModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataConnections\backup_types.cs">
+    <Compile Include="DataConnections\Document.cs">
       <DependentUpon>AppPortfolioModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataConnections\baseobject.cs">
+    <Compile Include="DataConnections\DocumentType.cs">
       <DependentUpon>AppPortfolioModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataConnections\building.cs">
+    <Compile Include="DataConnections\Repositories\ApplicationRespository.cs" />
+    <Compile Include="DataConnections\Repositories\BusinessCriticalityRepository.cs" />
+    <Compile Include="DataConnections\Repositories\ContactRepository.cs" />
+    <Compile Include="DataConnections\Repositories\ServerRepository.cs" />
+    <Compile Include="DataConnections\Repositories\ServiceAreaRepository.cs" />
+    <Compile Include="DataConnections\Server.cs">
       <DependentUpon>AppPortfolioModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataConnections\business_criticalities.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\change_requests.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\contact.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\contact_links.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\contact_types.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\cpu.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\document.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\document_type.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\framework.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\manufacturer.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\model.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\network.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\network_addresses.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\notification.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\notification_groups.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\notification_groups_contacts.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\notification_groups_objects.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\object_types.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\operating_systems.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\platform.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\server.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\server_links.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\server_locations.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\service_area.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\source_controls.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\status.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\supplier.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\sysdiagram.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\webserver.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\webservice.cs">
-      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\website.cs">
+    <Compile Include="DataConnections\ServiceArea.cs">
       <DependentUpon>AppPortfolioModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DataConnections\DataAnnotations.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Core\Contents.txt" />
@@ -228,17 +144,13 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="LocalDatabase\" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="App.Config" />
     <EntityDeploy Include="DataConnections\AppPortfolioModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>AppPortfolioModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="DataConnections\AppPortfolioModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>AppPortfolioModel.edmx</DependentUpon>

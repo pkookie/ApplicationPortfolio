@@ -1,0 +1,185 @@
+﻿
+#innerTabs 
+{
+	margin:0;
+    padding-top: 0.3em;
+    padding-left: 0.5em;
+    border-bottom:1px solid #EEE;
+}
+
+#innerTabs li
+{
+	display: inline-block;
+    vertical-align: bottom;
+    *display: inline;
+    margin-top: 0px;
+}
+
+#innerTabs li a
+{
+	display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 0.3em;
+    padding: 0.2em 1em;
+    
+	font-size: 0.85em;
+	
+    border: solid 1px #CCC;
+    border-bottom: none;
+    
+    color: #555;
+    
+    border-top-right-radius: 0.5em;
+    -webkit-border-radius-top-right: 0.5em;
+    -moz-border-radius-top-right: 0.5em;
+    border-top-left-radius: 0.5em;
+    -webkit-border-radius-top-left: 0.5em;
+    -moz-border-radius-top-left: 0.5em;
+}
+
+#innerTabs li.current a
+{
+	border-bottom: none;
+    color: #EEE;
+    
+    padding: 0.2em 1em;
+    font-weight: normal;
+    background-color:#0078C1;
+    border:#007BC1;
+}
+
+.carparkContainer
+{
+    display: block;
+    position:absolute;
+    height:auto;
+    width:auto;
+    margin-left: 16.5em;
+    background-color: #FCFCFC;
+    border: 0px solid #CCC;
+    border-left: 1px solid #EEE;
+    bottom:0;
+    top: 0;
+    left:0;
+    right:0;
+    overflow-y:scroll;
+}
+
+
+.resultDiv
+{
+	border:1px solid #EEE;
+	border-radius: .5em;
+	-webkit-border-radius: .5em;
+	margin:1em 0 0 0;
+	width:26em;
+}
+
+.resultDiv .heading
+{
+	background-color:#EEE;
+	border-radius: .5em .5em 0 0;
+	-webkit-border-radius: .5em .5em 0 0;
+	padding: 0.5em;
+}
+
+.resultDiv .content
+{
+	padding: 0.5em;
+}
+
+.resultDiv .heading a
+{
+	float:right;
+}
+
+.resultDiv h3 
+{
+	width:auto;
+}
+
+.clear
+{
+	clear:both;
+}
+
+html 
+{
+        overflow: auto;
+}
+#resultsTable
+{
+margin-top:1em;
+}
+#resultsTable thead tr
+{
+	
+	padding:0 0em 0 0em;
+	cursor:
+}	
+
+#resultsTable thead tr .header
+{
+	/*background-image:Url(Icons/sortArrow.png);*/
+	background-image:Url(Icons/bg.gif);
+	background-position:right center;
+	background-repeat:no-repeat;
+	cursor:pointer;
+}
+
+#resultsTable thead tr .headerSortUp
+{
+	/*background-image:Url(Icons/sortAsc.png);*/
+	background-image:Url(Icons/desc.gif);
+}
+
+#resultsTable thead tr .headerSortDown
+{
+	/*background-image:Url(Icons/sortDecs.png);*/
+	background-image:Url(Icons/asc.gif);
+}
+
+a.printerLink
+{
+	float:right;
+	display:inline;
+}
+
+#filters li div.TimeDisplay
+{
+    width:100%;
+}
+
+#filters li div.TimeDisplay input
+{
+    /*width:5.5em;
+margin:0 0.3em;*/
+
+    width: 5.9em;
+    padding: 0.2em 0em;
+    
+    display:inline-block;
+}
+
+#filters #SearchTypeRadio
+{
+    display: inline;
+    
+}
+#filters #SearchTypeRadio label
+{
+    width: auto;
+    font-size: 0.9em;
+    margin-top: 0.1em;
+}
+
+#SearchTypeRadio
+{
+    visibility: hidden;
+}
+
+.Printing
+{
+    display:none;
+}

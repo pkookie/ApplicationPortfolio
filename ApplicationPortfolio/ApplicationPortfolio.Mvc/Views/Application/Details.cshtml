@@ -1,0 +1,57 @@
+﻿@model ApplicationPortfolio.Domain.DataConnections.Application
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Application</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Contact.ContactId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact.ContactId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Contact1.ContactId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact1.ContactId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BusinessCriticality.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BusinessCriticality.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ServiceArea.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ServiceArea.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ApplicationId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

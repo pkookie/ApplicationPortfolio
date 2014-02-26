@@ -1,0 +1,61 @@
+﻿@model ApplicationPortfolio.Domain.DataConnections.Application
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Application</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Contact.ContactId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact.ContactId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Contact1.ContactId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact1.ContactId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BusinessCriticality.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BusinessCriticality.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ServiceArea.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ServiceArea.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+	<Folder FolderName="SVG" ExtStr="svg" XSL_XMLUseSet="Yes" XSL_XMLUseFile="render.xslt" XSL_DestFolderSet="Yes" XSL_DestFolder="C:\TEMP" XSL_DestFileExtSet="Yes" XSL_DestFileExt=".svg">
+		<File FilePath="Carrington.svg" HomeFolder="Yes"/>
+		<File FilePath="FriarsCourt.svg" HomeFolder="Yes"/>
+		<File FilePath="popup.svg" HomeFolder="Yes"/>
+		<File FilePath="QuayWest.svg" HomeFolder="Yes"/>
+		<File FilePath="TTH.svg" HomeFolder="Yes"/>
+		<File FilePath="Waterside.svg" HomeFolder="Yes"/>
+	</Folder>
+	<Folder FolderName="XSLT" ExtStr="xsl;xslt" XSL_DestFolderSet="Yes" XSL_DestFolder="C:\TEMP" XSL_DestFileExtSet="Yes" XSL_DestFileExt=".svg">
+		<File FilePath="cleanup.xsl" HomeFolder="Yes"/>
+		<File FilePath="desk-for-pc.xslt" HomeFolder="Yes"/>
+		<File FilePath="desk-list.xsl" HomeFolder="Yes"/>
+		<File FilePath="highlight-desks.xslt" HomeFolder="Yes"/>
+		<File FilePath="import-guid.xsl" HomeFolder="Yes"/>
+		<File FilePath="render.xslt" HomeFolder="Yes"/>
+	</Folder>
+	<Folder FolderName="XML" ExtStr="xml">
+		<File FilePath="ResourceStatus.xml" HomeFolder="Yes"/>
+		<File FilePath="rooms.xml" HomeFolder="Yes"/>
+	</Folder>
+</Project>

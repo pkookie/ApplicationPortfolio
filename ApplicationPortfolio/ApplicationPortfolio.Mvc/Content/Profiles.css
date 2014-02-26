@@ -1,0 +1,274 @@
+﻿#profileBox
+{
+    background-color: #0078C1;
+    position: absolute;
+    bottom:0;
+    top: 68px;
+    left:0;
+    right:0;
+}
+
+#profileMenu
+{
+    float: left;
+    padding: 4px 7px;
+    background-color: #0078C1;
+}
+#profileMenu ul
+{
+    padding: 0.2em 0;
+    margin: 0;
+    list-style: none;
+}
+#profileMenu li
+{
+    background-color: #0088CC;
+    color: #EEE;
+    border: solid 1px #0088CC;
+    height: 1.3em;
+    margin-top: 0.2em;
+    cursor: pointer;
+    zoom: 1;
+    padding: 2px 5px;
+    width: 190px;
+}
+#profileMenu li a
+{
+    color: #FFF;
+    text-decoration: none;
+    display: block;
+}
+#profileMenu li:hover
+{
+    background-color: #00AAEE;
+    color: #FFF;
+    border: solid 1px #00AAEE;
+}
+
+
+
+
+#profile
+{
+    min-height: 200px;
+    vertical-align: top;
+    display: block;
+    background-color: #FFF;
+    padding: 0.7em 1em;
+    margin-left: 220px;
+    
+    position: absolute;
+    bottom:0;
+    top: 0;
+    left:0;
+    right:0;
+}
+#profile h2
+{
+    font-size: 2.3em;
+    line-height: 0.95em;
+}
+#profile h3
+{
+    font-size: 1.5em;
+    color: #CCC;
+    line-height: 1.2em;
+}
+#profile ul
+{
+    padding: 0.5em 0;
+    margin: 0;
+    list-style: none;
+    font-size: 1.05em;
+}
+#profile li
+{
+    padding: 0.1em 0;
+}
+#profile label
+{
+    padding-right: 1em;
+    min-width: 6em;
+    display: inline-block;
+}
+
+
+
+
+div.galleryItem
+{
+    display: inline-block;
+    width: 140px;
+    height: 140px;
+    line-height: 140px;
+    text-align: center;
+    cursor: pointer;
+}
+div.galleryItem img
+{
+    border: 2px solid #DDD;
+}
+
+div#addGalleryItem
+{
+    display: inline-block;
+    width: 140px;
+    height: 140px;
+    line-height: 140px;
+    padding: 1em;
+    text-align: center;
+    cursor: pointer;
+}
+div#addGalleryItem div
+{
+    background-color: Red;
+}
+div.noImages
+{
+    font-size: 1.3em;
+    color: #AAA;
+    padding: 0 15% 0 0;
+}
+
+.miniProfile
+{
+	border:1px solid #EEE;
+	border-radius: .5em;
+	-webkit-border-radius: .5em;
+	margin:1em 0 0 0;
+	
+}
+
+.miniProfile .heading
+{
+	background-color:#EEE;
+	border-radius: .5em .5em 0 0;
+	-webkit-border-radius: .5em .5em 0 0;
+	padding: 0.5em;
+	height:40px;
+}
+
+.miniProfile .heading a h1
+{
+	float:none;
+	padding-left: 45px;
+}
+
+.miniProfile .heading h1
+{
+	float:none;
+	padding-left:45px;
+}
+
+.miniProfile .heading img
+{
+	float:left;
+}
+
+.miniProfile div.heading p
+{
+	margin:0;
+	color:#444;
+	padding-left:45px;
+}
+
+.miniProfile .content
+{
+	padding: 0.5em;
+}
+
+.miniProfile .content ul
+{
+	list-style:none;
+	padding:0em;
+	margin:0em;
+}
+
+.miniProfile .content ul li label
+{
+	min-width:6em;
+	padding-right:1em;
+	display:inline-block;
+}
+
+.stub
+{
+	background-color:#EEE;
+	border-radius: .5em;
+	-webkit-border-radius: .5em;
+	padding: 0.5em;
+	height:50px;
+	border: solid 1px #BEBEBE;
+	float:left;
+	width:19em;
+	overflow:hidden;
+	margin:0.5em;
+}
+
+.stub a h1
+{
+	float:none;
+	padding-left: 45px;
+}
+
+.stub h1
+{
+	float:none;
+	padding-left:55px;
+}
+
+.stub img
+{
+	float:left;
+}
+
+.stub p
+{
+	margin:0;
+	color:#444;
+	padding-left:45px;
+}
+
+.profileIcons
+{
+	list-style:none;
+	padding:0em;
+	margin:0em;
+	float:right;
+}
+
+.profileIcons li
+{
+	float:right;
+	clear:both;
+}
+
+.iconDisplay
+{
+	width:0px;
+	overflow:hidden;
+	float:left;
+	display:inline-block;
+	position:absolute;
+}
+
+.iconsDispalyHidden
+{
+	background:blue;
+	width:auto;
+}
+
+.iconHover
+{
+	position:absolute;
+}
+
+.iconDisplayHolder
+{
+	overflow:hidden;
+}
+
+.clearBoth
+{
+	clear:both;
+}

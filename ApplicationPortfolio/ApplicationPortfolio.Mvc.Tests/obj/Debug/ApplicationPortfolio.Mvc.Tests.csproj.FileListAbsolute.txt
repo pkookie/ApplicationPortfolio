@@ -20,7 +20,10 @@ D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPor
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc.Tests\bin\Debug\System.Web.WebPages.dll
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc.Tests\bin\Debug\EntityFramework.dll
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc.Tests\bin\Debug\System.Web.Optimization.dll
+D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc.Tests\bin\Debug\ApplicationPortfolio.Domain.dll
+D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc.Tests\bin\Debug\Library.dll
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc.Tests\bin\Debug\ApplicationPortfolio.Mvc.pdb
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc.Tests\bin\Debug\Newtonsoft.Json.xml
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc.Tests\bin\Debug\System.Net.Http.xml
@@ -38,6 +41,8 @@ D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPor
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc.Tests\bin\Debug\Microsoft.Data.Edm.xml
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc.Tests\bin\Debug\Microsoft.Data.OData.xml
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc.Tests\bin\Debug\System.Spatial.xml
+D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc.Tests\bin\Debug\EntityFramework.xml
+D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc.Tests\bin\Debug\ApplicationPortfolio.Domain.pdb
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc.Tests\bin\Debug\de\Microsoft.Data.Edm.resources.dll
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc.Tests\bin\Debug\es\Microsoft.Data.Edm.resources.dll
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc.Tests\bin\Debug\fr\Microsoft.Data.Edm.resources.dll

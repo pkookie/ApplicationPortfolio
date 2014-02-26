@@ -1,0 +1,32 @@
+<rooms>
+	<room id='73cb706f-e21e-4073-a938-fd8637e991a1' name='Committee Room 1 - Partington Room' />
+	<room id='cd4fc2a1-9f17-4fd3-979e-2cc74cbccb63' name='Committee Room 4 - Urmston Room' />
+	<room id='d4fc1301-03f8-45b5-a495-cc38f0c7f72c' name='Committee Room 5 - Stretford Room' />
+	<room id='8e74599b-3eb7-4534-99cf-569b44e23160' name='Edward Bradbury Room' />
+	<room id='4b6f5a8a-41bd-4033-90d6-488e2d1b7531' name='Harry Coverdale Room' />
+	<room id='7c2d6197-1c92-41a8-8bff-86d201494a47' name='Interview Room 1' />
+	<room id='6dca7902-a0e5-4f51-9eef-2c4691f178d8' name='Interview Room 2' />
+	<room id='bc73aa11-69d4-4770-93ed-5bc05460feb5' name='Meeting Room 1 - Darren Campbell Room' />
+	<room id='20550fde-119c-4453-bb65-1a9608e3aed2' name='Meeting Room 10 - L.S. Lowry Room' />
+	<room id='3b9c6853-6ed1-49bd-b9ac-44555ef7d661' name='Meeting Room 11 - Emmeline Pankhurst Room' />
+	<room id='b45ac716-1616-4810-a3ac-43c32600be51' name='Meeting Room 12 - Samuel Brooks Room' />
+	<room id='9a729930-c589-4ba2-8e44-61a1c9035836' name='Meeting Room 13 - Dame Isobel Baillie Room' />
+	<room id='d482eceb-3bd7-4c46-b206-a91ee3a8243b' name='Meeting Room 14 - Percy Courtman Room' />
+	<room id='b1afa1a3-a72a-49ad-950a-3bfdc7607c75' name='Meeting Room 15 - Park Hospital Room' />
+	<room id='83fd74bd-b408-4c5d-8634-208e980c9de6' name='Meeting Room 16 - James Bent Room' />
+	<room id='290ceda2-eee2-4ae6-8c90-b321b172d424' name='Meeting Room 17 - John Alcock Room' />
+	<room id='0089116f-a44d-48c6-a65f-98f21388fdb6' name='Meeting Room 2 - Robert Bolt Room' />
+	<room id='2128b1d3-03ac-4ac6-9042-4163fdad6944' name='Meeting Room 3 - John Rylands Room' />
+	<room id='0f512f40-d5d5-4d34-80fc-bbf38c1f117a' name='Meeting Room 4 - Chapel Street Room' />
+	<room id='a3cf08a4-7404-4170-9f44-b42a00054e84' name='Meeting Room 5 - Edward Charlton Room' />
+	<room id='278fe30a-60cd-42da-b224-c86b372a149c' name='Meeting Room 6 - Diane Modhal Room' />
+	<room id='b6227f43-e5d2-4f66-9074-f4cd159da894' name='Meeting Room 7 - Bill Speakman Room' />
+	<room id='c59a15bc-2d60-44ee-8801-292d559ebdf7' name='Meeting Room 9 - Marshall Stevens Room' />
+	<room id='6d6ba3b4-da90-4038-a5fd-b5b69944e54f' name='Project Area 1 - Longford Park Room' />
+	<room id='72a63795-3fdd-4146-8b0c-b31acbe32b7a' name='Project Area 2 - John Leigh Park Room' />
+	<room id='cc02c0da-f847-493d-8616-070537289279' name='Project Area 3 - Abbotsfield Park Room' />
+	<room id='9304f57a-6bbe-48e4-b86c-373444715ee6' name='Project Area 4 - Worthington Park Room' />
+	<room id='b614b4ff-09b6-49ea-9977-8cf8f2f95856' name='Thomas De Trafford Conference Room' />
+	<room id='730efb6b-c191-4815-ac66-c4ff088db1cc' name='Training Romm 3 - Ronald Gow Room' />
+	<room id='950c46bd-1b5b-4ac3-ae5c-b16e7f7ffd71' name='Training Room 1 - James Joule Room' />
+</rooms>

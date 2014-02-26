@@ -1,0 +1,1226 @@
+﻿/* DIRTY DIRTY HACK FOR IE!  
+   see: http://joseph.randomnetworks.com/2006/08/16/css-opacity-in-internet-explorer-ie/
+*/
+.ui-state-disabled
+{
+    zoom:1;
+}
+
+input[type=text].TimeInputBox {  width:6em; }
+
+/* --- THE FLOORPLAN -----
+One of the main displays within the system.
+The following styles directly relate to it and it's containers & contents. */
+#floorplan
+{
+    vertical-align: top;
+    display: block;
+    margin-left: 16.5em;
+    margin-top: 1.8em;
+    background-color: #FCFCFC;
+    border: 0px solid #CCC;
+    border-left: 1px solid #EEE;
+    position: absolute;
+    bottom:0;
+    top: 69px;
+    left:0;
+    right:0;
+}
+#floorplan object
+{
+    width: 750px;
+    height: 775px;
+}
+
+#roomBookingContainer
+{
+	display: block;
+    position:absolute;
+    height:auto;
+    width:auto;
+    margin-left: 16.5em;
+    margin-top: 1.8em;
+    background-color: #FCFCFC;
+    border: 0px solid #CCC;
+    border-left: 1px solid #EEE;
+    bottom:0;
+    top: 69px;
+    left:0;
+    right:0;
+    overflow-y:scroll;
+    padding:10px;
+}
+
+.roomSearchResults
+{
+    margin:1em;
+}
+
+#roomBookingCalendarContainer
+{
+	display: block;
+    position:absolute;
+    height:auto;
+    width:auto;
+    margin-left: 16.5em;
+    margin-top: 1.8em;
+    background-color: #FCFCFC;
+    border: 0px solid #CCC;
+    border-left: 1px solid #EEE;
+    bottom:0;
+    top: 69px;
+    left:0;
+    right:0;
+    overflow:hidden;
+}
+
+.ContextBarPadding
+{
+    /*margin-top: 29px;*/
+}
+
+.AttendeesPage
+{
+    display: block;
+    position:absolute;
+    height:auto;
+    width:auto;
+    /*margin-left: 16.5em;
+    margin-top: 1.8em;
+    background-color: #FCFCFC;
+    border: 0px solid #CCC;
+    border-left: 1px solid #EEE;*/
+    bottom:0;
+    top: 96px;
+    left:0;
+    right:0;
+}
+
+
+.unknown
+{
+    padding: 1.05em 1em;
+    margin-top: -1em;
+}
+.unknown p, .unknown li
+{
+    color: #AAA;
+    font-size: 1.4em;
+    margin-bottom: 0.75em;
+}
+#please-wait
+{
+    position: absolute;
+    bottom:0;
+    top: 69px;
+    left:0;
+    right:0;
+    background-color: #EEE;
+    margin-left: 16.5em;
+    margin-top: 1.8em;
+    text-align:center;
+    z-index: 1001;
+}
+#please-wait div
+{
+    position: absolute;
+    left: 50%;
+    top:  50%;
+    height: 80px;
+    width: 80px;
+    margin-left:-40px;
+    margin-top:-40px;
+}
+#please-wait div span
+{
+    color: #0078C1;
+    padding-left: 0.6em;
+}
+
+#please-wait-local
+{
+    position: absolute;
+    bottom:0;
+    top: 101px;
+    left:0;
+    right:0;
+    background-color: #EEE;
+    margin-left: 16.5em;
+    text-align:center;
+    z-index: 1001;
+}
+#please-wait-local div
+{
+    position: absolute;
+    left: 50%;
+    top:  50%;
+    height: 80px;
+    width: 80px;
+    margin-left:-40px;
+    margin-top:-40px;
+}
+#please-wait-local div span
+{
+    color: #0078C1;
+    padding-left: 0.6em;
+}
+
+.flashError
+{
+    padding: 1em;
+}
+
+/* ---- THE FILTERS -------
+The following classes are for the form that is the search criteria on the various forms */
+#filters
+{
+    position: fixed;
+    padding: 0.3em 0 0.2em 0.4em;
+    border: 0px solid #DDD;
+    width: 16em;
+    top: 100px;
+    overflow: hidden;
+}
+
+#filters img
+{
+    width:16px;
+    height:16px;
+}
+
+#filters form ul
+{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#filters li
+{
+    padding: 0.1em 0;
+}
+#filters li input
+{
+    width: 13.2em;
+    padding: 0.2em 0.3em;
+}
+#filters li div.TimeDisplay
+{
+    width:100%;
+}
+
+#filters li div.TimeDisplay input
+{
+    width:5.5em;
+    padding: 0.2em 0.3em;
+}
+
+#filters li div.ScrollerContainerDiv
+{
+    width: 12.5em;
+    padding: 0.3em 0.6em;
+}
+
+a#ToggleAdvanced
+{
+    font-size:small;
+    float:right;
+    padding-bottom:5px;
+    padding-top:5px;
+    cursor:pointer;    
+}
+
+#filters li select
+{
+    width: 14.2em;
+}
+#filters #timeOfDayRadio
+{
+    display: inline;
+    
+}
+#filters #timeOfDayRadio label
+{
+    width: auto;
+    font-size: 0.9em;
+    margin-top: 0.1em;
+}
+#filters .buttons
+{
+    margin-top: 0.2em;
+    padding-top: 0.5em;
+    border-top: 1px dashed #EEE;
+    text-align: center;
+}
+#filters li div
+{
+	width:13.2em;
+	display:inline-block;
+}
+
+#filters li div.ScrollerContainerDiv div
+{
+    width: 100%;
+}
+
+#zoneContainer, #subzoneContainer
+{
+    margin-left: 19px;
+    display: none;
+}
+.dropdownList
+{
+    visibility: hidden;
+}
+#timeOfDayRadio
+{
+    visibility: hidden;
+}
+
+#filters li div#otherTimeOfDay {
+    display: none;
+    width: 11.5em;
+    height: 1.8em;
+}
+
+#otherTimeOfDay {
+    margin: 0;
+    margin-left: 1.5em;
+    border-bottom: 1px solid #0078C1;
+    border-left: 5px solid #0078C1;
+    border-right: 5px solid #0078C1;
+    background-color: #EDEDED;
+    padding: 0.2em;
+}
+
+#otherTimeOfDay .OtherTimeBox {
+    display: inline;
+    vertical-align: middle;
+    width: auto;
+}
+
+#otherTimeOfDay .OtherTimeBox img {
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+#otherTimeOfDay input.timebox {
+    width: 2.5em;
+    margin: 0;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+/* ---- THE RECEIPT -------
+ * When displaying back the content of the booking, this ID can be used to format it consistently.
+ */
+ 
+div.confirmationTableContainer
+{
+    width: 30em;
+}
+
+table#confirmation
+{
+    margin-top: 0.5em;
+    border: 1px solid #DDD;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    padding: 0.5em 1em;
+    width: 25em;
+}
+
+table.fillParent
+{
+    width:100%;
+}
+
+table#confirmation tr th
+{
+    text-align: left;
+    padding-right: 1em;
+    vertical-align:text-top;
+}
+
+#notification-message
+{
+    position: absolute;
+    display: block;
+    /*top: 70px;*/
+    left: 17.5em;
+    right: 1em;
+    padding: 1.5em 1em;
+    z-index: 1006;
+    
+    border-bottom-right-radius: 0.5em;
+    -webkit-border-radius-bottom-right: 0.5em;
+    -moz-border-radius-bottom-right: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    -webkit-border-radius-bottom-left: 0.5em;
+    -moz-border-radius-bottom-left: 0.5em;
+}
+#notification-message span
+{
+    /*font-size: 1.5em;*/
+    float: right;
+    font-family: Verdana;
+    /*margin-top: -3.0em;*/
+    color: #699022;
+    padding: 0.1em;
+    cursor: pointer;
+}
+
+#notification-message.success
+{
+    background-color: #CDEE91;
+    border: 1px solid #B4DE6A;
+    border-top: none;
+}
+
+#notification-message.centre
+{
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    width:60%;
+}
+
+#notification-message.fail
+{
+    background-color: #ffeeee;
+    border: 1px solid #FF0000;
+    border-top: none;
+    color:#FF0000;
+}
+#DeskInfoPanel
+{
+    display: block;
+    padding: 0.7em 1em;
+}
+#DeskInfoPanel h2
+{
+    font-size: 1.9em;
+}
+#DeskInfoPanel h3.larger
+{
+    font-size: 1.5em;
+    line-height: 1.2em;
+    padding-top:0.25em;
+}
+
+#DeskInfoPanel ul
+{
+    padding: 0.2em 0;
+    margin: 0;
+    list-style: none;
+}
+#DeskInfoPanel li
+{
+    cursor: pointer;
+    zoom: 1;
+    padding: 0.1em 0;
+}
+
+#DeskInfoPanel li span
+{
+    padding-right:1em;
+    min-width:6em;
+    display:inline-block;
+}
+
+#RoomInfoPanel
+{
+    display: block;
+}
+
+.RoomInfoImage:hover .RoomInfoImageChange
+{
+    display:block;
+}
+
+.RoomInfoImage
+{
+    float:right; height:250px; width:250px;
+    border:1px solid #EEE;
+    overflow:hidden;
+    position:relative;
+}
+
+a.RoomInfoImageChange:link, 
+a.RoomInfoImageChange:hover, 
+a.RoomInfoImageChange:visited, 
+a.RoomInfoImageChange:active
+{
+    text-decoration:none;
+    color:white;
+}
+
+a.RoomInfoImageChange:hover {
+text-decoration: underline;
+}
+
+.RoomInfoImageChange
+{
+    background:black;
+    color:white;
+    display:none;
+    opacity:.7;
+    padding:4px 4px 4px 23px;
+    position: absolute;
+    right: 1px;
+    top: 0;
+    background-image:url("Icons/pencil.png");
+    background-position:left center;
+    background-repeat:no-repeat;
+}
+
+#RoomInfoPanel h2
+{
+    font-size: 1.9em;
+}
+#RoomInfoPanel h3.larger
+{
+    font-size: 1.5em;
+    line-height: 1.2em;
+}
+
+#RoomInfoPanel ul
+{
+    padding: 0.2em 0;
+    margin: 0;
+    list-style: none;
+    font-size: 1.05em;
+}
+#RoomInfoPanel li
+{
+    zoom: 1;
+    padding: .1em 0;
+}
+
+#RoomInfoPanel li span
+{
+    padding-right:1em;
+    min-width:6em;
+    display:inline-block;
+}
+
+#innerTabs 
+{
+	margin:0;
+    padding-top: 0.3em;
+    padding-left: 0.5em;
+    border-bottom:1px solid #EEE;
+}
+
+#innerTabs li
+{
+	display: inline-block;
+    vertical-align: bottom;
+    *display: inline;
+    margin-top: 0px;
+}
+
+#innerTabs li a
+{
+	display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 0.3em;
+    padding: 0.2em 1em;
+    
+	font-size: 0.85em;
+	
+    border: solid 1px #CCC;
+    border-bottom: none;
+    
+    color: #555;
+    
+    border-top-right-radius: 0.5em;
+    -webkit-border-radius-top-right: 0.5em;
+    -moz-border-radius-top-right: 0.5em;
+    border-top-left-radius: 0.5em;
+    -webkit-border-radius-top-left: 0.5em;
+    -moz-border-radius-top-left: 0.5em;
+}
+
+#innerTabs li.current a
+{
+	border-bottom: none;
+    color: #EEE;
+    
+    padding: 0.2em 1em;
+    font-weight: normal;
+    background-color:#0078C1;
+    border:#007BC1;
+}
+
+#deskInfoResults
+{
+	vertical-align: top;
+    display: block;
+    margin-left: 16.5em;
+    margin-top: 1.8em;
+    background-color: #FCFCFC;
+    border: 0px solid #CCC;
+    border-left: 1px solid #EEE;
+    position: absolute;
+    bottom:0;
+    top: 69px;
+    left:0;
+    right:0;
+}
+
+#innerTabsDiv
+{
+	
+	
+}
+
+.RoomResultDiv
+{
+	border:1px solid #EEE;
+	border-radius: .5em;
+	-webkit-border-radius: .5em;
+	margin:1em 0 0 0;
+	width:30em;
+	position:relative;
+}
+
+.RoomResultDiv .heading
+{
+	background-color:#EEE;
+	border-radius: .5em .5em 0 0;
+	-webkit-border-radius: .5em .5em 0 0;
+	padding: 0.5em;
+}
+
+.RoomResultDiv .heading a
+{
+	float:right;
+}
+
+.RoomResultDiv .heading img
+{
+	float:left;
+	height:128px;
+	width:128px;
+	padding-right:1em;
+	padding-bottom:0.5em;
+}
+
+.RoomResultDiv .content
+{
+	padding: 0.5em;
+}
+
+.RoomResultDiv .BookButton
+{
+    position:absolute;
+    bottom:0;
+    right:0;
+    margin:.5em;
+}
+
+
+    
+.clearBoth
+{
+	clear:both;
+}
+
+.RoomResultDiv .content #mainList
+{
+    list-style:none;
+    zoom: 1;
+    padding: .1em 0;   
+}
+
+.RoomResultDiv  #subList
+{
+    list-style:none;
+    zoom: 1;
+    padding: .1em 0;
+    margin:0;
+    display:inline-block;
+}
+
+.RoomResultDiv .roomFeatures ul#subList li
+{
+    float:left;
+    width:8em;
+    overflow:hidden;
+}
+
+.RoomResultDiv div.content div.roomFeatures h4
+{
+    clear:left;
+}
+
+
+/* Attendees code */
+
+.addNewAttendees
+{
+	background-color:#F7F7F7;
+    border: 1px dashed #DDD;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    display: inline-block;
+    width: 18em;
+    vertical-align: bottom;
+    overflow: hidden;
+    height: 40px;
+    padding: 0px;
+    border-image: initial;
+}
+
+.addNewAttendees .AddAttendeesInput
+{
+    margin-top:6px;
+    /*width:12.5em;*/
+    width:auto;
+    padding-left:40px;
+    padding-right:4px;
+}
+
+.addNewAttendees img#BigAddImage
+{
+    margin:4px;
+    cursor:pointer;
+}
+
+.addAttendeesPopup
+{
+	display:none;
+	position:absolute; 
+	border:solid 1px black;
+	background-color:White;
+	padding:0.5em;
+	margin-top:3em;
+	margin-left:2em;
+}
+
+#AddAttendeesResults
+{
+	list-style:none;
+	width:18em;
+	padding:0.25em 0.5em;
+	position:absolute;
+	background:white;
+	cursor:pointer;
+	display:none;
+	border:1px solid #CCC;
+	z-index:5;
+}
+
+.AttendeeWrapper
+{
+    padding:0.25em 24px 0.25em 0.25em;
+    position:relative;
+    display:inline-block;
+    z-index:0;
+    width:18em;
+}
+
+.AttendeeWrapper .removeProfile
+{
+    position:absolute;
+    top:50%;
+    margin-top:-8px; 
+    right:4px; 
+    cursor:pointer;
+    z-index:0;
+}
+
+#AddAttendeesResults li.selected div
+{
+    border-color:#0078C1;
+    background-color:#DDD;
+}
+
+
+#AddAttendeesResults li
+{
+	margin:2px 0px ;
+	clear:both;
+}
+
+#AttendeesDetails
+{
+    float:left;width:24em; height:100%; display:inline; padding:1em;
+}
+
+#AttendeesContainer
+{
+    display: block;
+    position:absolute;
+    height:auto;
+    width:auto;
+    margin-left:26em; 
+    padding:1em; 
+    background-color:#FCFCFC;  
+    border-left:1px dashed #000000;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+/*
+#AddAttendeesResults li img
+{
+	display:inline-block;
+	float:left;
+	padding-right:1em;
+	height:40px;
+	width:40px;
+}
+
+#AddAttendeesResults li div.MainText
+{
+	font-weight:bold;
+}
+
+#AddAttendeesResults li div.SubText
+{
+	font-style:italic;
+}
+
+#AddAttendeesResults li.MoreInfo
+{
+	background-color:#0078C1;
+	color:#EEE;
+}*/
+
+
+
+/*
+    Calendar Code
+                    */
+
+#calendar
+{
+    padding: 1em;
+}
+
+#CriteriaForm label
+{
+	width: 10em;
+	display: inline-block;
+	font-weight: bold;
+}
+#CriteriaForm p label
+{
+    width: auto;
+}
+#CriteriaForm ul
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#CriteriaForm ul li
+{
+	padding: 0.25em 0.2em;
+}
+#CriteriaForm ul li img
+{
+    vertical-align: middle;
+}
+
+#CurrentEventSources ul
+{
+    list-style:none;
+    padding:0;
+    padding-right:0.3em;
+    margin:0;
+}
+
+#CurrentEventSources ul li
+{
+   padding:0.25em 0.2em;
+   margin-bottom:0.5em;
+   border:1px solid white;
+   overflow:hidden;
+   height:1em;
+}
+
+div#CurrentEventSources ul li div.itemVisible, div.itemVisible
+{
+    width:16px;
+    height:16px;
+    margin-right:0.75em;
+    vertical-align:middle;
+    display:block;
+    float:left;
+}
+
+#EventSourcesContainer
+{
+    height:auto;
+    margin-top:75px;
+    overflow-y:auto;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+span.roomName
+{
+    overflow:hidden;
+    height:1em;
+}
+
+div#CurrentEventSources ul li div.floatClose
+{
+    float:right;
+    display:inline-block;
+    width:auto;
+    cursor:pointer;
+}
+div#CurrentEventSources ul li div.floatClose img
+{
+    padding-right:0.8em;
+}
+
+#PagePopupBackground
+{
+    display:none;
+    position:fixed;
+    _position:absolute;
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    background:#000000;
+    border:1px solid #cecece;
+    z-index:100;
+}
+
+#RoomBookingPopup
+{
+    display:none;
+    position:fixed;
+    _position:absolute;
+    height:auto;
+    width:580px;
+    background:#FFFFFF;
+    border:2px solid #cecece;
+    z-index:120;
+    padding:12px;
+}
+
+ul#Rooms
+{
+    list-style:none;
+    padding:0px;
+    margin:0px;
+}
+
+ul#Rooms li
+{
+    cursor:pointer;
+    border:2px solid #FFFFFF;
+}
+
+ul#Rooms li div
+{
+    width:16px;
+    height:16px;
+    display:inline-block;
+    margin:0.2em;
+    vertical-align:text-bottom;
+    
+}
+
+div#CurrentEventSources
+{
+    margin-top:0.5em;
+}
+    
+    
+ul#SendInvitesFromListItem
+{
+    list-style:none;
+    margin:0px;
+    padding:0.5em 0px 0px 0px;
+}
+
+.highlightedProfile
+{
+    background-color:#f5f7f8;
+    background-color:#7B7B7B;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+}
+    
+.topPaddingSmall
+{
+    padding-top:0.5em;
+}
+    
+.bottomPaddingSmaller
+{
+    padding-bottom:0.25em;
+}
+    
+#TraffordAttendeeContainer h2, #NoneTraffordAttendeeContainer h2
+{
+    padding-top:0.5em;
+    padding-bottom:0.25em;
+}
+    
+.dataTables_paginate, .dataTables_length
+{
+    width:48%;
+    float:right;
+    text-align:right;
+}
+
+.dataTables_length span
+{
+    text-align:left;
+}
+    
+.dataTables_info, .dataTables_filter
+{
+    float:left;
+    width:48%;
+}
+    
+#futureBookings
+{
+    clear:both;
+    width:100%;
+    margin:0.5em 0em;
+}
+    
+.futureBookingsDiv
+{
+    margin-top:0.25em;
+}
+
+#previousBookings
+{
+    clear:both;
+    width:100%;
+    margin:0.5em 0em;
+}
+    
+.previousBookingsDiv
+{
+    margin-top:0.25em;
+}
+
+
+.paginate_disabled_previous, .paginate_enabled_previous
+{
+    background-image:url('Icons/resultset_previous.png');
+    background-position: center left;
+    background-repeat:no-repeat;
+    padding-left:20px;
+    padding-right:0.25em;
+    cursor:pointer;
+}
+    
+.paginate_disabled_next, .paginate_enabled_next
+{
+    background-image:url('Icons/resultset_next.png');
+    background-position: center right;
+    background-repeat:no-repeat;
+    padding-right:20px;
+    padding-left:0.25em;
+    cursor:pointer;
+}
+    
+.dataTables_filter
+{
+    margin-bottom:4px;
+}
+
+.dataTables_length select
+{
+    width:auto;
+}
+
+div.buttons {
+    margin-top: 0.4em;
+    border-top: 1px dashed #EEE;
+}
+
+.dataTables_wrapper
+{
+    margin-bottom:2em;
+}
+
+#RoomBookingPopup h2
+{
+    cursor:move;
+}
+
+.warningContainer
+{
+    width:30em;
+    background:#FEE; 
+    border:1px solid red; 
+    padding:0 1em
+}
+
+
+/*
+        View Booking & Edit Booking
+                        */
+
+#DetailsContainer
+{
+    display:block;
+    position:absolute;
+    height:auto;
+    width:auto; 
+    margin-left:26em; 
+    padding:1em; 
+    background-color:#FCFCFC;  
+    border-left:1px dashed #000000;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+}
+
+
+
+
+
+
+
+
+/* Probably to be moved to the Shared Content Library */
+#systemNavigation
+{
+    overflow:visible;
+}
+
+#systemHeader h1 
+{
+    padding: 0;
+}
+
+#systemContextBar li
+{
+    position: relative;
+}
+#systemContextBar li.parent
+{
+    padding-right: 1.3em;
+}
+
+#systemContextBar li span { /*--Drop down trigger styles--*/
+    width: 16px;
+    height: 100%;
+    position: absolute;
+    top: 0; right: 0;
+    background: url("/shared/images/icons/downArrow.png") no-repeat center;
+    margin-left:1.7em;
+}
+
+#systemContextBar li a {
+    display: block;
+    white-space: nowrap;
+}
+
+#systemContextBar li span.subhover /*--Hover effect for trigger--*/
+{
+    cursor: pointer;
+} 
+
+
+#systemContextBar li ul.subnav {
+    list-style: none;
+    position: absolute; /*--Important - Keeps subnav from affecting main navigation flow--*/
+    left: -3px;
+    top: 1.6em;
+    background: #0078C1;
+    margin: 0;
+    padding: 0;
+    display: none;
+    
+    z-index:5000;
+}
+
+#systemContextBar li ul.subnav li
+{
+    margin: 2px;
+    width: 170px;
+    z-index:60;
+    display: list-item;
+    text-align:left ! important;
+    
+}
+
+#systemContextBar li ul.subnav li a
+{
+    display: block;
+    clear: none;
+    width: 170px;
+    margin: 0;
+    padding-left: 0.1em;
+    font-weight: normal;
+    
+}
+#systemContextBar li ul.subnav li a:hover
+{
+    font-weight: bold;
+}
+
+#systemContextBar li ul.subnav li a img
+{
+    vertical-align: middle;
+}
+
+#ui-datepicker-div 
+{
+    z-index: 5 ! important;
+}
+
+#svg-error {
+    padding: 1em;
+}
+
+.footer.fixed-footer {
+   position:fixed;
+   left:0;
+   bottom:0;
+
+   width:100%;
+   background:#F6F6F6;
+   border-top:1px solid #DDDDDD;
+   padding:10px;
+   font-size:0.75em;
+}
+
+    .footer.fixed-footer p {
+        margin-top: 0;
+    }
+
+/* IE 6 */
+* html .footer.fixed-footer {
+   position:absolute;
+   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+}
+
+/* A fixed footer will cover the bottom of the page, so give the page some more space at the bottom */
+.footer-padding {
+    margin-bottom: 160px;
+}
+
+a img {
+    border:0 !important;
+ }

@@ -1,0 +1,78 @@
+﻿#page-desk-info .ui-dialog-contain { max-width:800px; }
+
+.wide-width
+{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.narrow-width
+{
+	margin-left:20%;
+	margin-right:20%;
+}
+
+.very-large
+{
+	font-size:4em;
+	margin:0.5em auto;
+}
+
+.centered
+{
+    text-align: center;
+}
+
+.ui-bar .ui-btn {
+    font-size: 1em;
+}
+.ui-keyboard-button { height: 3em; }
+
+.clear
+{
+    clear: both;
+}
+
+div.desk-select
+{
+    width: 12.5%;
+    float: left;
+}
+
+div.desk-select *
+{
+    text-align: center;
+}
+
+div.desk-select.occupied
+{
+    background-color: red;
+}
+
+div.desk-select .ui-disabled
+{
+    opacity:0.7;
+}
+
+div.desk-select .occupants, div.desk-select .unavailable
+{
+    font-weight: normal; font-size:0.7em;
+}
+
+div.desk-select .ui-icon-radio-on, div.desk-select .ui-icon-radio-off
+{
+    margin: 0 auto;
+}
+
+div.my-bookings, div.floor-zones
+{
+    float:none;
+    display: inline-block;
+    vertical-align:top;
+}
+
+div.my-bookings ul.ui-listview, div.floor-zones ul.ui-listview
+{
+    margin: -0.5em auto -1em auto;
+    padding: 1em 0 1em 0;
+}

@@ -12,17 +12,19 @@ namespace ApplicationPortfolio.Domain.DataConnections
     using System;
     using System.Collections.Generic;
     
-    public partial class document
+    public partial class Document
     {
-        public System.Guid object_id { get; set; }
-        public long document_id { get; set; }
-        public long document_type_id { get; set; }
-        public string name { get; set; }
-        public string description { get; set; }
-        public Nullable<bool> is_image { get; set; }
-        public string file_location { get; set; }
+        public Document()
+        {
+            this.ApplicationDocuments = new HashSet<ApplicationDocument>();
+        }
     
-        public virtual baseobject baseobject { get; set; }
-        public virtual document_type document_type { get; set; }
+        public System.Guid DocumentId { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public Nullable<int> DocumentTypeId { get; set; }
+    
+        public virtual ICollection<ApplicationDocument> ApplicationDocuments { get; set; }
+        public virtual DocumentType DocumentType { get; set; }
     }
 }

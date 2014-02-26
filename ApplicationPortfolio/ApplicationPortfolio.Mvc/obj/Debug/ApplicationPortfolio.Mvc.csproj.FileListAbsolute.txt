@@ -1,7 +1,9 @@
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc\bin\ApplicationPortfolio.Mvc.dll
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc\bin\ApplicationPortfolio.Mvc.pdb
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc\bin\Antlr3.Runtime.dll
+D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc\bin\ApplicationPortfolio.Domain.dll
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc\bin\EntityFramework.dll
+D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc\bin\Library.dll
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc\bin\Microsoft.Data.Edm.dll
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc\bin\Microsoft.Data.OData.dll
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc\bin\Microsoft.Web.Infrastructure.dll
@@ -22,6 +24,7 @@ D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPor
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc\bin\System.Web.WebPages.dll
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc\bin\System.Web.WebPages.Razor.dll
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc\bin\WebGrease.dll
+D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc\bin\ApplicationPortfolio.Domain.pdb
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc\bin\EntityFramework.xml
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc\bin\Newtonsoft.Json.xml
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Mvc\bin\System.Net.Http.xml

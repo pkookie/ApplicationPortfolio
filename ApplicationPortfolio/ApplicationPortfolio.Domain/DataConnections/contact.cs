@@ -12,30 +12,18 @@ namespace ApplicationPortfolio.Domain.DataConnections
     using System;
     using System.Collections.Generic;
     
-    public partial class contact
+    public partial class Contact
     {
-        public contact()
+        public Contact()
         {
-            this.change_requests = new HashSet<change_requests>();
-            this.contact_links = new HashSet<contact_links>();
-            this.notification_groups_contacts = new HashSet<notification_groups_contacts>();
-            this.notifications = new HashSet<notification>();
+            this.Applications = new HashSet<Application>();
+            this.Applications1 = new HashSet<Application>();
         }
     
-        public long contact_id { get; set; }
-        public string known_as { get; set; }
-        public string primary_email { get; set; }
-        public string primary_phone { get; set; }
-        public string secondary_phone { get; set; }
-        public Nullable<long> address_id { get; set; }
-        public string job_description { get; set; }
-        public Nullable<long> contact_type_id { get; set; }
+        public System.Guid ContactId { get; set; }
+        public Nullable<System.Guid> OpenId { get; set; }
     
-        public virtual address address { get; set; }
-        public virtual ICollection<change_requests> change_requests { get; set; }
-        public virtual ICollection<contact_links> contact_links { get; set; }
-        public virtual contact_types contact_types { get; set; }
-        public virtual ICollection<notification_groups_contacts> notification_groups_contacts { get; set; }
-        public virtual ICollection<notification> notifications { get; set; }
+        public virtual ICollection<Application> Applications { get; set; }
+        public virtual ICollection<Application> Applications1 { get; set; }
     }
 }
