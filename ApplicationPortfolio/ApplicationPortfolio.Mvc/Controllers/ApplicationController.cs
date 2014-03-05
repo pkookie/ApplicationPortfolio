@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using ApplicationPortfolio.Domain.DataConnections;
 using ApplicationPortfolio.Domain.DataConnections.Repositories;
+using ApplicationPortfolio.Mvc.ViewModels.Application;
 
 namespace ApplicationPortfolio.Mvc.Controllers
 {
@@ -22,9 +23,9 @@ namespace ApplicationPortfolio.Mvc.Controllers
 
         public ActionResult Index()
         {
-
-            var applications = AppRepo.GetAllApplications(); //db.Applications.Include(a => a.BusinessCriticality).Include(a => a.Contact).Include(a => a.Contact1).Include(a => a.ServiceArea);
-            return View(applications);
+            var viewModel = new AllApplicationsViewModel();
+            viewModel.Applications = AppRepo.GetAllApplications();
+            return View(viewModel);
         }
 
         //
@@ -47,11 +48,19 @@ namespace ApplicationPortfolio.Mvc.Controllers
         public ActionResult Create()
         {
 
+            var viewmodel = new ApplicationCreateViewModel();
+
+            viewmodel.ApplicationContacts = null;
+            viewmodel.ApplicationDocuments = null;
+            viewmodel.BusinessCriticalities = BusCritRepo.GetAllBusinessCriticalities();
+            viewmodel.ServiceAreas = ServiceAreaRepo.GetAllServiceAreas();
+            
+
             ViewBag.BusinessCriticalityId = new SelectList(BusCritRepo.GetAllBusinessCriticalities(), "BusinessCriticalityId", "Name");
             ViewBag.BusinessContact = new SelectList(ContactRepo.GetAllContacts(), "ContactId", "ContactId");
             ViewBag.IctContact = new SelectList(ContactRepo.GetAllContacts(), "ContactId", "ContactId");
             ViewBag.ServiceAreaId = new SelectList(ServiceAreaRepo.GetAllServiceAreas(), "ServiceAreaId", "Name");
-            return View();
+            return View(viewmodel);
         }
 
         //
@@ -59,11 +68,15 @@ namespace ApplicationPortfolio.Mvc.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Application application)
+        public ActionResult Create(ApplicationCreateViewModel applicationCreateViewModel)
         {
             if (ModelState.IsValid)
             {
-               var result = AppRepo.CreateApplication(application);
+                Application application = applicationCreateViewModel.Application;
+                application.BusinessCriticalityId = applicationCreateViewModel.BusinessCriticalitySelectedValue;
+                application.ServiceAreaId = applicationCreateViewModel.ServiceAreaSelectedValue;
+
+                var result = AppRepo.CreateApplication(application);
                if (result == "Success")
                {
                    return RedirectToAction("Index");
@@ -75,7 +88,7 @@ namespace ApplicationPortfolio.Mvc.Controllers
             ViewBag.BusinessContact = new SelectList(ContactRepo.GetAllContacts(), "ContactId", "ContactId");
             ViewBag.IctContact = new SelectList(ContactRepo.GetAllContacts(), "ContactId", "ContactId");
             ViewBag.ServiceAreaId = new SelectList(ServiceAreaRepo.GetAllServiceAreas(), "ServiceAreaId", "Name");
-            return View(application);
+            return View(applicationCreateViewModel);
         }
 
         //
@@ -83,16 +96,27 @@ namespace ApplicationPortfolio.Mvc.Controllers
 
         public ActionResult Edit(Guid id)
         {
-            Application application = AppRepo.GetApplication(id);// db.Applications.Find(id);
+            Application application = AppRepo.GetApplication(id);
             if (application == null)
             {
                 return HttpNotFound();
             }
+
+            var viewmodel = new ApplicationEditViewModel();
+            viewmodel.Application = application;
+            viewmodel.BusinessCriticalitySelectedValue = application.BusinessCriticalityId;
+            viewmodel.ServiceAreaSelectedValue = application.ServiceAreaId;
+
+            viewmodel.ApplicationContacts = AppRepo.GetApplicationContacts(id);
+            viewmodel.ApplicationDocuments = AppRepo.GetApplicationDocuments(id);
+            viewmodel.BusinessCriticalities = BusCritRepo.GetAllBusinessCriticalities();
+            viewmodel.ServiceAreas = ServiceAreaRepo.GetAllServiceAreas();
+
             ViewBag.BusinessCriticalityId = new SelectList(BusCritRepo.GetAllBusinessCriticalities(), "BusinessCriticalityId", "Name");
             ViewBag.BusinessContact = new SelectList(ContactRepo.GetAllContacts(), "ContactId", "ContactId");
             ViewBag.IctContact = new SelectList(ContactRepo.GetAllContacts(), "ContactId", "ContactId");
             ViewBag.ServiceAreaId = new SelectList(ServiceAreaRepo.GetAllServiceAreas(), "ServiceAreaId", "Name");
-            return View(application);
+            return View(viewmodel);
         }
 
         //
@@ -100,10 +124,13 @@ namespace ApplicationPortfolio.Mvc.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Application application)
+        public ActionResult Edit(ApplicationEditViewModel applicationViewModel)
         {
             if (ModelState.IsValid)
             {
+                Application application = applicationViewModel.Application;
+                application.BusinessCriticalityId = applicationViewModel.BusinessCriticalitySelectedValue;
+                application.ServiceAreaId = applicationViewModel.ServiceAreaSelectedValue;
                 AppRepo.EditApplication(application);
                 
                 return RedirectToAction("Index");
@@ -112,7 +139,7 @@ namespace ApplicationPortfolio.Mvc.Controllers
             ViewBag.BusinessContact = new SelectList(ContactRepo.GetAllContacts(), "ContactId", "ContactId");
             ViewBag.IctContact = new SelectList(ContactRepo.GetAllContacts(), "ContactId", "ContactId");
             ViewBag.ServiceAreaId = new SelectList(ServiceAreaRepo.GetAllServiceAreas(), "ServiceAreaId", "Name");
-            return View(application);
+            return View(applicationViewModel);
         }
 
         //

@@ -5,24 +5,34 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="a1f723d7180944d59bd22f7540d37f3b" Name="Diagram1">
-        <EntityTypeShape EntityType="AppPortfolioModel.Application" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppPortfolioModel.ApplicationDocument" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppPortfolioModel.ApplicationServer" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppPortfolioModel.BusinessCriticality" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppPortfolioModel.Contact" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppPortfolioModel.Document" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppPortfolioModel.DocumentType" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppPortfolioModel.Server" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppPortfolioModel.ServiceArea" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
-        <AssociationConnector Association="AppPortfolioModel.FK_Application_BusinessCriticality" ManuallyRouted="false" />
-        <AssociationConnector Association="AppPortfolioModel.FK_Application_Contact" ManuallyRouted="false" />
-        <AssociationConnector Association="AppPortfolioModel.FK_Application_Contact1" ManuallyRouted="false" />
-        <AssociationConnector Association="AppPortfolioModel.FK_Application_ServiceArea" ManuallyRouted="false" />
-        <AssociationConnector Association="AppPortfolioModel.FK_ApplicationDocuments_Application" ManuallyRouted="false" />
-        <AssociationConnector Association="AppPortfolioModel.FK_ApplicationServers_Application" ManuallyRouted="false" />
-        <AssociationConnector Association="AppPortfolioModel.FK_ApplicationDocuments_Document" ManuallyRouted="false" />
-        <AssociationConnector Association="AppPortfolioModel.FK_ApplicationServers_Server" ManuallyRouted="false" />
-        <AssociationConnector Association="AppPortfolioModel.FK_Document_DocumentType" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AppPortfolioModel.Application" Width="1.5" PointX="0.54076134997455472" PointY="25.785975632158095" />
+        <EntityTypeShape EntityType="AppPortfolioModel.ApplicationContact" Width="1.5" PointX="5.5295759856372957" PointY="14.151764950785676" />
+        <EntityTypeShape EntityType="AppPortfolioModel.ApplicationDocument" Width="1.5" PointX="10.553582550284258" PointY="14.345345429305613" />
+        <EntityTypeShape EntityType="AppPortfolioModel.ApplicationServer" Width="1.5" PointX="3.5334824284228876" PointY="7.1478597257043512" />
+        <EntityTypeShape EntityType="AppPortfolioModel.BusinessCriticality" Width="1.5" PointX="10.399833574145955" PointY="0.34891308860337039" />
+        <EntityTypeShape EntityType="AppPortfolioModel.Contact" Width="1.5" PointX="6.072916558977643" PointY="19.5799358727317" />
+        <EntityTypeShape EntityType="AppPortfolioModel.Document" Width="1.5" PointX="4.4971306307693624" PointY="11.480748375635942" />
+        <EntityTypeShape EntityType="AppPortfolioModel.DocumentType" Width="1.5" PointX="11.962397268024459" PointY="16.726359285752455" />
+        <EntityTypeShape EntityType="AppPortfolioModel.Server" Width="1.5" PointX="4.9469910510568837" PointY="5.4800850327499608" />
+        <EntityTypeShape EntityType="AppPortfolioModel.ServerContact" Width="1.5" PointX="1.5736879937228223" PointY="27.555297253446327" />
+        <EntityTypeShape EntityType="AppPortfolioModel.ServerDocument" Width="1.5" PointX="8.861467859177603" PointY="4.8757000141198281" />
+        <EntityTypeShape EntityType="AppPortfolioModel.ServiceArea" Width="1.5" PointX="5.2808324197683634" PointY="19.04040516309459" />
+        <AssociationConnector Association="AppPortfolioModel.FK_Application_BusinessCriticality" />
+        <AssociationConnector Association="AppPortfolioModel.FK_Application_ServiceArea" />
+        <AssociationConnector Association="AppPortfolioModel.FK_ApplicationContacts_Application" />
+        <AssociationConnector Association="AppPortfolioModel.FK_ApplicationDocuments_Application" />
+        <AssociationConnector Association="AppPortfolioModel.FK_ApplicationServers_Application" />
+        <AssociationConnector Association="AppPortfolioModel.FK_ApplicationContacts_Contact" />
+        <AssociationConnector Association="AppPortfolioModel.FK_ApplicationDocuments_Document" />
+        <AssociationConnector Association="AppPortfolioModel.FK_ApplicationServers_Server" />
+        <AssociationConnector Association="AppPortfolioModel.FK_ServerContacts_Contact" />
+        <AssociationConnector Association="AppPortfolioModel.FK_Document_DocumentType" />
+        <AssociationConnector Association="AppPortfolioModel.FK_ServerDocuments_Document" />
+        <AssociationConnector Association="AppPortfolioModel.FK_ServerContacts_Server" />
+        <AssociationConnector Association="AppPortfolioModel.FK_ServerDocuments_Server" />
+        <EntityTypeShape EntityType="AppPortfolioModel.ApplicationServerDependency" Width="1.5" PointX="11.855350965566631" PointY="30.928971915938412" />
+        <AssociationConnector Association="AppPortfolioModel.FK_ApplicationServerDependencies_Application" />
+        <AssociationConnector Association="AppPortfolioModel.FK_ApplicationServerDependencies_Server" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,0 +1,28 @@
+﻿@model ApplicationPortfolio.Domain.DataConnections.ApplicationServerDependency
+
+@{
+    ViewBag.Title = "Delete App Dependency";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this dependency?</h3>
+<fieldset>
+    <legend>Dependency Details</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Server.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Server.Name)
+    </div>
+
+    
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Details", new {id = Model.ApplicationId,AppOrServer="Application"})
+    </p>
+}

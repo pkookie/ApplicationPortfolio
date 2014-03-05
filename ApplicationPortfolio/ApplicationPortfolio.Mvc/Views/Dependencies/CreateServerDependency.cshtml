@@ -1,0 +1,26 @@
+﻿@model ApplicationPortfolio.Mvc.ViewModels.Dependencies.CreateServerDependencyViewModel
+
+@{
+    ViewBag.Title = "CreateServerDependency";
+}
+
+<h2>Create Server Dependency</h2>
+
+@* dropdownlist of all servers *@
+@* application doesnt need to be shown? *@
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    @Html.HiddenFor(model => model.Server.ServerId)
+<div class="editor-label">
+            @Html.LabelFor(model => model.SelectedApplicationId, "Application")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(m=>m.SelectedApplicationId, new SelectList(Model.Applications,"ApplicationId","Name"))
+            @Html.ValidationMessageFor(model => model.SelectedApplicationId)
+        </div>
+    <p>
+            <input type="submit" value="Create" />
+        </p>
+}

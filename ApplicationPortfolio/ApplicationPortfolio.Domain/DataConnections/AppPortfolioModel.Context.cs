@@ -26,6 +26,7 @@ namespace ApplicationPortfolio.Domain.DataConnections
         }
     
         public DbSet<Application> Applications { get; set; }
+        public DbSet<ApplicationContact> ApplicationContacts { get; set; }
         public DbSet<ApplicationDocument> ApplicationDocuments { get; set; }
         public DbSet<ApplicationServer> ApplicationServers { get; set; }
         public DbSet<BusinessCriticality> BusinessCriticalities { get; set; }
@@ -33,6 +34,9 @@ namespace ApplicationPortfolio.Domain.DataConnections
         public DbSet<Document> Documents { get; set; }
         public DbSet<DocumentType> DocumentTypes { get; set; }
         public DbSet<Server> Servers { get; set; }
+        public DbSet<ServerContact> ServerContacts { get; set; }
+        public DbSet<ServerDocument> ServerDocuments { get; set; }
         public DbSet<ServiceArea> ServiceAreas { get; set; }
+        public DbSet<ApplicationServerDependency> ApplicationServerDependencies { get; set; }
     }
 }

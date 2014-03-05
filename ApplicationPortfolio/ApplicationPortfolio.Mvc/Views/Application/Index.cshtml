@@ -1,47 +1,43 @@
-﻿@model IEnumerable<ApplicationPortfolio.Domain.DataConnections.Application>
+﻿@model ApplicationPortfolio.Mvc.ViewModels.Application.AllApplicationsViewModel
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Applications";
 }
 
-<h2>Index</h2>
+<h2>Applications</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table>
-    <tr>
+<div class="GridDiv">
+<table id="GridTable" class="data tableOrgoniser10-25-50-100-all" cellspacing="0">
+   <thead>
+     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Contact.ContactId)
+            Description
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Contact1.ContactId)
+            Business Criticality
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.BusinessCriticality.Name)
+            Service Area
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ServiceArea.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
+        
         <th></th>
     </tr>
-
-@foreach (var item in Model) {
+</thead>
+    <tbody>
+@foreach (var item in Model.Applications)
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Contact.ContactId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Contact1.ContactId)
+            @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.BusinessCriticality.Name)
@@ -49,15 +45,15 @@
         <td>
             @Html.DisplayFor(modelItem => item.ServiceArea.Name)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
+        
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ApplicationId }) |
             @Html.ActionLink("Details", "Details", new { id=item.ApplicationId }) |
+            @Html.ActionLink("Dependencies", "Details","Dependencies", new { id=item.ApplicationId,AppOrServer="Application" },null) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ApplicationId })
         </td>
     </tr>
 }
-
+</tbody>
 </table>
+    </div>

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ApplicationPortfolio.Domain.DataConnections.ApplicationDocument>
+<h4>Documents</h4>
+<div class="GridDiv">
+@Html.ActionLink("Create Document", "Create", new { id=ViewBag.ApplicationId })
+<table id="GridTable" class="data tableOrgoniser10-25-50-100-all" cellspacing="0">
+   <thead>
+     <tr>
+        <th>
+            Application
+        </th>
+        <th>
+            Document Name
+        </th>
+        <th>
+            Document Description
+        </th>
+        <th>
+            View
+        </th>
+        
+        <th></th>
+    </tr>
+</thead>
+    <tbody>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+             @Html.DisplayFor(modelItem => item.Application.Name)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.Document.Name)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.Document.Description)
+        </td>
+        <td>
+            View
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ApplicationDocumentId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ApplicationDocumentId })
+        </td>
+    </tr>
+}
+</tbody>
+</table>
+    </div>

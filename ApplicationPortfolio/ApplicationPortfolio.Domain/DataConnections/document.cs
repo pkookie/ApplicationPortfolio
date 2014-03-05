@@ -17,6 +17,7 @@ namespace ApplicationPortfolio.Domain.DataConnections
         public Document()
         {
             this.ApplicationDocuments = new HashSet<ApplicationDocument>();
+            this.ServerDocuments = new HashSet<ServerDocument>();
         }
     
         public System.Guid DocumentId { get; set; }
@@ -26,5 +27,6 @@ namespace ApplicationPortfolio.Domain.DataConnections
     
         public virtual ICollection<ApplicationDocument> ApplicationDocuments { get; set; }
         public virtual DocumentType DocumentType { get; set; }
+        public virtual ICollection<ServerDocument> ServerDocuments { get; set; }
     }
 }

@@ -1,0 +1,71 @@
+﻿@model ApplicationPortfolio.Mvc.ViewModels.Dependencies.ViewDependencyViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@* Application or server dependencies *@
+<p>
+@if (Model.ApplicationOrServer == "Application")
+{
+   @Html.ActionLink("Create new Application dependency", "CreateAppDependency", new { id=Model.Application.ApplicationId }) @:|
+   @Html.ActionLink("Back to application", "Index","Application")
+   <h3>@Model.Application.Name</h3>
+    @: Below are a list of items that this application is dependant on
+
+}
+else if (Model.ApplicationOrServer == "Server")
+{
+    <h3>@Model.Server.Name</h3>
+    @: Below is a list of items that are dependant on this server
+    @Html.ActionLink("Create new Server dependency", "CreateServerDependency", new { id=Model.Server.ServerId })
+}
+</p>
+<div class="GridDiv">
+<table id="GridTable" class="data tableOrgoniser10-25-50-100-all" cellspacing="0">
+   <thead>
+     <tr>
+        <th>
+            @if (Model.ApplicationOrServer == "Application")
+            {
+                @: Server
+            }
+            else if (Model.ApplicationOrServer == "Server")
+            {
+                @: Application
+            }
+        </th>
+               
+        <th></th>
+    </tr>
+</thead>
+    <tbody>
+@foreach (var item in Model.dependencies)
+{
+    <tr>
+        <td>
+             @if (Model.ApplicationOrServer == "Application")
+            {
+                 @Html.DisplayFor(modelItem => item.Server.Name)
+            }
+            else if (Model.ApplicationOrServer == "Server")
+            {
+                 @Html.DisplayFor(modelItem => item.Application.Name)
+            }
+
+           
+        </td>
+        
+        <td>
+            @Html.ActionLink("Delete", "DeleteAppDependency", new { id=item.AppServerDependId })
+        </td>
+    </tr>
+}
+</tbody>
+</table>
+    </div>
+
+
+
+
+

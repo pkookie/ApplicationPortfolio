@@ -17,9 +17,9 @@ namespace ApplicationPortfolio.Domain.DataConnections.Repositories
             return db.Servers.ToList();
         }
 
-        public Contact GetServer(Guid Id)
+        public Server GetServer(Guid Id)
         {
-            return db.Contacts.Find(Id);
+            return db.Servers.Find(Id);
         }
 
         public String CreateServer(Server server)

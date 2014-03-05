@@ -53,7 +53,9 @@ namespace ApplicationPortfolio.Domain.DataConnections
         
         [Required(ErrorMessage = "A name is required")]
         public String Name { get; set; }
+
         
+
     }
 
     #endregion
@@ -136,20 +138,20 @@ namespace ApplicationPortfolio.Domain.DataConnections
 //    }
 //    #endregion
 
-//    #region Business Criticalities
+    #region Business Criticalities
 
 
-//    [MetadataType(typeof(business_criticalitiesMetaData))]
-//    public partial class business_criticalities
-//    {
-//    }
+    [MetadataType(typeof(business_criticalitiesMetaData))]
+    public partial class BusinessCriticality
+    {
+    }
 
-//    public class business_criticalitiesMetaData
-//    {
-//        [Key]
-//        public long BusinessCritId { get; set; }
-//    }
-//    #endregion
+    public class business_criticalitiesMetaData
+    {
+        [Display(Name = "Business Criticality")]
+        public string Name { get; set; }
+    }
+    #endregion
 
 //    #region Change Request
 
@@ -489,20 +491,20 @@ namespace ApplicationPortfolio.Domain.DataConnections
 //    }
 //    #endregion
 
-//    #region Service Area
+    #region Service Area
 
 
-//    [MetadataType(typeof(service_areaMetaData))]
-//    public partial class service_area
-//    {
-//    }
+    [MetadataType(typeof(service_areaMetaData))]
+    public partial class ServiceArea
+    {
+    }
 
-//    public class service_areaMetaData
-//    {
-//        [Key]
-//        public long ServiceAreaId { get; set; }
-//    }
-//    #endregion
+    public class service_areaMetaData
+    {
+        [Display(Name = "Service Area")]
+        public String Name { get; set; }
+    }
+    #endregion
 
 //    #region Source Control
 
@@ -594,6 +596,38 @@ namespace ApplicationPortfolio.Domain.DataConnections
 //        [Key]
 //        public System.Guid WebsiteId { get; set; }
 //    }
-//    #endregion
+    //    #endregion
+
+    #region Application Business Contact
+
+
+    [MetadataType(typeof(appbuscontactMetaData))]
+    public partial class ApplicationBusinessContact
+    {
+    }
+
+    public class appbuscontactMetaData
+    {
+        [Display(Name = "Business Contact")]
+        public System.Guid contact_id { get; set; }
+    }
+    #endregion
+
+    #region Application ICT Contact
+
+
+    [MetadataType(typeof(appictcontactMetaData))]
+    public partial class ApplicationIctContact
+    {
+    }
+
+    public class appictcontactMetaData
+    {
+        [Display(Name = "ICT Contact")]
+        public System.Guid contact_id { get; set; }
+    }
+    #endregion
+
+    
 }
 

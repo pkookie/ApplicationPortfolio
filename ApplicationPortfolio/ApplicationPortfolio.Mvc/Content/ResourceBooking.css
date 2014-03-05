@@ -996,14 +996,14 @@ ul#SendInvitesFromListItem
     width:48%;
 }
     
-#futureBookings
+#GridTable
 {
     clear:both;
     width:100%;
     margin:0.5em 0em;
 }
     
-.futureBookingsDiv
+.GridDiv
 {
     margin-top:0.25em;
 }

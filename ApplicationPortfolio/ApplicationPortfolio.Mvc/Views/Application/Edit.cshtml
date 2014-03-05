@@ -1,10 +1,10 @@
-﻿@model ApplicationPortfolio.Domain.DataConnections.Application
+﻿@model ApplicationPortfolio.Mvc.ViewModels.Application.ApplicationEditViewModel
 
 @{
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Edit Application</h2>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
@@ -13,54 +13,48 @@
     <fieldset>
         <legend>Application</legend>
 
-        @Html.HiddenFor(model => model.ApplicationId)
+        @Html.HiddenFor(model => model.Application.ApplicationId)
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Name)
+            @Html.LabelFor(model => model.Application.Name)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Name)
-            @Html.ValidationMessageFor(model => model.Name)
+            @Html.EditorFor(model => model.Application.Name)
+            @Html.ValidationMessageFor(model => model.Application.Name)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.BusinessContact, "Contact")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("BusinessContact", String.Empty)
-            @Html.ValidationMessageFor(model => model.BusinessContact)
-        </div>
+        @*PartialView to show application contacts*@
 
+        @Html.Partial("_ApplicationContacts", Model.ApplicationContacts)
+        
+        
+        @*PartialView to show application documents*@
+        @Html.Partial("_ApplicationDocuments", Model.ApplicationDocuments)
+        
         <div class="editor-label">
-            @Html.LabelFor(model => model.IctContact, "Contact1")
+            @Html.LabelFor(model => model.Application.BusinessCriticalityId, "BusinessCriticality")
         </div>
         <div class="editor-field">
-            @Html.DropDownList("IctContact", String.Empty)
-            @Html.ValidationMessageFor(model => model.IctContact)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.BusinessCriticalityId, "BusinessCriticality")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("BusinessCriticalityId", String.Empty)
-            @Html.ValidationMessageFor(model => model.BusinessCriticalityId)
+            @Html.DropDownListFor(m=>m.BusinessCriticalitySelectedValue, new SelectList(Model.BusinessCriticalities,"BusinessCriticalityId","Name"))
+            @*@Html.DropDownList("BusinessCriticalityId", String.Empty)*@
+            @Html.ValidationMessageFor(model => model.Application.BusinessCriticalityId)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.ServiceAreaId, "ServiceArea")
+            @Html.LabelFor(model => model.Application.ServiceAreaId, "ServiceArea")
         </div>
         <div class="editor-field">
-            @Html.DropDownList("ServiceAreaId", String.Empty)
-            @Html.ValidationMessageFor(model => model.ServiceAreaId)
+            @Html.DropDownListFor(m=>m.ServiceAreaSelectedValue, new SelectList(Model.ServiceAreas,"ServiceAreaId","Name"))
+            @*@Html.DropDownList("ServiceAreaId", String.Empty)*@
+            @Html.ValidationMessageFor(model => model.Application.ServiceAreaId)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Description)
+            @Html.LabelFor(model => model.Application.Description)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Description)
-            @Html.ValidationMessageFor(model => model.Description)
+            @Html.EditorFor(model => model.Application.Description)
+            @Html.ValidationMessageFor(model => model.Application.Description)
         </div>
 
         <p>
@@ -73,6 +67,3 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

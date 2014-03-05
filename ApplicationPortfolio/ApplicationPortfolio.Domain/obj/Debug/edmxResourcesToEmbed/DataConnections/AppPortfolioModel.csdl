@@ -2,6 +2,7 @@
 <Schema Namespace="AppPortfolioModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
   <EntityContainer Name="AppPortfolioEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Applications" EntityType="AppPortfolioModel.Application" />
+    <EntitySet Name="ApplicationContacts" EntityType="AppPortfolioModel.ApplicationContact" />
     <EntitySet Name="ApplicationDocuments" EntityType="AppPortfolioModel.ApplicationDocument" />
     <EntitySet Name="ApplicationServers" EntityType="AppPortfolioModel.ApplicationServer" />
     <EntitySet Name="BusinessCriticalities" EntityType="AppPortfolioModel.BusinessCriticality" />
@@ -9,139 +10,198 @@
     <EntitySet Name="Documents" EntityType="AppPortfolioModel.Document" />
     <EntitySet Name="DocumentTypes" EntityType="AppPortfolioModel.DocumentType" />
     <EntitySet Name="Servers" EntityType="AppPortfolioModel.Server" />
+    <EntitySet Name="ServerContacts" EntityType="AppPortfolioModel.ServerContact" />
+    <EntitySet Name="ServerDocuments" EntityType="AppPortfolioModel.ServerDocument" />
     <EntitySet Name="ServiceAreas" EntityType="AppPortfolioModel.ServiceArea" />
     <AssociationSet Name="FK_Application_BusinessCriticality" Association="AppPortfolioModel.FK_Application_BusinessCriticality">
       <End Role="BusinessCriticality" EntitySet="BusinessCriticalities" />
-      <End Role="Application" EntitySet="Applications" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Application_Contact" Association="AppPortfolioModel.FK_Application_Contact">
-      <End Role="Contact" EntitySet="Contacts" />
-      <End Role="Application" EntitySet="Applications" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Application_Contact1" Association="AppPortfolioModel.FK_Application_Contact1">
-      <End Role="Contact" EntitySet="Contacts" />
       <End Role="Application" EntitySet="Applications" />
     </AssociationSet>
     <AssociationSet Name="FK_Application_ServiceArea" Association="AppPortfolioModel.FK_Application_ServiceArea">
       <End Role="ServiceArea" EntitySet="ServiceAreas" />
       <End Role="Application" EntitySet="Applications" />
     </AssociationSet>
+    <AssociationSet Name="FK_ApplicationContacts_Application" Association="AppPortfolioModel.FK_ApplicationContacts_Application">
+      <End Role="Application" EntitySet="Applications" />
+      <End Role="ApplicationContact" EntitySet="ApplicationContacts" />
+    </AssociationSet>
     <AssociationSet Name="FK_ApplicationDocuments_Application" Association="AppPortfolioModel.FK_ApplicationDocuments_Application">
       <End Role="Application" EntitySet="Applications" />
-      <End Role="ApplicationDocuments" EntitySet="ApplicationDocuments" />
+      <End Role="ApplicationDocument" EntitySet="ApplicationDocuments" />
     </AssociationSet>
     <AssociationSet Name="FK_ApplicationServers_Application" Association="AppPortfolioModel.FK_ApplicationServers_Application">
       <End Role="Application" EntitySet="Applications" />
-      <End Role="ApplicationServers" EntitySet="ApplicationServers" />
+      <End Role="ApplicationServer" EntitySet="ApplicationServers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplicationContacts_Contact" Association="AppPortfolioModel.FK_ApplicationContacts_Contact">
+      <End Role="Contact" EntitySet="Contacts" />
+      <End Role="ApplicationContact" EntitySet="ApplicationContacts" />
     </AssociationSet>
     <AssociationSet Name="FK_ApplicationDocuments_Document" Association="AppPortfolioModel.FK_ApplicationDocuments_Document">
       <End Role="Document" EntitySet="Documents" />
-      <End Role="ApplicationDocuments" EntitySet="ApplicationDocuments" />
+      <End Role="ApplicationDocument" EntitySet="ApplicationDocuments" />
     </AssociationSet>
     <AssociationSet Name="FK_ApplicationServers_Server" Association="AppPortfolioModel.FK_ApplicationServers_Server">
       <End Role="Server" EntitySet="Servers" />
-      <End Role="ApplicationServers" EntitySet="ApplicationServers" />
+      <End Role="ApplicationServer" EntitySet="ApplicationServers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServerContacts_Contact" Association="AppPortfolioModel.FK_ServerContacts_Contact">
+      <End Role="Contact" EntitySet="Contacts" />
+      <End Role="ServerContact" EntitySet="ServerContacts" />
     </AssociationSet>
     <AssociationSet Name="FK_Document_DocumentType" Association="AppPortfolioModel.FK_Document_DocumentType">
       <End Role="DocumentType" EntitySet="DocumentTypes" />
       <End Role="Document" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServerDocuments_Document" Association="AppPortfolioModel.FK_ServerDocuments_Document">
+      <End Role="Document" EntitySet="Documents" />
+      <End Role="ServerDocument" EntitySet="ServerDocuments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServerContacts_Server" Association="AppPortfolioModel.FK_ServerContacts_Server">
+      <End Role="Server" EntitySet="Servers" />
+      <End Role="ServerContact" EntitySet="ServerContacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServerDocuments_Server" Association="AppPortfolioModel.FK_ServerDocuments_Server">
+      <End Role="Server" EntitySet="Servers" />
+      <End Role="ServerDocument" EntitySet="ServerDocuments" />
+    </AssociationSet>
+    <EntitySet Name="ApplicationServerDependencies" EntityType="AppPortfolioModel.ApplicationServerDependency" />
+    <AssociationSet Name="FK_ApplicationServerDependencies_Application" Association="AppPortfolioModel.FK_ApplicationServerDependencies_Application">
+      <End Role="Application" EntitySet="Applications" />
+      <End Role="ApplicationServerDependency" EntitySet="ApplicationServerDependencies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplicationServerDependencies_Server" Association="AppPortfolioModel.FK_ApplicationServerDependencies_Server">
+      <End Role="Server" EntitySet="Servers" />
+      <End Role="ApplicationServerDependency" EntitySet="ApplicationServerDependencies" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Application">
     <Key>
       <PropertyRef Name="ApplicationId" />
     </Key>
-    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
-    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="BusinessContact" Type="Guid" />
-    <Property Name="IctContact" Type="Guid" />
-    <Property Name="BusinessCriticalityId" Type="Int32" />
-    <Property Name="ServiceAreaId" Type="Int32" />
-    <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="BusinessCriticalityId" Nullable="false" />
+    <Property Type="Int32" Name="ServiceAreaId" Nullable="false" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="BusinessCriticality" Relationship="AppPortfolioModel.FK_Application_BusinessCriticality" FromRole="Application" ToRole="BusinessCriticality" />
-    <NavigationProperty Name="Contact" Relationship="AppPortfolioModel.FK_Application_Contact" FromRole="Application" ToRole="Contact" />
-    <NavigationProperty Name="Contact1" Relationship="AppPortfolioModel.FK_Application_Contact1" FromRole="Application" ToRole="Contact" />
     <NavigationProperty Name="ServiceArea" Relationship="AppPortfolioModel.FK_Application_ServiceArea" FromRole="Application" ToRole="ServiceArea" />
-    <NavigationProperty Name="ApplicationDocuments" Relationship="AppPortfolioModel.FK_ApplicationDocuments_Application" FromRole="Application" ToRole="ApplicationDocuments" />
-    <NavigationProperty Name="ApplicationServers" Relationship="AppPortfolioModel.FK_ApplicationServers_Application" FromRole="Application" ToRole="ApplicationServers" />
+    <NavigationProperty Name="ApplicationContacts" Relationship="AppPortfolioModel.FK_ApplicationContacts_Application" FromRole="Application" ToRole="ApplicationContact" />
+    <NavigationProperty Name="ApplicationDocuments" Relationship="AppPortfolioModel.FK_ApplicationDocuments_Application" FromRole="Application" ToRole="ApplicationDocument" />
+    <NavigationProperty Name="ApplicationServers" Relationship="AppPortfolioModel.FK_ApplicationServers_Application" FromRole="Application" ToRole="ApplicationServer" />
+    <NavigationProperty Name="ApplicationServerDependencies" Relationship="AppPortfolioModel.FK_ApplicationServerDependencies_Application" FromRole="Application" ToRole="ApplicationServerDependency" />
+  </EntityType>
+  <EntityType Name="ApplicationContact">
+    <Key>
+      <PropertyRef Name="AppContactId" />
+    </Key>
+    <Property Type="Int32" Name="AppContactId" Nullable="false" />
+    <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+    <Property Type="Guid" Name="ContactId" Nullable="false" />
+    <NavigationProperty Name="Application" Relationship="AppPortfolioModel.FK_ApplicationContacts_Application" FromRole="ApplicationContact" ToRole="Application" />
+    <NavigationProperty Name="Contact" Relationship="AppPortfolioModel.FK_ApplicationContacts_Contact" FromRole="ApplicationContact" ToRole="Contact" />
   </EntityType>
   <EntityType Name="ApplicationDocument">
     <Key>
       <PropertyRef Name="ApplicationDocumentId" />
     </Key>
-    <Property Name="ApplicationDocumentId" Type="Guid" Nullable="false" />
-    <Property Name="ApplicationId" Type="Guid" />
-    <Property Name="DocumentId" Type="Guid" />
-    <NavigationProperty Name="Application" Relationship="AppPortfolioModel.FK_ApplicationDocuments_Application" FromRole="ApplicationDocuments" ToRole="Application" />
-    <NavigationProperty Name="Document" Relationship="AppPortfolioModel.FK_ApplicationDocuments_Document" FromRole="ApplicationDocuments" ToRole="Document" />
+    <Property Type="Guid" Name="ApplicationDocumentId" Nullable="false" />
+    <Property Type="Guid" Name="ApplicationId" />
+    <Property Type="Guid" Name="DocumentId" />
+    <NavigationProperty Name="Application" Relationship="AppPortfolioModel.FK_ApplicationDocuments_Application" FromRole="ApplicationDocument" ToRole="Application" />
+    <NavigationProperty Name="Document" Relationship="AppPortfolioModel.FK_ApplicationDocuments_Document" FromRole="ApplicationDocument" ToRole="Document" />
   </EntityType>
   <EntityType Name="ApplicationServer">
     <Key>
       <PropertyRef Name="ApplicationServerId" />
     </Key>
-    <Property Name="ApplicationServerId" Type="Int32" Nullable="false" />
-    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
-    <Property Name="ServerId" Type="Guid" Nullable="false" />
-    <NavigationProperty Name="Application" Relationship="AppPortfolioModel.FK_ApplicationServers_Application" FromRole="ApplicationServers" ToRole="Application" />
-    <NavigationProperty Name="Server" Relationship="AppPortfolioModel.FK_ApplicationServers_Server" FromRole="ApplicationServers" ToRole="Server" />
+    <Property Type="Int32" Name="ApplicationServerId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+    <Property Type="Guid" Name="ServerId" Nullable="false" />
+    <NavigationProperty Name="Application" Relationship="AppPortfolioModel.FK_ApplicationServers_Application" FromRole="ApplicationServer" ToRole="Application" />
+    <NavigationProperty Name="Server" Relationship="AppPortfolioModel.FK_ApplicationServers_Server" FromRole="ApplicationServer" ToRole="Server" />
   </EntityType>
   <EntityType Name="BusinessCriticality">
     <Key>
       <PropertyRef Name="BusinessCriticalityId" />
     </Key>
-    <Property Name="BusinessCriticalityId" Type="Int32" Nullable="false" />
-    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Type="Int32" Name="BusinessCriticalityId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Applications" Relationship="AppPortfolioModel.FK_Application_BusinessCriticality" FromRole="BusinessCriticality" ToRole="Application" />
   </EntityType>
   <EntityType Name="Contact">
     <Key>
       <PropertyRef Name="ContactId" />
     </Key>
-    <Property Name="ContactId" Type="Guid" Nullable="false" />
-    <Property Name="OpenId" Type="Guid" />
-    <NavigationProperty Name="Applications" Relationship="AppPortfolioModel.FK_Application_Contact" FromRole="Contact" ToRole="Application" />
-    <NavigationProperty Name="Applications1" Relationship="AppPortfolioModel.FK_Application_Contact1" FromRole="Contact" ToRole="Application" />
+    <Property Type="Guid" Name="ContactId" Nullable="false" />
+    <Property Type="Guid" Name="OpenId" />
+    <NavigationProperty Name="ApplicationContacts" Relationship="AppPortfolioModel.FK_ApplicationContacts_Contact" FromRole="Contact" ToRole="ApplicationContact" />
+    <NavigationProperty Name="ServerContacts" Relationship="AppPortfolioModel.FK_ServerContacts_Contact" FromRole="Contact" ToRole="ServerContact" />
   </EntityType>
   <EntityType Name="Document">
     <Key>
       <PropertyRef Name="DocumentId" />
     </Key>
-    <Property Name="DocumentId" Type="Guid" Nullable="false" />
-    <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="DocumentTypeId" Type="Int32" />
-    <NavigationProperty Name="ApplicationDocuments" Relationship="AppPortfolioModel.FK_ApplicationDocuments_Document" FromRole="Document" ToRole="ApplicationDocuments" />
+    <Property Type="Guid" Name="DocumentId" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="DocumentTypeId" />
+    <NavigationProperty Name="ApplicationDocuments" Relationship="AppPortfolioModel.FK_ApplicationDocuments_Document" FromRole="Document" ToRole="ApplicationDocument" />
     <NavigationProperty Name="DocumentType" Relationship="AppPortfolioModel.FK_Document_DocumentType" FromRole="Document" ToRole="DocumentType" />
+    <NavigationProperty Name="ServerDocuments" Relationship="AppPortfolioModel.FK_ServerDocuments_Document" FromRole="Document" ToRole="ServerDocument" />
   </EntityType>
   <EntityType Name="DocumentType">
     <Key>
       <PropertyRef Name="DocumentTypeId" />
     </Key>
-    <Property Name="DocumentTypeId" Type="Int32" Nullable="false" />
-    <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="Description" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Type="Int32" Name="DocumentTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="10" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="Documents" Relationship="AppPortfolioModel.FK_Document_DocumentType" FromRole="DocumentType" ToRole="Document" />
   </EntityType>
   <EntityType Name="Server">
     <Key>
       <PropertyRef Name="ServerId" />
     </Key>
-    <Property Name="ServerId" Type="Guid" Nullable="false" />
-    <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <NavigationProperty Name="ApplicationServers" Relationship="AppPortfolioModel.FK_ApplicationServers_Server" FromRole="Server" ToRole="ApplicationServers" />
+    <Property Type="Guid" Name="ServerId" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ApplicationServers" Relationship="AppPortfolioModel.FK_ApplicationServers_Server" FromRole="Server" ToRole="ApplicationServer" />
+    <NavigationProperty Name="ServerContacts" Relationship="AppPortfolioModel.FK_ServerContacts_Server" FromRole="Server" ToRole="ServerContact" />
+    <NavigationProperty Name="ServerDocuments" Relationship="AppPortfolioModel.FK_ServerDocuments_Server" FromRole="Server" ToRole="ServerDocument" />
+    <NavigationProperty Name="ApplicationServerDependencies" Relationship="AppPortfolioModel.FK_ApplicationServerDependencies_Server" FromRole="Server" ToRole="ApplicationServerDependency" />
+  </EntityType>
+  <EntityType Name="ServerContact">
+    <Key>
+      <PropertyRef Name="ServerContactId" />
+    </Key>
+    <Property Type="Int32" Name="ServerContactId" Nullable="false" />
+    <Property Type="Guid" Name="ServerId" Nullable="false" />
+    <Property Type="Guid" Name="ContactId" Nullable="false" />
+    <NavigationProperty Name="Contact" Relationship="AppPortfolioModel.FK_ServerContacts_Contact" FromRole="ServerContact" ToRole="Contact" />
+    <NavigationProperty Name="Server" Relationship="AppPortfolioModel.FK_ServerContacts_Server" FromRole="ServerContact" ToRole="Server" />
+  </EntityType>
+  <EntityType Name="ServerDocument">
+    <Key>
+      <PropertyRef Name="ServerDocumentId" />
+    </Key>
+    <Property Type="Int32" Name="ServerDocumentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Guid" Name="DocumentId" Nullable="false" />
+    <Property Type="Guid" Name="ServerId" Nullable="false" />
+    <NavigationProperty Name="Document" Relationship="AppPortfolioModel.FK_ServerDocuments_Document" FromRole="ServerDocument" ToRole="Document" />
+    <NavigationProperty Name="Server" Relationship="AppPortfolioModel.FK_ServerDocuments_Server" FromRole="ServerDocument" ToRole="Server" />
   </EntityType>
   <EntityType Name="ServiceArea">
     <Key>
       <PropertyRef Name="ServiceAreaId" />
     </Key>
-    <Property Name="ServiceAreaId" Type="Int32" Nullable="false" />
-    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Type="Int32" Name="ServiceAreaId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Applications" Relationship="AppPortfolioModel.FK_Application_ServiceArea" FromRole="ServiceArea" ToRole="Application" />
   </EntityType>
   <Association Name="FK_Application_BusinessCriticality">
-    <End Role="BusinessCriticality" Type="AppPortfolioModel.BusinessCriticality" Multiplicity="0..1" />
-    <End Role="Application" Type="AppPortfolioModel.Application" Multiplicity="*" />
+    <End Type="AppPortfolioModel.BusinessCriticality" Role="BusinessCriticality" Multiplicity="1" />
+    <End Type="AppPortfolioModel.Application" Role="Application" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="BusinessCriticality">
         <PropertyRef Name="BusinessCriticalityId" />
@@ -151,33 +211,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Application_Contact">
-    <End Role="Contact" Type="AppPortfolioModel.Contact" Multiplicity="0..1" />
-    <End Role="Application" Type="AppPortfolioModel.Application" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Contact">
-        <PropertyRef Name="ContactId" />
-      </Principal>
-      <Dependent Role="Application">
-        <PropertyRef Name="BusinessContact" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Application_Contact1">
-    <End Role="Contact" Type="AppPortfolioModel.Contact" Multiplicity="0..1" />
-    <End Role="Application" Type="AppPortfolioModel.Application" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Contact">
-        <PropertyRef Name="ContactId" />
-      </Principal>
-      <Dependent Role="Application">
-        <PropertyRef Name="IctContact" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Application_ServiceArea">
-    <End Role="ServiceArea" Type="AppPortfolioModel.ServiceArea" Multiplicity="0..1" />
-    <End Role="Application" Type="AppPortfolioModel.Application" Multiplicity="*" />
+    <End Type="AppPortfolioModel.ServiceArea" Role="ServiceArea" Multiplicity="1" />
+    <End Type="AppPortfolioModel.Application" Role="Application" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ServiceArea">
         <PropertyRef Name="ServiceAreaId" />
@@ -187,63 +223,169 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ApplicationDocuments_Application">
-    <End Role="Application" Type="AppPortfolioModel.Application" Multiplicity="0..1" />
-    <End Role="ApplicationDocuments" Type="AppPortfolioModel.ApplicationDocument" Multiplicity="*" />
+  <Association Name="FK_ApplicationContacts_Application">
+    <End Type="AppPortfolioModel.Application" Role="Application" Multiplicity="1" />
+    <End Type="AppPortfolioModel.ApplicationContact" Role="ApplicationContact" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Application">
         <PropertyRef Name="ApplicationId" />
       </Principal>
-      <Dependent Role="ApplicationDocuments">
+      <Dependent Role="ApplicationContact">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplicationDocuments_Application">
+    <End Type="AppPortfolioModel.Application" Role="Application" Multiplicity="0..1" />
+    <End Type="AppPortfolioModel.ApplicationDocument" Role="ApplicationDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Application">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="ApplicationDocument">
         <PropertyRef Name="ApplicationId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ApplicationServers_Application">
-    <End Role="Application" Type="AppPortfolioModel.Application" Multiplicity="1" />
-    <End Role="ApplicationServers" Type="AppPortfolioModel.ApplicationServer" Multiplicity="*" />
+    <End Type="AppPortfolioModel.Application" Role="Application" Multiplicity="1" />
+    <End Type="AppPortfolioModel.ApplicationServer" Role="ApplicationServer" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Application">
         <PropertyRef Name="ApplicationId" />
       </Principal>
-      <Dependent Role="ApplicationServers">
+      <Dependent Role="ApplicationServer">
         <PropertyRef Name="ApplicationId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ApplicationContacts_Contact">
+    <End Type="AppPortfolioModel.Contact" Role="Contact" Multiplicity="1" />
+    <End Type="AppPortfolioModel.ApplicationContact" Role="ApplicationContact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="ContactId" />
+      </Principal>
+      <Dependent Role="ApplicationContact">
+        <PropertyRef Name="ContactId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_ApplicationDocuments_Document">
-    <End Role="Document" Type="AppPortfolioModel.Document" Multiplicity="0..1" />
-    <End Role="ApplicationDocuments" Type="AppPortfolioModel.ApplicationDocument" Multiplicity="*" />
+    <End Type="AppPortfolioModel.Document" Role="Document" Multiplicity="0..1" />
+    <End Type="AppPortfolioModel.ApplicationDocument" Role="ApplicationDocument" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Document">
         <PropertyRef Name="DocumentId" />
       </Principal>
-      <Dependent Role="ApplicationDocuments">
+      <Dependent Role="ApplicationDocument">
         <PropertyRef Name="DocumentId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ApplicationServers_Server">
-    <End Role="Server" Type="AppPortfolioModel.Server" Multiplicity="1" />
-    <End Role="ApplicationServers" Type="AppPortfolioModel.ApplicationServer" Multiplicity="*" />
+    <End Type="AppPortfolioModel.Server" Role="Server" Multiplicity="1" />
+    <End Type="AppPortfolioModel.ApplicationServer" Role="ApplicationServer" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Server">
         <PropertyRef Name="ServerId" />
       </Principal>
-      <Dependent Role="ApplicationServers">
+      <Dependent Role="ApplicationServer">
         <PropertyRef Name="ServerId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ServerContacts_Contact">
+    <End Type="AppPortfolioModel.Contact" Role="Contact" Multiplicity="1" />
+    <End Type="AppPortfolioModel.ServerContact" Role="ServerContact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="ContactId" />
+      </Principal>
+      <Dependent Role="ServerContact">
+        <PropertyRef Name="ContactId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Document_DocumentType">
-    <End Role="DocumentType" Type="AppPortfolioModel.DocumentType" Multiplicity="0..1" />
-    <End Role="Document" Type="AppPortfolioModel.Document" Multiplicity="*" />
+    <End Type="AppPortfolioModel.DocumentType" Role="DocumentType" Multiplicity="0..1" />
+    <End Type="AppPortfolioModel.Document" Role="Document" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="DocumentType">
         <PropertyRef Name="DocumentTypeId" />
       </Principal>
       <Dependent Role="Document">
         <PropertyRef Name="DocumentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServerDocuments_Document">
+    <End Type="AppPortfolioModel.Document" Role="Document" Multiplicity="1" />
+    <End Type="AppPortfolioModel.ServerDocument" Role="ServerDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Document">
+        <PropertyRef Name="DocumentId" />
+      </Principal>
+      <Dependent Role="ServerDocument">
+        <PropertyRef Name="DocumentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServerContacts_Server">
+    <End Type="AppPortfolioModel.Server" Role="Server" Multiplicity="1" />
+    <End Type="AppPortfolioModel.ServerContact" Role="ServerContact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Server">
+        <PropertyRef Name="ServerId" />
+      </Principal>
+      <Dependent Role="ServerContact">
+        <PropertyRef Name="ServerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServerDocuments_Server">
+    <End Type="AppPortfolioModel.Server" Role="Server" Multiplicity="1" />
+    <End Type="AppPortfolioModel.ServerDocument" Role="ServerDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Server">
+        <PropertyRef Name="ServerId" />
+      </Principal>
+      <Dependent Role="ServerDocument">
+        <PropertyRef Name="ServerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ApplicationServerDependency">
+    <Key>
+      <PropertyRef Name="AppServerDependId" />
+    </Key>
+    <Property Type="Int32" Name="AppServerDependId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+    <Property Type="Guid" Name="ServerId" Nullable="false" />
+    <NavigationProperty Name="Application" Relationship="AppPortfolioModel.FK_ApplicationServerDependencies_Application" FromRole="ApplicationServerDependency" ToRole="Application" />
+    <NavigationProperty Name="Server" Relationship="AppPortfolioModel.FK_ApplicationServerDependencies_Server" FromRole="ApplicationServerDependency" ToRole="Server" />
+  </EntityType>
+  <Association Name="FK_ApplicationServerDependencies_Application">
+    <End Type="AppPortfolioModel.Application" Role="Application" Multiplicity="1" />
+    <End Type="AppPortfolioModel.ApplicationServerDependency" Role="ApplicationServerDependency" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Application">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="ApplicationServerDependency">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplicationServerDependencies_Server">
+    <End Type="AppPortfolioModel.Server" Role="Server" Multiplicity="1" />
+    <End Type="AppPortfolioModel.ApplicationServerDependency" Role="ApplicationServerDependency" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Server">
+        <PropertyRef Name="ServerId" />
+      </Principal>
+      <Dependent Role="ApplicationServerDependency">
+        <PropertyRef Name="ServerId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

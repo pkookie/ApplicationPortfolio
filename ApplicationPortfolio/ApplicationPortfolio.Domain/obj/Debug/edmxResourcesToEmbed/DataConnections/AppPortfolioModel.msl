@@ -4,83 +4,117 @@
     <EntitySetMapping Name="Applications">
       <EntityTypeMapping TypeName="AppPortfolioModel.Application">
         <MappingFragment StoreEntitySet="Application">
-          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="BusinessContact" ColumnName="BusinessContact" />
-          <ScalarProperty Name="IctContact" ColumnName="IctContact" />
-          <ScalarProperty Name="BusinessCriticalityId" ColumnName="BusinessCriticalityId" />
-          <ScalarProperty Name="ServiceAreaId" ColumnName="ServiceAreaId" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ServiceAreaId" ColumnName="ServiceAreaId" />
+          <ScalarProperty Name="BusinessCriticalityId" ColumnName="BusinessCriticalityId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplicationContacts">
+      <EntityTypeMapping TypeName="AppPortfolioModel.ApplicationContact">
+        <MappingFragment StoreEntitySet="ApplicationContacts">
+          <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="AppContactId" ColumnName="AppContactId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ApplicationDocuments">
       <EntityTypeMapping TypeName="AppPortfolioModel.ApplicationDocument">
         <MappingFragment StoreEntitySet="ApplicationDocuments">
-          <ScalarProperty Name="ApplicationDocumentId" ColumnName="ApplicationDocumentId" />
-          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
           <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="ApplicationDocumentId" ColumnName="ApplicationDocumentId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ApplicationServers">
       <EntityTypeMapping TypeName="AppPortfolioModel.ApplicationServer">
         <MappingFragment StoreEntitySet="ApplicationServers">
-          <ScalarProperty Name="ApplicationServerId" ColumnName="ApplicationServerId" />
-          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
           <ScalarProperty Name="ServerId" ColumnName="ServerId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="ApplicationServerId" ColumnName="ApplicationServerId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="BusinessCriticalities">
       <EntityTypeMapping TypeName="AppPortfolioModel.BusinessCriticality">
         <MappingFragment StoreEntitySet="BusinessCriticality">
-          <ScalarProperty Name="BusinessCriticalityId" ColumnName="BusinessCriticalityId" />
           <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BusinessCriticalityId" ColumnName="BusinessCriticalityId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Contacts">
       <EntityTypeMapping TypeName="AppPortfolioModel.Contact">
         <MappingFragment StoreEntitySet="Contact">
-          <ScalarProperty Name="ContactId" ColumnName="ContactId" />
           <ScalarProperty Name="OpenId" ColumnName="OpenId" />
+          <ScalarProperty Name="ContactId" ColumnName="ContactId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Documents">
       <EntityTypeMapping TypeName="AppPortfolioModel.Document">
         <MappingFragment StoreEntitySet="Document">
-          <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="DocumentTypeId" ColumnName="DocumentTypeId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DocumentTypes">
       <EntityTypeMapping TypeName="AppPortfolioModel.DocumentType">
         <MappingFragment StoreEntitySet="DocumentType">
-          <ScalarProperty Name="DocumentTypeId" ColumnName="DocumentTypeId" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DocumentTypeId" ColumnName="DocumentTypeId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Servers">
       <EntityTypeMapping TypeName="AppPortfolioModel.Server">
         <MappingFragment StoreEntitySet="Server">
-          <ScalarProperty Name="ServerId" ColumnName="ServerId" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ServerId" ColumnName="ServerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServerContacts">
+      <EntityTypeMapping TypeName="AppPortfolioModel.ServerContact">
+        <MappingFragment StoreEntitySet="ServerContacts">
+          <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+          <ScalarProperty Name="ServerId" ColumnName="ServerId" />
+          <ScalarProperty Name="ServerContactId" ColumnName="ServerContactId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServerDocuments">
+      <EntityTypeMapping TypeName="AppPortfolioModel.ServerDocument">
+        <MappingFragment StoreEntitySet="ServerDocuments">
+          <ScalarProperty Name="ServerId" ColumnName="ServerId" />
+          <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+          <ScalarProperty Name="ServerDocumentId" ColumnName="ServerDocumentId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ServiceAreas">
       <EntityTypeMapping TypeName="AppPortfolioModel.ServiceArea">
         <MappingFragment StoreEntitySet="ServiceArea">
-          <ScalarProperty Name="ServiceAreaId" ColumnName="ServiceAreaId" />
           <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ServiceAreaId" ColumnName="ServiceAreaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplicationServerDependencies">
+      <EntityTypeMapping TypeName="AppPortfolioModel.ApplicationServerDependency">
+        <MappingFragment StoreEntitySet="ApplicationServerDependencies">
+          <ScalarProperty Name="ServerId" ColumnName="ServerId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="AppServerDependId" ColumnName="AppServerDependId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

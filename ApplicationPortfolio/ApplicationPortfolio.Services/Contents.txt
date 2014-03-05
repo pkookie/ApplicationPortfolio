@@ -1,0 +1,4 @@
+﻿To make it a modulised system (and to re-use existing resources) this project will contain portals to:
+
+- Any future access to the EDRMS
+- Access to people's service (service areas, users on intranet)

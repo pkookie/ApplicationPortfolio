@@ -64,10 +64,16 @@
     <Compile Include="DataConnections\Application.cs">
       <DependentUpon>AppPortfolioModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataConnections\ApplicationContact.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataConnections\ApplicationDocument.cs">
       <DependentUpon>AppPortfolioModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataConnections\ApplicationServer.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\ApplicationServerDependency.cs">
       <DependentUpon>AppPortfolioModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataConnections\AppPortfolioModel.Context.cs">
@@ -100,9 +106,17 @@
     <Compile Include="DataConnections\Repositories\ApplicationRespository.cs" />
     <Compile Include="DataConnections\Repositories\BusinessCriticalityRepository.cs" />
     <Compile Include="DataConnections\Repositories\ContactRepository.cs" />
+    <Compile Include="DataConnections\Repositories\DependenciesRepository.cs" />
+    <Compile Include="DataConnections\Repositories\DocumentRepository.cs" />
     <Compile Include="DataConnections\Repositories\ServerRepository.cs" />
     <Compile Include="DataConnections\Repositories\ServiceAreaRepository.cs" />
     <Compile Include="DataConnections\Server.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\ServerContact.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\ServerDocument.cs">
       <DependentUpon>AppPortfolioModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataConnections\ServiceArea.cs">

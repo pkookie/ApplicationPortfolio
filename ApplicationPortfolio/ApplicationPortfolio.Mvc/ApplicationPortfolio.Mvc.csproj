@@ -154,14 +154,24 @@
     <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Controllers\BusinessCriticalityController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\DependenciesController.cs" />
+    <Compile Include="Controllers\DocumentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ServerController.cs" />
     <Compile Include="Controllers\ServiceAreaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ApplicationPortfolioMvcContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Application\AllApplicationsViewModel.cs" />
+    <Compile Include="ViewModels\Application\ApplicationContactsViewModel.cs" />
+    <Compile Include="ViewModels\Application\ApplicationCreateViewModel.cs" />
+    <Compile Include="ViewModels\Application\ApplicationDocumentsViewModel.cs" />
+    <Compile Include="ViewModels\Application\ApplicationEditViewModel.cs" />
+    <Compile Include="ViewModels\Application\ApplicationViewModel.cs" />
+    <Compile Include="ViewModels\Dependencies\CreateAppDependencyViewModel.cs" />
+    <Compile Include="ViewModels\Dependencies\CreateServerDependencyViewModel.cs" />
+    <Compile Include="ViewModels\Dependencies\ViewDependencyViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Carpark.css" />
@@ -395,11 +405,35 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Icons\SVG\ResourceBookingSVG.spp" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\Attendees.js" />
+    <Content Include="Scripts\Desk.js" />
+    <Content Include="Scripts\handlebars.js" />
+    <Content Include="Scripts\jqm-datebox.core.js" />
+    <Content Include="Scripts\jqm-datebox.mode.calbox.js" />
+    <Content Include="Scripts\jqm-datebox.mode.datebox.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.dataTables.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jquery.hoverIntent.minified.js" />
+    <Content Include="Scripts\jquery.Jcrop.js" />
+    <Content Include="Scripts\jquery.joyride-1.0.4.js" />
+    <Content Include="Scripts\jquery.jstree.js" />
+    <Content Include="Scripts\jquery.keyboard.extension-autocomplete.js" />
+    <Content Include="Scripts\jquery.keyboard.extension-mobile.js" />
+    <Content Include="Scripts\jquery.keyboard.extension-navigation.js" />
+    <Content Include="Scripts\jquery.keyboard.extension-typing.js" />
+    <Content Include="Scripts\jquery.keyboard.min.js" />
+    <Content Include="Scripts\jquery.mobile-1.3.0.js" />
+    <Content Include="Scripts\jquery.peek.min.js" />
+    <Content Include="Scripts\jquery.raty.min.js" />
+    <Content Include="Scripts\jquery.scrollbox.js" />
+    <Content Include="Scripts\jquery.tablesorter.min.js" />
+    <Content Include="Scripts\jquery.ui.selectmenu.js" />
+    <Content Include="Scripts\jquery.ui.timepicker.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -409,6 +443,31 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\mustache.js" />
+    <Content Include="Scripts\Profile.js" />
+    <Content Include="Scripts\Room.js" />
+    <Content Include="Scripts\themes\apple\bg.jpg" />
+    <Content Include="Scripts\themes\apple\d.png" />
+    <Content Include="Scripts\themes\apple\dot_for_ie.gif" />
+    <Content Include="Scripts\themes\apple\style.css" />
+    <Content Include="Scripts\themes\apple\throbber.gif" />
+    <Content Include="Scripts\themes\classic\d.gif" />
+    <Content Include="Scripts\themes\classic\d.png" />
+    <Content Include="Scripts\themes\classic\dot_for_ie.gif" />
+    <Content Include="Scripts\themes\classic\style.css" />
+    <Content Include="Scripts\themes\classic\throbber.gif" />
+    <Content Include="Scripts\themes\default-rtl\d.gif" />
+    <Content Include="Scripts\themes\default-rtl\d.png" />
+    <Content Include="Scripts\themes\default-rtl\dots.gif" />
+    <Content Include="Scripts\themes\default-rtl\style.css" />
+    <Content Include="Scripts\themes\default-rtl\throbber.gif" />
+    <Content Include="Scripts\themes\default\d.gif" />
+    <Content Include="Scripts\themes\default\d.png" />
+    <Content Include="Scripts\themes\default\style.css" />
+    <Content Include="Scripts\themes\default\throbber.gif" />
+    <Content Include="Scripts\time.js" />
+    <Content Include="Scripts\TimeFunctions.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -467,14 +526,31 @@
     <Content Include="Views\Server\Create.cshtml" />
     <Content Include="Views\Server\Edit.cshtml" />
     <Content Include="Views\Server\Delete.cshtml" />
-    <Content Include="Views\Shared\_LayoutAppPortfolio.cshtml" />
+    <Content Include="Views\Document\Index.cshtml" />
+    <Content Include="Views\Document\Details.cshtml" />
+    <Content Include="Views\Document\Create.cshtml" />
+    <Content Include="Views\Document\Edit.cshtml" />
+    <Content Include="Views\Document\Delete.cshtml" />
+    <Content Include="Views\Shared\_ApplicationContacts.cshtml" />
+    <Content Include="Views\Shared\_ApplicationDocuments.cshtml" />
+    <Content Include="Views\Dependencies\Application\Index.cshtml" />
+    <Content Include="Views\Dependencies\Server\Index.cshtml" />
+    <Content Include="Views\Dependencies\Application\Create.cshtml" />
+    <Content Include="Views\Dependencies\Application\Delete.cshtml" />
+    <Content Include="Views\Dependencies\Application\Details.cshtml" />
+    <Content Include="Views\Dependencies\Server\Create.cshtml" />
+    <Content Include="Views\Dependencies\Server\Details.cshtml" />
+    <Content Include="Views\Dependencies\Server\Delete.cshtml" />
+    <Content Include="Views\Dependencies\Details.cshtml" />
+    <Content Include="Views\Dependencies\CreateAppDependency.cshtml" />
+    <Content Include="Views\Dependencies\CreateServerDependency.cshtml" />
+    <Content Include="Views\Dependencies\DeleteAppDependency.cshtml" />
+    <Content Include="Views\Dependencies\DeleteServerDependency.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Helpers\" />
-    <Folder Include="ViewModels\Application\" />
-    <Folder Include="ViewModels\BaseObject\" />
-    <Folder Include="ViewModels\Document\" />
+    <Folder Include="Models\" />
     <Folder Include="ViewModels\Server\" />
   </ItemGroup>
   <ItemGroup>

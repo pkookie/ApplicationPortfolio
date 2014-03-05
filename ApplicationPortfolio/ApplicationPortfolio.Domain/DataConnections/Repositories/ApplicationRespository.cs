@@ -17,7 +17,7 @@ namespace ApplicationPortfolio.Domain.DataConnections.Repositories
         //    base.Dispose(disposing);
         //}
 
-        public IEnumerable<Application> GetAllApplications()
+        public IEnumerable<ApplicationPortfolio.Domain.DataConnections.Application> GetAllApplications()
         {
           //  var applications = db.Applications.Include(a => a.BusinessCriticalityId).Include(a => a.Contact).Include(a => a.Contact1).Include(a => a.ServiceArea);
             return db.Applications.ToList();
@@ -53,6 +53,20 @@ namespace ApplicationPortfolio.Domain.DataConnections.Repositories
 
             return "Success";
         }
+
+        #region Application contacts
+        public IEnumerable<ApplicationContact> GetApplicationContacts(Guid applicationId)
+        {
+            return db.ApplicationContacts.Where(x => x.ApplicationId == applicationId);
+        }
+        #endregion
+
+        #region Application documents
+        public IEnumerable<ApplicationDocument> GetApplicationDocuments(Guid applicationId)
+        {
+            return db.ApplicationDocuments.Where(x => x.ApplicationId == applicationId);
+        }
+        #endregion
 
     }
 }

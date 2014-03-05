@@ -17,6 +17,9 @@ namespace ApplicationPortfolio.Domain.DataConnections
         public Server()
         {
             this.ApplicationServers = new HashSet<ApplicationServer>();
+            this.ServerContacts = new HashSet<ServerContact>();
+            this.ServerDocuments = new HashSet<ServerDocument>();
+            this.ApplicationServerDependencies = new HashSet<ApplicationServerDependency>();
         }
     
         public System.Guid ServerId { get; set; }
@@ -24,5 +27,8 @@ namespace ApplicationPortfolio.Domain.DataConnections
         public string Description { get; set; }
     
         public virtual ICollection<ApplicationServer> ApplicationServers { get; set; }
+        public virtual ICollection<ServerContact> ServerContacts { get; set; }
+        public virtual ICollection<ServerDocument> ServerDocuments { get; set; }
+        public virtual ICollection<ApplicationServerDependency> ApplicationServerDependencies { get; set; }
     }
 }

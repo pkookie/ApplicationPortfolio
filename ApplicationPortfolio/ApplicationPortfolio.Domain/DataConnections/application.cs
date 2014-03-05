@@ -16,23 +16,23 @@ namespace ApplicationPortfolio.Domain.DataConnections
     {
         public Application()
         {
+            this.ApplicationContacts = new HashSet<ApplicationContact>();
             this.ApplicationDocuments = new HashSet<ApplicationDocument>();
             this.ApplicationServers = new HashSet<ApplicationServer>();
+            this.ApplicationServerDependencies = new HashSet<ApplicationServerDependency>();
         }
     
         public System.Guid ApplicationId { get; set; }
         public string Name { get; set; }
-        public Nullable<System.Guid> BusinessContact { get; set; }
-        public Nullable<System.Guid> IctContact { get; set; }
-        public Nullable<int> BusinessCriticalityId { get; set; }
-        public Nullable<int> ServiceAreaId { get; set; }
+        public int BusinessCriticalityId { get; set; }
+        public int ServiceAreaId { get; set; }
         public string Description { get; set; }
     
         public virtual BusinessCriticality BusinessCriticality { get; set; }
-        public virtual Contact Contact { get; set; }
-        public virtual Contact Contact1 { get; set; }
         public virtual ServiceArea ServiceArea { get; set; }
+        public virtual ICollection<ApplicationContact> ApplicationContacts { get; set; }
         public virtual ICollection<ApplicationDocument> ApplicationDocuments { get; set; }
         public virtual ICollection<ApplicationServer> ApplicationServers { get; set; }
+        public virtual ICollection<ApplicationServerDependency> ApplicationServerDependencies { get; set; }
     }
 }

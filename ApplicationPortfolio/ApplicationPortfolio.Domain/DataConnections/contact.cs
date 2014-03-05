@@ -16,14 +16,14 @@ namespace ApplicationPortfolio.Domain.DataConnections
     {
         public Contact()
         {
-            this.Applications = new HashSet<Application>();
-            this.Applications1 = new HashSet<Application>();
+            this.ApplicationContacts = new HashSet<ApplicationContact>();
+            this.ServerContacts = new HashSet<ServerContact>();
         }
     
         public System.Guid ContactId { get; set; }
         public Nullable<System.Guid> OpenId { get; set; }
     
-        public virtual ICollection<Application> Applications { get; set; }
-        public virtual ICollection<Application> Applications1 { get; set; }
+        public virtual ICollection<ApplicationContact> ApplicationContacts { get; set; }
+        public virtual ICollection<ServerContact> ServerContacts { get; set; }
     }
 }

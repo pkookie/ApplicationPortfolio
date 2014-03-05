@@ -1,4 +1,4 @@
-﻿@model ApplicationPortfolio.Domain.DataConnections.Application
+﻿@model ApplicationPortfolio.Mvc.ViewModels.Application.ApplicationViewModel
 
 @{
     ViewBag.Title = "Details";
@@ -10,48 +10,41 @@
     <legend>Application</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Name)
+         @Html.DisplayNameFor(model => model.Application.Name)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Name)
+        @Html.DisplayFor(model => model.Application.Name)
+    </div>
+
+    
+    @*Documents*@
+
+
+    @*Contacts*@
+
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Application.BusinessCriticality.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Application.BusinessCriticality.Name)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Contact.ContactId)
+         @Html.DisplayNameFor(model => model.Application.ServiceArea.Name)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Contact.ContactId)
+        @Html.DisplayFor(model => model.Application.ServiceArea.Name)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Contact1.ContactId)
+         @Html.DisplayNameFor(model => model.Application.Description)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Contact1.ContactId)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.BusinessCriticality.Name)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.BusinessCriticality.Name)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.ServiceArea.Name)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.ServiceArea.Name)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Description)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Description)
+        @Html.DisplayFor(model => model.Application.Description)
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.ApplicationId }) |
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Application.ApplicationId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

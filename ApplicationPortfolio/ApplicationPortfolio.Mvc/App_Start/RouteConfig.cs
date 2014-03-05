@@ -22,7 +22,7 @@ namespace ApplicationPortfolio.Mvc
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "baseobjects", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Application", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

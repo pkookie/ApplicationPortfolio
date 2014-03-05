@@ -4,7 +4,7 @@
 
 @section Head
 {
-    <meta name="svg.config.data-path" content="@Url.Content("~/Content/SVG/")" />
+   @* <meta name="svg.config.data-path" content="@Url.Content("~/Content/SVG/")" />*@
 
     <link rel="Stylesheet" type="text/css" href="@Url.Content("~/Content/ResourceBooking.css")">
     <link rel="Stylesheet" type="text/css" href="@Url.Content("~/Content/Profiles.css")">
@@ -15,7 +15,7 @@
 
 
     <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.hoverIntent.minified.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.dataTables.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.dataTables.js")"></script>
     
 
     <script src="@Url.Content("~/Scripts/Desk.js")" type="text/javascript"></script>
@@ -29,7 +29,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
 
-            $("#tab-desks").addClass("current");
+            $("#tab-applications").addClass("current");
             $("#systemHeader").addClass("fixed");
 
             $("ul.subnav").parent().append("<span></span>");
@@ -56,79 +56,61 @@
 @section ContextBar
 {
 
-    <li id="tab-myBookings"><a href="@Url.Action("Index", "MyBookings", new { id = "" })">
+    <li id="tab-applications"><a href="@Url.Action("Index", "Application", new { id = "" })">
         <img src="@Url.Content("~/Content/Icons/calendar.png")" />
-        My Bookings</a></li>
-    <li id="tab-desks" class="navbar tab-iefix">
-        <a href="@Url.Action("Index", "Desk")">
-            <img src="@Url.Content("~/Content/Icons/desk_green.png")" />
-            Desks</a>
+        Applications</a>
         <ul class="subnav">
-            <li id="bookDesk"><a href="@Url.Action("Index", "Desk")">
+            <li id="AppSubItem1"><a href="@Url.Action("Index", "Application")">
                 <img src="@Url.Content("~/Content/Icons/desk_green.png")" />
-                Book Desk</a></li>
-            <li id="infoDesk"><a href="@Url.Action("Information", "Desk")">
-                <img src="@Url.Content("~/Content/Icons/information.png")" />
-                Desk Information</a></li>
+                Sub Item 1</a></li>
+            <li id="AppSubItem2"><a href="@Url.Action("Index", "Application")">
+                <img src="@Url.Content("~/Content/Icons/desk_green.png")" />
+                Sub Item 2</a></li>
         </ul>
     </li>
 
-    <li id="tab-rooms" class="navbar tab-iefix disabled">
+
+    <li id="tab-contacts" class="navbar tab-iefix">
+        <a href="@Url.Action("Index", "Contact")">
+            <img src="@Url.Content("~/Content/Icons/desk_green.png")" />
+            Contacts</a>
+    </li>
+
+    <li id="tab-documents" class="navbar tab-iefix disabled">
         <a href="@Url.Action("Index", "Room")">
             <img src="@Url.Content("~/Content/Icons/door_open.png")" />
-            Rooms</a>
+            Documents</a>
         <ul class="subnav">
-            <li id="bookRoom"><a href="@Url.Action("Index", "Room")">
+            <li id="documents-documentType"><a href="@Url.Action("Index", "Room")">
                 <img src="@Url.Content("~/Content/Icons/door_open.png")" />
-                Book Room</a></li>
-            <li id="roomCalendar"><a href="@Url.Action("Calendar", "Room")">
+                Document Type</a></li>
+            <li id="documents-appdocuments"><a href="@Url.Action("Calendar", "Room")">
                 <img src="@Url.Content("~/Content/Icons/calendar.png")" />
-                Room Calendar</a></li>
-            <li id="roomInfo">
+                Application Documents</a></li>
+            <li id="documents-serverdocuments">
                 <a href="@Url.Action("Information", "Room")">
                     <img src="@Url.Content("~/Content/Icons/information.png")" />
-                    Room Information
+                    Server Documents
                 </a>
             </li>
-            <li id="tth-room-schedule">
-                <a href="@Url.Action("rooms", "info")">
-                    <img src="@Url.Content("~/Content/Icons/information.png")" />
-                    TTH Room Schedule
-                </a>
-            </li>
-            <li id="waterside-room-schedule">
-                <a href="@Url.Action("rooms", "info", new { ResourceId = "F669A3EE-BE56-44CC-AD8D-5E8DFFB186FF" },null)">
-                    <img src="@Url.Content("~/Content/Icons/information.png")" />
-                    Waterside Room Schedule
-                </a>
-            </li>
-            <li id="legacy-rooms">
-                <a href="http://intranet.trafford.gov.uk/SelfService/RoomBookings/">
-                    <img src="@Url.Content("~/Content/Icons/door_open.png")" />
-                    Legacy Room Booking</a>
-            </li>
+           
         </ul>
-        @*<a href="http://intranet.trafford.gov.uk/SelfService/RoomBookings/"><img src="@Url.Content("~/Content/Icons/door_open.png")" /> Rooms</a>*@
+        </li>
+    <li id="tab-servers" class="navbar tab-iefix">
+        <a href="@Url.Action("Index", "Server")">
+            <img src="@Url.Content("~/Content/Icons/desk_green.png")" />
+            Servers</a>
+    </li>
+
+    <li id="tab-reports" class="navbar tab-iefix">
+        <a href="@Url.Action("Index", "Contact")">
+            <img src="@Url.Content("~/Content/Icons/desk_green.png")" />
+            Reports</a>
     </li>
 
     @if (ViewBag.ViewParking != null && ViewBag.ViewParking)
     {
-        <li id="tab-parking" class="navbar tab-iefix disabled">
-            <a href="@Url.Action("Index", "Parking")">
-                <img src="@Url.Content("~/Content/Icons/car.png")" />
-                Parking</a>
-            <ul class="subnav">
-                <li id="parkingBook"><a href="@Url.Action("Index", "Parking")">
-                    <img src="@Url.Content("~/Content/Icons/car.png")" />
-                    Book Parking</a></li>
-                <li id="parkingInfo"><a href="@Url.Action("Info", "Parking")">
-                    <img src="@Url.Content("~/Content/Icons/information.png")" />
-                    Parking Information</a></li>
-                <li id="parkingSearch"><a href="@Url.Action("Search", "Parking")">
-                    <img src="@Url.Content("~/Content/Icons/magnifier.png")" />
-                    Parking Search</a></li>
-            </ul>
-        </li>
+      //if there any conditional showing of navigation then use this template
     }
 
 }

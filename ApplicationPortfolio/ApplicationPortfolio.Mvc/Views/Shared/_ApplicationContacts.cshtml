@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ApplicationPortfolio.Domain.DataConnections.ApplicationContact>
+<h4>Contacts</h4>
+<div class="GridDiv">
+    @Html.ActionLink("Create Contact", "Create", new { id= ViewBag.ApplicationId })
+<table id="GridTable" class="data tableOrgoniser10-25-50-100-all" cellspacing="0">
+   <thead>
+     <tr>
+        <th>
+            Application
+        </th>
+        <th>
+            Contact Id
+        </th>
+        <th></th>
+    </tr>
+</thead>
+    <tbody>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+             @Html.DisplayFor(modelItem => item.Application.Name)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.Contact.ContactId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AppContactId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AppContactId })
+        </td>
+    </tr>
+}
+</tbody>
+</table>
+    </div>
