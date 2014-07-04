@@ -1,0 +1,29 @@
+﻿@model ApplicationPortfolio.Domain.DataConnections.ServerChangeRequest
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ServerChangeRequest</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ServerId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ServerId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ChangeRequestId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ChangeRequestId)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ServerChangeRequestId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

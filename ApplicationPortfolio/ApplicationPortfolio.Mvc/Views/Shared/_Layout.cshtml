@@ -16,7 +16,13 @@
 
     <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.hoverIntent.minified.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.dataTables.js")"></script>
-    
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.autocomplete.js")"></script> 
+
+     @*needed for the autocomplete*@
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+     <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
 
     <script src="@Url.Content("~/Scripts/Desk.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/Profile.js")" type="text/javascript"></script>
@@ -44,8 +50,86 @@
                 timeout: 200,
                 interval: 100
             });
-        });
+        
 
+
+        //------------------
+
+
+            $("#autocompletefield").autocomplete({
+                minLength: 3,
+                source: function (request, response) {
+                    $.ajax({
+                        url: "Autocomplete",
+                        type: "POST",
+                        dataType: "json",
+                        data: { term: request.term },
+                 
+                        success: function (data) {
+                            response($.map(data, function (item) {
+                                //create an object with all of the properties within it
+                                alert('got to here');
+                                //return { label: item.UserName, value: item.UserName, myFullName: item.FullName, mySponsoredBy: item.SponsoredBy, myEmailAddress: item.EmailAddress, myContactNo: item.ContactNumber };
+                            }))
+
+                        }
+                    })
+                },
+                select: function (event, ui) {
+
+                    alert('got to here two');
+
+                    //do a final ajax call so that an LDAP request can be made to get the sponsors name                
+                    //$.ajax({
+                    //    url: 'GetDetails',
+                    //    type: "POST",
+                    //    dataType: "json",
+                    //    data: { id: ui.item.value },
+
+                    //    success: function (data) {
+
+                    //        //clear what's in the log first
+                    //        $("#log").empty();
+
+                    //        log("Email Address: " + data.EmailAddress);
+                    //        log("Contact Number: " + data.ContactNumber);
+                    //        log("Sponsored By: " + data.sponsoredByFullName);
+                    //        log("Name: " + data.FullName);
+
+                    //        //now populate dropdownlist with sponsors values
+                    //        $(function () {
+                    //            var states = data.sponsorsForUser;
+                    //            var $select = $('#SponsorSelect');
+
+                    //            //empty the values of the select list before populating
+                    //            $('#SponsorSelect').empty()
+
+                    //            $.each(states, function (i, state) {
+                    //                var option = $('<option>', {
+                    //                    value: state.SponsoredBy
+                    //                }).html(state.sponsoredByFullName).appendTo($select);
+                    //            });
+
+                    //            //Add the 'other' option
+                    //            $('#SponsorSelect').append($('<option>', {
+                    //                value: 'Other',
+                    //                text: 'Other'
+                    //            }));
+
+                    //        });
+                    //        //by default set the hidden field to the first value on the select list
+                    //        $("#selectedSponsor").val($("#SponsorSelect option:first").val());
+
+                    //    },
+                    //    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    //        alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                    //    }
+                    //})
+
+                }
+            });
+
+        });
     </script>
 
 
@@ -112,6 +196,10 @@
     {
       //if there any conditional showing of navigation then use this template
     }
+
+    <li id="tab-autocomplete" style="align-content:flex-end" >
+        <input id="autocompletefield" name="autocompletefield" type="text" style="width: 150px;">
+    </li>
 
 }
 

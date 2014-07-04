@@ -60,6 +60,28 @@ namespace ApplicationPortfolio.Domain.DataConnections
 
     #endregion
 
+    #region Server Change Requests
+
+    [MetadataType(typeof(serverchangerequestMetaData))]
+    public partial class ServerChangeRequest
+    {
+    }
+
+    public class serverchangerequestMetaData
+    {
+
+        [Column(TypeName = "DateTime")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public System.DateTime ChangeDate { get; set; }
+
+        [Column(TypeName = "DateTime")]
+        public System.DateTime CreatedDate { get; set; }
+
+
+    }
+
+    #endregion
+
 //    #region Backup Jobs
 
 //    [MetadataType(typeof(backup_jobsMetaData))]

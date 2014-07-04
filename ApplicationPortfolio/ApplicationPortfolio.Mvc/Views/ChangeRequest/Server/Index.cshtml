@@ -1,0 +1,52 @@
+﻿@model ApplicationPortfolio.Mvc.ViewModels.ChangeRequest.ServerChangeRequestViewViewModel
+
+@{
+    ViewBag.Title = "Server Change Requests";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "ServerChangeRequestCreate","ChangeRequest", new { id=Model.ServerId },null)
+</p>
+
+<p>
+    @Html.ActionLink("Back to Servers", "Index","Server")
+</p>
+
+<div class="GridDiv">
+<table id="GridTable" class="data tableOrgoniser10-25-50-100-all" cellspacing="0">
+   <thead>
+     <tr>
+        <th>
+            Description
+        </th>
+        <th>
+            Created Date
+        </th>
+        
+        
+        <th></th>
+    </tr>
+</thead>
+    <tbody>
+@foreach (var item in Model.ChangeRequests)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        
+        <td>
+            @Html.ActionLink("More Info", "Details", new { id=item.ServerChangeRequestId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ServerChangeRequestId })
+        </td>
+    </tr>
+}
+</tbody>
+</table>
+    </div>
+

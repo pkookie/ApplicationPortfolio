@@ -74,6 +74,13 @@
       <End Role="Server" EntitySet="Servers" />
       <End Role="ApplicationServerDependency" EntitySet="ApplicationServerDependencies" />
     </AssociationSet>
+    <EntitySet Name="ChangeRequests" EntityType="AppPortfolioModel.ChangeRequest" />
+    <EntitySet Name="ServerChangeRequests" EntityType="AppPortfolioModel.ServerChangeRequest" />
+    <AssociationSet Name="FK_ServerChangeRequests_Server" Association="AppPortfolioModel.FK_ServerChangeRequests_Server">
+      <End Role="Server" EntitySet="Servers" />
+      <End Role="ServerChangeRequest" EntitySet="ServerChangeRequests" />
+    </AssociationSet>
+    <EntitySet Name="vw_AutoComplete" EntityType="AppPortfolioModel.vw_AutoComplete" />
   </EntityContainer>
   <EntityType Name="Application">
     <Key>
@@ -170,6 +177,7 @@
     <NavigationProperty Name="ServerContacts" Relationship="AppPortfolioModel.FK_ServerContacts_Server" FromRole="Server" ToRole="ServerContact" />
     <NavigationProperty Name="ServerDocuments" Relationship="AppPortfolioModel.FK_ServerDocuments_Server" FromRole="Server" ToRole="ServerDocument" />
     <NavigationProperty Name="ApplicationServerDependencies" Relationship="AppPortfolioModel.FK_ApplicationServerDependencies_Server" FromRole="Server" ToRole="ApplicationServerDependency" />
+    <NavigationProperty Name="ServerChangeRequests" Relationship="AppPortfolioModel.FK_ServerChangeRequests_Server" FromRole="Server" ToRole="ServerChangeRequest" />
   </EntityType>
   <EntityType Name="ServerContact">
     <Key>
@@ -389,4 +397,47 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="ChangeRequest">
+    <Key>
+      <PropertyRef Name="ChangeRequestId" />
+    </Key>
+    <Property Type="Int32" Name="ChangeRequestId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="ChangeDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="3" />
+    <Property Type="Guid" Name="CreatedBy" Nullable="false" />
+    <Property Type="String" Name="BackoutStrategy" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ServerChangeRequest">
+    <Key>
+      <PropertyRef Name="ServerChangeRequestId" />
+    </Key>
+    <Property Type="Int32" Name="ServerChangeRequestId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Guid" Name="ServerId" Nullable="false" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="ChangeDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="BackoutStrategy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Server" Relationship="AppPortfolioModel.FK_ServerChangeRequests_Server" FromRole="ServerChangeRequest" ToRole="Server" />
+  </EntityType>
+  <Association Name="FK_ServerChangeRequests_Server">
+    <End Type="AppPortfolioModel.Server" Role="Server" Multiplicity="1" />
+    <End Type="AppPortfolioModel.ServerChangeRequest" Role="ServerChangeRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Server">
+        <PropertyRef Name="ServerId" />
+      </Principal>
+      <Dependent Role="ServerChangeRequest">
+        <PropertyRef Name="ServerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="vw_AutoComplete">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Guid" Name="Id" Nullable="false" />
+    <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

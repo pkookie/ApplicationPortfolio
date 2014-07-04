@@ -1,4 +1,5 @@
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Services\bin\Debug\ApplicationPortfolio.Services.dll
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Services\bin\Debug\ApplicationPortfolio.Services.pdb
+D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Services\obj\Debug\ApplicationPortfolio.Services.csprojResolveAssemblyReference.cache
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Services\obj\Debug\ApplicationPortfolio.Services.dll
 D:\Projects\Personal Sandbox\AppPortfolioMVC\ApplicationPortfolio\ApplicationPortfolio.Services\obj\Debug\ApplicationPortfolio.Services.pdb

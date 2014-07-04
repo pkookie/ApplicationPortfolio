@@ -7,13 +7,22 @@
     <EntitySet Name="ApplicationServerDependencies" EntityType="AppPortfolioModel.Store.ApplicationServerDependencies" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ApplicationServers" EntityType="AppPortfolioModel.Store.ApplicationServers" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="BusinessCriticality" EntityType="AppPortfolioModel.Store.BusinessCriticality" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ChangeRequest" EntityType="AppPortfolioModel.Store.ChangeRequest" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Contact" EntityType="AppPortfolioModel.Store.Contact" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Document" EntityType="AppPortfolioModel.Store.Document" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="DocumentType" EntityType="AppPortfolioModel.Store.DocumentType" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Server" EntityType="AppPortfolioModel.Store.Server" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ServerChangeRequests" EntityType="AppPortfolioModel.Store.ServerChangeRequests" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ServerContacts" EntityType="AppPortfolioModel.Store.ServerContacts" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ServerDocuments" EntityType="AppPortfolioModel.Store.ServerDocuments" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ServiceArea" EntityType="AppPortfolioModel.Store.ServiceArea" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vw_AutoComplete" EntityType="AppPortfolioModel.Store.vw_AutoComplete" store:Type="Views" store:Schema="dbo" store:Name="vw_AutoComplete">
+      <DefiningQuery>SELECT 
+      [vw_AutoComplete].[Id] AS [Id], 
+      [vw_AutoComplete].[name] AS [name], 
+      [vw_AutoComplete].[Description] AS [Description]
+      FROM [dbo].[vw_AutoComplete] AS [vw_AutoComplete]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_Application_BusinessCriticality" Association="AppPortfolioModel.Store.FK_Application_BusinessCriticality">
       <End Role="BusinessCriticality" EntitySet="BusinessCriticality" />
       <End Role="Application" EntitySet="Application" />
@@ -57,6 +66,10 @@
     <AssociationSet Name="FK_Document_DocumentType" Association="AppPortfolioModel.Store.FK_Document_DocumentType">
       <End Role="DocumentType" EntitySet="DocumentType" />
       <End Role="Document" EntitySet="Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServerChangeRequests_Server" Association="AppPortfolioModel.Store.FK_ServerChangeRequests_Server">
+      <End Role="Server" EntitySet="Server" />
+      <End Role="ServerChangeRequests" EntitySet="ServerChangeRequests" />
     </AssociationSet>
     <AssociationSet Name="FK_ServerContacts_Contact" Association="AppPortfolioModel.Store.FK_ServerContacts_Contact">
       <End Role="Contact" EntitySet="Contact" />
@@ -124,6 +137,17 @@
     <Property Name="BusinessCriticalityId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
   </EntityType>
+  <EntityType Name="ChangeRequest">
+    <Key>
+      <PropertyRef Name="ChangeRequestId" />
+    </Key>
+    <Property Name="ChangeRequestId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="ChangeDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BackoutStrategy" Type="nvarchar" MaxLength="500" />
+  </EntityType>
   <EntityType Name="Contact">
     <Key>
       <PropertyRef Name="ContactId" />
@@ -156,6 +180,17 @@
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
     <Property Name="Description" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="ServerChangeRequests">
+    <Key>
+      <PropertyRef Name="ServerChangeRequestId" />
+    </Key>
+    <Property Name="ServerChangeRequestId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ServerId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ChangeDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="BackoutStrategy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="ServerContacts">
     <Key>
       <PropertyRef Name="ServerContactId" />
@@ -178,6 +213,17 @@
     </Key>
     <Property Name="ServiceAreaId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'AppPortfolio.dbo.vw_AutoComplete' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vw_AutoComplete">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <Association Name="FK_Application_BusinessCriticality">
     <End Role="BusinessCriticality" Type="AppPortfolioModel.Store.BusinessCriticality" Multiplicity="1" />
@@ -308,6 +354,18 @@
       </Principal>
       <Dependent Role="Document">
         <PropertyRef Name="DocumentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServerChangeRequests_Server">
+    <End Role="Server" Type="AppPortfolioModel.Store.Server" Multiplicity="1" />
+    <End Role="ServerChangeRequests" Type="AppPortfolioModel.Store.ServerChangeRequests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Server">
+        <PropertyRef Name="ServerId" />
+      </Principal>
+      <Dependent Role="ServerChangeRequests">
+        <PropertyRef Name="ServerId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

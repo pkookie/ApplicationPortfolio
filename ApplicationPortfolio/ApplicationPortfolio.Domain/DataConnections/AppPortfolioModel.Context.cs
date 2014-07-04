@@ -38,5 +38,8 @@ namespace ApplicationPortfolio.Domain.DataConnections
         public DbSet<ServerDocument> ServerDocuments { get; set; }
         public DbSet<ServiceArea> ServiceAreas { get; set; }
         public DbSet<ApplicationServerDependency> ApplicationServerDependencies { get; set; }
+        public DbSet<ChangeRequest> ChangeRequests { get; set; }
+        public DbSet<ServerChangeRequest> ServerChangeRequests { get; set; }
+        public DbSet<vw_AutoComplete> vw_AutoComplete { get; set; }
     }
 }

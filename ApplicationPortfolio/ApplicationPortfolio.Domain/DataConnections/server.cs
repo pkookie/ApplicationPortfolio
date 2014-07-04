@@ -20,6 +20,7 @@ namespace ApplicationPortfolio.Domain.DataConnections
             this.ServerContacts = new HashSet<ServerContact>();
             this.ServerDocuments = new HashSet<ServerDocument>();
             this.ApplicationServerDependencies = new HashSet<ApplicationServerDependency>();
+            this.ServerChangeRequests = new HashSet<ServerChangeRequest>();
         }
     
         public System.Guid ServerId { get; set; }
@@ -30,5 +31,6 @@ namespace ApplicationPortfolio.Domain.DataConnections
         public virtual ICollection<ServerContact> ServerContacts { get; set; }
         public virtual ICollection<ServerDocument> ServerDocuments { get; set; }
         public virtual ICollection<ApplicationServerDependency> ApplicationServerDependencies { get; set; }
+        public virtual ICollection<ServerChangeRequest> ServerChangeRequests { get; set; }
     }
 }

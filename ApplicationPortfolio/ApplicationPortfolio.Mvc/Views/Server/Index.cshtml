@@ -35,7 +35,7 @@
             @Html.ActionLink("Edit", "Edit", new { id=item.ServerId }) |
             @Html.ActionLink("Details", "Details", new { id=item.ServerId }) |
             @Html.ActionLink("Dependencies", "Details","Dependencies", new { id=item.ServerId,AppOrServer="Server" },null) |
-            @Html.ActionLink("Change Requests", "Details", new { id=item.ServerId }) |
+            @Html.ActionLink("Change Requests", "ServerChangeRequestDetails","ChangeRequest", new { id=item.ServerId }, null) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ServerId })
         </td>
     </tr>

@@ -94,6 +94,9 @@
     <Compile Include="DataConnections\BusinessCriticality.cs">
       <DependentUpon>AppPortfolioModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataConnections\ChangeRequest.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataConnections\Contact.cs">
       <DependentUpon>AppPortfolioModel.tt</DependentUpon>
     </Compile>
@@ -105,12 +108,17 @@
     </Compile>
     <Compile Include="DataConnections\Repositories\ApplicationRespository.cs" />
     <Compile Include="DataConnections\Repositories\BusinessCriticalityRepository.cs" />
+    <Compile Include="DataConnections\Repositories\ChangeRequestRepository.cs" />
     <Compile Include="DataConnections\Repositories\ContactRepository.cs" />
     <Compile Include="DataConnections\Repositories\DependenciesRepository.cs" />
     <Compile Include="DataConnections\Repositories\DocumentRepository.cs" />
     <Compile Include="DataConnections\Repositories\ServerRepository.cs" />
     <Compile Include="DataConnections\Repositories\ServiceAreaRepository.cs" />
+    <Compile Include="DataConnections\Repositories\SharedRepository.cs" />
     <Compile Include="DataConnections\Server.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\ServerChangeRequest.cs">
       <DependentUpon>AppPortfolioModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataConnections\ServerContact.cs">
@@ -120,6 +128,9 @@
       <DependentUpon>AppPortfolioModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataConnections\ServiceArea.cs">
+      <DependentUpon>AppPortfolioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\vw_AutoComplete.cs">
       <DependentUpon>AppPortfolioModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

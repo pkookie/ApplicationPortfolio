@@ -118,5 +118,38 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ChangeRequests">
+      <EntityTypeMapping TypeName="AppPortfolioModel.ChangeRequest">
+        <MappingFragment StoreEntitySet="ChangeRequest">
+          <ScalarProperty Name="BackoutStrategy" ColumnName="BackoutStrategy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ChangeDate" ColumnName="ChangeDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ChangeRequestId" ColumnName="ChangeRequestId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServerChangeRequests">
+      <EntityTypeMapping TypeName="AppPortfolioModel.ServerChangeRequest">
+        <MappingFragment StoreEntitySet="ServerChangeRequests">
+          <ScalarProperty Name="BackoutStrategy" ColumnName="BackoutStrategy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ChangeDate" ColumnName="ChangeDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ServerId" ColumnName="ServerId" />
+          <ScalarProperty Name="ServerChangeRequestId" ColumnName="ServerChangeRequestId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_AutoComplete">
+      <EntityTypeMapping TypeName="AppPortfolioModel.vw_AutoComplete">
+        <MappingFragment StoreEntitySet="vw_AutoComplete">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a1f723d7180944d59bd22f7540d37f3b" Name="Diagram1">
+      <Diagram DiagramId="a1f723d7180944d59bd22f7540d37f3b" Name="Diagram1" ZoomLevel="52">
         <EntityTypeShape EntityType="AppPortfolioModel.Application" Width="1.5" PointX="0.54076134997455472" PointY="25.785975632158095" />
         <EntityTypeShape EntityType="AppPortfolioModel.ApplicationContact" Width="1.5" PointX="5.5295759856372957" PointY="14.151764950785676" />
         <EntityTypeShape EntityType="AppPortfolioModel.ApplicationDocument" Width="1.5" PointX="10.553582550284258" PointY="14.345345429305613" />
@@ -14,9 +14,9 @@
         <EntityTypeShape EntityType="AppPortfolioModel.Document" Width="1.5" PointX="4.4971306307693624" PointY="11.480748375635942" />
         <EntityTypeShape EntityType="AppPortfolioModel.DocumentType" Width="1.5" PointX="11.962397268024459" PointY="16.726359285752455" />
         <EntityTypeShape EntityType="AppPortfolioModel.Server" Width="1.5" PointX="4.9469910510568837" PointY="5.4800850327499608" />
-        <EntityTypeShape EntityType="AppPortfolioModel.ServerContact" Width="1.5" PointX="1.5736879937228223" PointY="27.555297253446327" />
+        <EntityTypeShape EntityType="AppPortfolioModel.ServerContact" Width="1.5" PointX="3.5" PointY="29.375" />
         <EntityTypeShape EntityType="AppPortfolioModel.ServerDocument" Width="1.5" PointX="8.861467859177603" PointY="4.8757000141198281" />
-        <EntityTypeShape EntityType="AppPortfolioModel.ServiceArea" Width="1.5" PointX="5.2808324197683634" PointY="19.04040516309459" />
+        <EntityTypeShape EntityType="AppPortfolioModel.ServiceArea" Width="1.5" PointX="4" PointY="18.875" />
         <AssociationConnector Association="AppPortfolioModel.FK_Application_BusinessCriticality" />
         <AssociationConnector Association="AppPortfolioModel.FK_Application_ServiceArea" />
         <AssociationConnector Association="AppPortfolioModel.FK_ApplicationContacts_Application" />
@@ -33,6 +33,10 @@
         <EntityTypeShape EntityType="AppPortfolioModel.ApplicationServerDependency" Width="1.5" PointX="11.855350965566631" PointY="30.928971915938412" />
         <AssociationConnector Association="AppPortfolioModel.FK_ApplicationServerDependencies_Application" />
         <AssociationConnector Association="AppPortfolioModel.FK_ApplicationServerDependencies_Server" />
+        <EntityTypeShape EntityType="AppPortfolioModel.ChangeRequest" Width="1.5" PointX="2.5267341726118389" PointY="10.944871549934554" />
+        <EntityTypeShape EntityType="AppPortfolioModel.ServerChangeRequest" Width="1.5" PointX="7.8225121068873031" PointY="31.285328700805703" />
+        <AssociationConnector Association="AppPortfolioModel.FK_ServerChangeRequests_Server" />
+        <EntityTypeShape EntityType="AppPortfolioModel.vw_AutoComplete" Width="1.5" PointX="5.7244126152826524" PointY="16.798822738602208" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
